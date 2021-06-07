@@ -31,6 +31,7 @@
 #### Q. What are the core operations of DevOps?
 #### Q. What is Nginx and how it works?
 #### Q. What is Ngrok?
+#### Q. How is container different from a virtual machine?
 
 <br/>
 

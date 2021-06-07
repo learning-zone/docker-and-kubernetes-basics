@@ -38,6 +38,7 @@
 #### Q. Explain how can create a backup and copy files in Jenkins?
 #### Q. Explain how you can setup Jenkins job?
 #### Q. Mention some of the useful plugins in Jenkins
+#### Q. What is Ngrok?
 
 <br/>
 
@@ -70,7 +71,6 @@
 #### Q. What is Docker hub?
 #### Q. How exactly are containers (Docker in our case) different from hypervisor virtualization (vSphere)? What are the benefits?
 
-
 <br/>
 
 # Kubernetes
@@ -91,7 +91,7 @@
 
 # Helm
 
-#### Q. What is Helm
+#### Q. What is Helm?
 #### Q. Helm installation
 #### Q. Create Helm project
 #### Q. Deploy Helm chart

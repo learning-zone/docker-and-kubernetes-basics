@@ -33,6 +33,7 @@
 #### Q. What is Nginx and how it works?
 #### Q. What is Ngrok?
 #### Q. How is container different from a virtual machine?
+#### Q. Why and When to use CICD Pipeline?
 
 <br/>
 

@@ -29,6 +29,8 @@
 #### Q. What do you mean by passive check in Nagios?
 #### Q. When Does Nagios Check for external commands?
 #### Q. What are the core operations of DevOps?
+#### Q. What is Nginx and how it works?
+#### Q. What is Ngrok?
 
 <br/>
 
@@ -38,7 +40,6 @@
 #### Q. Explain how can create a backup and copy files in Jenkins?
 #### Q. Explain how you can setup Jenkins job?
 #### Q. Mention some of the useful plugins in Jenkins
-#### Q. What is Ngrok?
 
 <br/>
 

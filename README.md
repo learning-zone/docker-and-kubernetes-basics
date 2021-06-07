@@ -6,6 +6,7 @@
 #### Q. Define Microservice Architecture?
 #### Q. How is DevOps different from Agile/SDLC?
 #### Q. What are benefits of CI-CD?
+#### Q. What is PaaS?
 #### Q. How DevOps tools work together?
 #### Q. What does Containerization mean?
 #### Q. What is the function of CI (Continuous Integration) server?

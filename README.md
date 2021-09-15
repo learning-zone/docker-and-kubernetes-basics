@@ -1,3 +1,75 @@
+# Docker
+
+#### Q. What is a Docker?
+#### Q. Installing Docker on Linux (CentOS)
+#### Q. Basic Docker Commands
+#### Q. Deploying Containers
+#### Q. Working with Containers
+#### Q. Customize a container
+#### Q. Push personal container to Docker Hub
+#### Q. Create a container by Dockerfile
+#### Q. Docker composes
+#### Q. Docker networking
+#### Q. Data collection for support
+#### Q. Explain a use case for Docker
+#### Q. What is Docker image?
+#### Q. What is Dockerfile used for?
+#### Q. What is the difference between a Docker image and a container?
+#### Q. Do I lose my data when the Docker container exits?
+#### Q. What platforms does Docker run on?
+#### Q. How to stop and restart the Docker container?
+#### Q. What is Docker container? How to create Docker container?
+#### Q. Can I use json instead of yaml for my compose file in Docker?
+#### Q. What is Docker Swarm?
+#### Q. How is Docker different from other container technologies?
+#### Q. What is Docker hub?
+#### Q. How exactly are containers (Docker in our case) different from hypervisor virtualization (vSphere)? What are the benefits?
+
+<br/>
+
+# Kubernetes
+
+#### Q. Exaplin kubernetes architecture
+#### Q. What is Pod?
+#### Q. ReplicaSet
+#### Q. Deployment
+#### Q. Services
+#### Q. Rolling update
+#### Q. Environment
+#### Q. Persistent volumes
+#### Q. Namespace
+#### Q. Troubleshooting
+#### Q. What is containers Orchestration in Kubernetes?
+#### Q. What problems have you actually solved with kubernetes?
+#### Q. What is the difference between Docker Compose and Kubernetes?
+#### Q. How to use local docker images with Minikube?
+#### Q. What is the difference between ClusterIP, NodePort and LoadBalancer service types in Kubernetes?
+#### Q. Ingress vs Load Balancer
+#### Q. What is the difference between a pod and a deployment?
+#### Q. Command to delete all pods in all kubernetes namespaces
+#### Q. How do I force Kubernetes to re-pull an image?
+#### Q. How can I keep a container running on Kubernetes?
+#### Q. How can I trigger a Kubernetes Scheduled Job manually?
+
+<br/>
+
+# Helm Charts
+
+#### Q. What is Helm Charts?
+#### Q. Helm installation
+#### Q. Create Helm project
+#### Q. Deploy Helm chart
+#### Q. Troubleshooting
+
+<br/>
+
+# Pulumi
+
+#### Q. Explain how to use Pulumi in Google Cloud Platform?
+#### Q. How to implement shared resources in Pulumi?
+
+<br/>
+
 # CI/CD
 
 #### Q. What are the fundamental differences between DevOps & Agile?
@@ -45,60 +117,6 @@
 #### Q. Explain how you can setup Jenkins job?
 #### Q. Mention some of the useful plugins in Jenkins
 
-<br/>
-
-# Docker
-
-#### Q. Why use Docker?
-#### Q. What is a Docker?
-#### Q. Installing Docker on Linux (CentOS)
-#### Q. Basic Docker Commands
-#### Q. Deploying Containers
-#### Q. Working with Containers
-#### Q. Load and work with HCL product images
-#### Q. Customize a container
-#### Q. Push personal container to Docker Hub
-#### Q. Create a container by Dockerfile
-#### Q. Docker composes
-#### Q. Docker networking
-#### Q. Data collection for support
-#### Q. Explain a use case for Docker
-#### Q. What is Docker image?
-#### Q. What is Dockerfile used for?
-#### Q. What is the difference between a Docker image and a container?
-#### Q. Do I lose my data when the Docker container exits?
-#### Q. What platforms does Docker run on?
-#### Q. How to stop and restart the Docker container?
-#### Q. What is Docker container? How to create Docker container?
-#### Q. Can I use json instead of yaml for my compose file in Docker?
-#### Q. What is Docker Swarm?
-#### Q. How is Docker different from other container technologies?
-#### Q. What is Docker hub?
-#### Q. How exactly are containers (Docker in our case) different from hypervisor virtualization (vSphere)? What are the benefits?
-
-<br/>
-
-# Kubernetes
-
-#### Q. Kubernetes architecture
-#### Q. Kubernetes installation
-#### Q. Pod
-#### Q. ReplicaSet
-#### Q. Deployment
-#### Q. Services
-#### Q. Rolling update
-#### Q. Environment
-#### Q. Persistent volumes
-#### Q. Namespace
-#### Q. Troubleshooting
-#### Q. What is containers Orchestration in Kubernetes?
-
-<br/>
-
-# Helm
-
-#### Q. What is Helm?
-#### Q. Helm installation
-#### Q. Create Helm project
-#### Q. Deploy Helm chart
-#### Q. Troubleshooting
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>

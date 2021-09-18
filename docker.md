@@ -101,6 +101,14 @@ Docker Compose is a YAML file which contains details about the services, network
     <b><a href="#">↥ back to top</a></b>
 </div>
 
+## Q. ***How is Dockerfile different from Docker Compose***
+
+A Dockerfile is a simple text file that contains the commands a user could call to assemble an image whereas Docker Compose is a tool for defining and running multi-container Docker applications. Docker Compose define the services that make up your app in docker-compose.yml so they can be run together in an isolated environment. It get an app running in one command by just running docker-compose up. Docker compose uses the Dockerfile if one add the build command to your project's docker-compose.yml. Your Docker workflow should be to build a suitable Dockerfile for each image you wish to create, then use compose to assemble the images using the build command.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 ## Q. ***What is Docker Swarm?***
 
 Docker Swarm is native clustering for Docker. It turns a pool of Docker hosts into a single, virtual Docker host. Docker Swarm serves the standard Docker API, any tool that already communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.
@@ -358,14 +366,6 @@ These are the following changes you need make to your compose file before migrat
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***Have you used Kubernetes? If you have, which one would you prefer amongst Docker and Kubernetes?***
-
-Be very honest in such questions. If you have used Kubernetes, talk about your experience with Kubernetes and Docker Swarm. Point out the key areas where you thought docker swarm was more efficient and vice versa. Have a look at this blog for understanding differences between Docker and Kubernetes.
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 ## Q. ***Are you aware of load balancing across containers and hosts? How does it work?***
 
 While using docker service with multiple containers across different hosts, you come across the need to load balance the incoming traffic. Load balancing and HAProxy is basically used to balance the incoming traffic across different available(healthy) containers. If one container crashes, another container should automatically start running and the traffic should be re-routed to this new running container. Load balancing and HAProxy works around this concept.
@@ -377,6 +377,288 @@ While using docker service with multiple containers across different hosts, you 
 ## Q. ***What is a Docker Registry?***
 
 A Docker Registry is a place where all the Docker Images will be stored and Docker Cloud and Docker Hub are the public registries where these images can be hosted upon. The Docker hub is the default storage for the Docker Images. An own registry can also be set up as per the requirement. Docker Data Center (DDC) can also be used which includes DTR (Docker Trusted Registry). Docker store will provide the feature of buying and selling the Docker images.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is DockerHub?***
+
+DockerHub is a cloud-based registry service which allows you to link to code repositories, build your images and test them, stores manually pushed images, and links to Docker cloud so you can deploy images to your hosts. It provides a centralized resource for container image discovery, distribution and change management, user and team collaboration, and workflow automation throughout the development pipeline.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Can I use JSON instead of YAML for my Docker Compose file***
+
+Yes. Yaml is a superset of json so any JSON file should be valid Yaml. To use a JSON file with Compose, specify the filename to use, for example: `docker-compose -f docker-compose.json up`
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to create Docker container***
+
+We can use Docker image to create Docker container by using the below command:
+
+```js
+$ docker run -t -i command name
+```
+
+This command will create and start a container.If you want to verify the list of all running container with the status on a host use the below command:
+
+```js
+$ docker ps -a
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Does Docker container package up the entire OS?***
+
+Docker containers do not package up the OS. They package up the applications with everything that the application needs to run. The engine is installed on top of the OS running on a host. Containers share the OS kernel allowing a single host to run multiple containers.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Describe how many ways are available to configure Docker daemon?***
+
+There are two ways to configure the Docker daemon:
+
+* Using a JSON configuration file. This is the preferred option, since it keeps all configurations in a single place.
+* Using flags when starting dockerd. You can use both of these options together as long as you don’t specify the same option both as a flag and in the JSON file. If that happens, the Docker daemon won’t start and prints an error message. 
+
+```js
+$ dockerd --debug --tls=true --tlscert=/var/docker/server.pem --tlskey=/var/docker/serverkey.pem
+--host tcp://<Host_IP>:2376
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Can you list reasons why Container Networking is so important?***
+
+* Containers need to talk to external world.
+* Reach Containers from external world to use the service that Containers provides.
+* Allows Containers to talk to host machine.
+* Inter-container connectivity in same host and across hosts.
+* Discover services provided by containers automatically.
+* Load balance traffic between different containers in a service.
+* Provide secure multi-tenant services.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to create a user-defined Bridge network ?***
+
+To create a user-defined bridge network, one can use the docker network create command -
+
+`$ docker network create mynet`
+
+You can specify the subnet, the IP address range, the gateway, and other options. See the docker network create reference or the output of docker network create --help for details.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is memory-swap flag?***
+
+`--memory-swap` is a modifier flag that only has meaning if `--memory` is also set. Using swap allows the container to write excess memory requirements to disk when the container has exhausted all the RAM that is available to it. There is a performance penalty for applications that swap memory to disk often.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Can you explain different volume mount types available in Docker?***
+
+There are three mount types available in Docker · Volumes are stored in a part of the host filesystem which is managed by Docker (`/var/lib/docker/volumes/` on Linux). Non-Docker processes should not modify this part of the filesystem. Volumes are the best way to persist data in Docker. · Bind mounts may be stored anywhere on the host system. They may even be important system files or directories. Non-Docker processes on the Docker host or a Docker container can modify them at any time. · tmpfs mounts are stored in the host system’s memory only, and are never written to the host system’s filesystem.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to share data among DockerHost?***
+
+Ways to achieve this when developing your applications. One is to add logic to your application to store files on a cloud object storage system like Amazon S3. Another is to create volumes with a driver that supports writing files to an external storage system like NFS or Amazon S3. Volume drivers allow you to abstract the underlying storage system from the application logic. For example, if your services use a volume with an NFS driver, you can update the services to use a different driver, as an example to store data in the cloud, without changing the application logic.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to Backup, Restore, or Migrate data volumes under Docker container?***
+
+Steps to Backup a container
+
+1. Launch a new container and mount the volume from the dbstore container
+1. Mount a local host directory as /backup
+1. Pass a command that tars the contents of the dbdata volume to a backup.tar file inside our /backup directory.
+
+`$ docker run --rm --volumes-from dbstore -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata` Restore container from backup With the backup just created, you can restore it to the same container, or another that you made elsewhere. For example, create a new container named dbstore2: `$ docker run -v /dbdata --name dbstore2 ubuntu /bin/bash`
+
+Then un-tar the backup file in the new container`s data volume:
+
+```js
+$ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1"
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to Configure Automated Builds on DockerHub***
+
+You can build your images automatically from a build context stored in a repository. A build context is a Dockerfile and any files at a specific location. For an automated build, the build context is a repository containing a Dockerfile.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to configure the default logging driver under Docker?***
+
+To configure the Docker daemon to default to a specific logging driver, set the value of log-driver to the name of the logging driver in the daemon.json file, which is located in /etc/docker/ on Linux hosts or C:\ProgramData\docker\config\ on Windows server hosts. The default logging driver is json-file.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Why do my services take 10 seconds to recreate or stop?***
+
+Compose stop attempts to stop a container by sending a SIGTERM. It then waits for a default timeout of 10 seconds. After the timeout, a SIGKILL is sent to the container to forcefully kill it. If you are waiting for this timeout, it means that your containers aren’t shutting down when they receive the SIGTERM signal.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How do I run multiple copies of a Compose file on the same host?***
+
+Compose uses the project name to create unique identifiers for all of a project’s containers and other resources. To run multiple copies of a project, set a custom project name using the -command line option or the COMPOSE_PROJECT_NAME environment variable.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What’s the difference between up, run, and start under Docker Compose?***
+
+Typically, you want docker-compose up. Use up to start or restart all the services defined in a docker-compose.yml. In the default “attached” mode, you see all the logs from all the containers. In “detached” mode (-d), Compose exits after starting the containers, but the containers continue to run in the background.
+
+The docker-compose run command is for running “one-off” or “adhoc” tasks. It requires the service name you want to run and only starts containers for services that the running service depends on. Use run to run tests or perform an administrative task such as removing or adding data to a data volume container. The run command acts like docker run -ti in that it opens an interactive terminal to the container and returns an exit status matching the exit status of the process in the container. The docker-compose start command is useful only to restart containers that were previously created, but were stopped. It never creates new containers.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is Docker Trusted Registry?***
+
+Docker Trusted Registry (DTR) is the enterprise-grade image storage solution from Docker. You install it behind your firewall so that you can securely store and manage the Docker images you use in your applications.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to declare default environment variables under Docker Compose?***
+
+Compose supports declaring default environment variables in an environment file named .env placed in the folder where the docker-compose command is executed (current working directory). Example: The below example demonstrate how to declare default environmental variable for Docker Compose. img
+
+When you run docker-compose up, the web service defined above uses the image alpine:v3.4. You can verify this with the docker-compose config command which prints your resolved application config to the terminal: img
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Can you list out ways to share Compose configurations between files and projects under Docker Compose?***
+
+Compose supports two methods of sharing common configuration:
+
+Extending an entire Compose file by using multiple Compose files
+Extending individual services with the extends field
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is the purpose of EXPOSE command in Dockerfile?***
+
+When writing your Dockerfiles, the instruction EXPOSE tells Docker the running container listens on specific network ports. This acts as a kind of port mapping documentation that can then be used when publishing the ports.
+
+`EXPOSE <port> [<port>/<protocol>...]`
+
+You can also specify this within a docker run command, such as:
+
+`docker run --expose=1234 my_app`
+
+Please note that EXPOSE will not allow communication via the defined ports to containers outside of the same network or to the host machine. To allow this to happen you need to publish the ports.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How is ENTRYPOINT instruction under Dockerfile different from RUN instruction?***
+
+*ToDo*
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Why Build cache in Docker is so important?***
+
+If the objects on the file system that Docker is about to produce are unchanged between builds, reusing a cache of a previous build on the host is a great time-saver. It makes building a new container really, really fast. None of those file structures have to be created and written to disk this time — the reference to them is sufficient to locate and reuse the previously built structures.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Why Docker Monitoring is necessary?***
+
+* Monitoring helps to identify issues proactively that would help to avoid system outages. 
+* The monitoring time-series data provide insights to fine-tune applications for better performance and robustness. 
+* With full monitoring in place, changes could be rolled out safely as issues will be caught early on and be resolved quickly before that transforms into root-cause for an outage.
+* The changes are inherent in container based environments and impact of that too gets monitored indirectly.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Is it possible to run Kubernetes on Docker EE 2.0 Platform?***
+
+Yes, it is possible to run Kubernetes under Docker EE 2.0 platform. Docker Enterprise Edition (EE) 2.0 is the only platform that manages and secures applications on Kubernetes in multi-Linux, multi-OS and multi-cloud customer environments. As a complete platform that integrates and scales with your organization, Docker EE 2.0 gives you the most flexibility and choice over the types of applications supported, orchestrators used, and where it’s deployed. It also enables organizations to operationalize Kubernetes more rapidly with streamlined workflows and helps you deliver safer applications through integrated security solutions.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Can you use Docker Compose to build up Swarm/Kubernetes Cluster?***
+
+Yes, one can deploy a stack on Kubernetes with docker stack deploy command, the `docker-compose.yml` file, and the name of the stack. Example: `$docker stack deploy --compose-file /path/to/docker-compose.yml mystack $docker stack services mystack` You can see the service deployed with the kubectl get services command $kubectl get svc, po, deploy.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is 'docker stack deploy' command meant for?***
+
+The "docker stack deploy" is a command to deploy a new stack or update an existing stack. A stack is a collection of services that make up an application in a specific environment. A stack file is a file in YAML format that defines one or more services, similar to a docker-compose.yml file for Docker Compose but with a few extensions.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Explain the concept of HA under Swarm Mode?***
+
+HA refers to High Availability. High Availability is a feature where you have multiple instances of your applications running in parallel to handle increased load or failures. These two paradigms fit perfectly into Docker Swarm, the built-in orchestrator that comes with Docker. Deploying your applications like this will improve your uptime which translates to happy users. For creating a high availability container in the Docker Swarm, we need to deploy a docker service to the swarm with nginx image. This can be done by using docker swarm create command as specified above.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What are Docker secrets and why is it necessary***
+
+In Docker there are three key components to container security and together they result in inherently safer apps. img Docker Secrets, a container native solution that strengthens the Trusted Delivery component of container security by integrating secret distribution directly into the container platform. By integrating secrets into Docker orchestration, we are able to deliver a solution for the secrets management problem that follows these exact principles. The following diagram provides a high-level view of how the Docker swarm mode architecture is applied to securely deliver a new type of object to our containers: a secret object.
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

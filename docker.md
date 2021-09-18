@@ -55,6 +55,26 @@ Docker containers include the application and all of its dependencies. It shares
     <b><a href="#">↥ back to top</a></b>
 </div>
 
+## Q. ***How to start a Docker container***
+
+```js
+docker start container-id
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to stop a docker container ?***
+
+```js
+docker stop container-id
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 ## Q. ***What are Docker Images?***
 
 Docker image is the source of Docker container. In other words, Docker images are used to create containers. When a user runs a Docker image, an instance of a container is created. These docker images can be deployed to any Docker environment.
@@ -664,7 +684,7 @@ In Docker there are three key components to container security and together they
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. Docker networking
+## Q. ***What are docker networking***
 
 Mainly we have four mode of networking for Docker
 
@@ -672,6 +692,15 @@ Mainly we have four mode of networking for Docker
 * Host mode networking
 * Container mode networking
 * No networking
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Explain a use case for Docker***
+
+* It can be used to spin up a unified developement environment for all the developers to avoid the problem of "it works fine on my machine" by packaging up the application with all its dependencies in a docker container and then run it on any os.
+* You can spin up clean test environments quickly (instead of bringing up full virtual machines)in order to test your software.
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -715,7 +744,6 @@ Mainly we have four mode of networking for Docker
 #### Q. How to push personal container to Docker Hub
 #### Q. Create a container by Dockerfile
 #### Q. Data collection for support
-#### Q. Explain a use case for Docker
 #### Q. What is the difference between a Docker image and a container?
 #### Q. Do I lose my data when the Docker container exits?
 #### Q. How to stop and restart the Docker container?

@@ -744,16 +744,21 @@ Mainly we have four mode of networking for Docker
 
 ## Q. ***Basic Docker Commands***
 
-| Command      | Description                             | Example                  |
-|--------------|-----------------------------------------|--------------------------|
-|docker pull   | Download an image from an image registry|                          |
-|docker run    | Run a container ( create and start a container )|                  |
-|docker ps     | List containers ( process status )      | $ docker ps              |
-|docker images | List images                             | $ docker images          |
-|docker logs   | Show container logs                     | $ docker logs -f myapp   |
-|docker exec   | Execute a command in a running container|                          |
-|docker cp     | Copy files between a container and local file system|              |
-|docker build  | Build a new image|                                                 |
+| Command       | Description                             | Example                  |
+|---------------|-----------------------------------------|--------------------------|
+| docker pull   | Download an image from an image registry|                          |
+| docker run    | Run a container ( create and start a container )|                  |
+| docker ps     | List containers ( process status )      | $ docker ps              |
+| docker images | List images                             | $ docker images          |
+| docker logs   | Show container logs                     | $ docker logs -f myapp   |
+| docker exec   | Execute a command in a running container|                          |
+| docker cp     | Copy files between a container and local file system|              |
+| docker build  | Build a new image                       |                          |
+| docker start  | Start a Docker container                | $ docker start myapp     |
+| docker stop   | Stop a docker container                 | $ docker stop myapp      |
+| docker version| Docker version                          | $ docker version         |
+| docker info   |                                         | $ docker info            |
+
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

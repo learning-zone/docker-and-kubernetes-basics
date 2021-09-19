@@ -751,14 +751,14 @@ Mainly we have four mode of networking for Docker
 | docker ps     | List containers ( process status )      | $ docker ps              |
 | docker images | List images                             | $ docker images          |
 | docker logs   | Show container logs                     | $ docker logs -f myapp   |
-| docker exec   | Execute a command in a running container|                          |
+| docker exec   | Execute a command in a running container| $ docker exec myapp ls, $ docker exec -it myapp bash |
 | docker cp     | Copy files between a container and local file system|              |
 | docker build  | Build a new image                       |                          |
 | docker start  | Start a Docker container                | $ docker start myapp     |
 | docker stop   | Stop a docker container                 | $ docker stop myapp      |
-| docker version| display Docker Client and Docker Server version| $ docker version  |
-| docker info   | display number of containers running, paused, stopped, number of images etc.| $ docker info |
-
+| docker version| Display Docker Client and Docker Server version| $ docker version  |
+| docker info   | Display number of containers running, paused, stopped, number of images etc.| $ docker info |
+| docker build  | Build docker image                      | $ docker build . -t myapp:1.0.0 |
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

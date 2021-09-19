@@ -740,16 +740,16 @@ Mainly we have four mode of networking for Docker
 
 ## Q. ***Basic Docker Commands***
 
-| Command      | Description                             |
-|--------------|-----------------------------------------|
-|docker pull   | Download an image from an image registry|
-|docker run    | Run a container ( create and start a container )|
-|docker ps     | List containers ( process status )|
-|docker images | List images|
-|docker logs   | Show container logs|
-|docker exec   | Execute a command in a running container|
-|docker cp     | Copy files between a container and local file system|
-|docker build  | Build a new image|
+| Command      | Description                             | Example                  |
+|--------------|-----------------------------------------|--------------------------|
+|docker pull   | Download an image from an image registry|                          |
+|docker run    | Run a container ( create and start a container )|                  |
+|docker ps     | List containers ( process status )      | $ docker ps              |
+|docker images | List images                             | $ docker images          |
+|docker logs   | Show container logs                     | $ docker logs -f myapp   |
+|docker exec   | Execute a command in a running container|                          |
+|docker cp     | Copy files between a container and local file system|              |
+|docker build  | Build a new image|                                                 |
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

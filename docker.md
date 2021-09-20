@@ -87,26 +87,6 @@ Docker containers include the application and all of its dependencies. It shares
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***How to start a Docker container***
-
-```js
-docker start container-id
-```
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
-## Q. ***How to stop a docker container ?***
-
-```js
-docker stop container-id
-```
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 ## Q. ***What are Docker Images?***
 
 Docker image is the source of Docker container. In other words, Docker images are used to create containers. When a user runs a Docker image, an instance of a container is created. These docker images can be deployed to any Docker environment.
@@ -207,40 +187,15 @@ Docker machine is a tool that lets you install Docker Engine on virtual hosts. T
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***Tell some important Docker commands?***
-
-We run docker commands using `$ docker <command name below>`
-
-* `dockerd`: To launch Docker daemon.
-* `build <path to docker file>`: To build an image file for docker.
-* `create`: To create a new container.
-* `kill <container_id>`: To kill a container.
-* `commit`: To create a new image from container changes.
-* `start <container_id>`: to start
-
-Other commands
-
-* `version`: to check for Docker Client and Docker Server version?
-* `info`: to get the number of containers running, paused, stopped, the number of images and a lot more.
-* `login`: to login into hub.docker.com
-* `pull`: to pull an base image from docker hub onto your local system
-* `run -it -d <image_name>`: create a docker container from an image -d means the container needs to start in the detached mode.
-* `ps`: get list all the running containers
-* `exec`: lets you get inside a container and work with it
-* `stop`: to stop
-* `commit <conatainer id> <username/imagename>` : you can use a container, edit it and update it
-* `push <username/image name>`: push it to docker hub
-* `rm <container id>`: delete a stopped container
-* `rmi <image-id>`: delete an image from the local system
-* `system prune`: to remove all the stopped containers, all the networks that are not used, all dangling images and all build caches.
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 ## Q. ***Suppose you have 3 containers running and out of these, you wish to access one of them. How do you access a running container?***
 
-The following command lets us access a running container: `$ docker exec -it bash` The exec command lets you get inside a container and work with it.
+The following command lets us access a running container:
+
+```js
+$ docker exec -it bash
+```
+
+The exec command lets you get inside a container and work with it.
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -746,7 +701,7 @@ Mainly we have four mode of networking for Docker
 
 | Command       | Description                             | Example                  |
 |---------------|-----------------------------------------|--------------------------|
-| docker pull   | Download an image from an image registry|                          |
+| docker pull   | Download an image from docker hub       |                          |
 | docker run    | Run a container ( create and start a container )|                  |
 | docker ps     | List containers ( process status )      | $ docker ps              |
 | docker images | List images                             | $ docker images          |
@@ -759,6 +714,16 @@ Mainly we have four mode of networking for Docker
 | docker version| Display Docker Client and Docker Server version| $ docker version  |
 | docker info   | Display number of containers running, paused, stopped, number of images etc.| $ docker info |
 | docker build  | Build docker image                      | $ docker build . -t myapp:1.0.0 |
+| docker dockerd| To launch Docker daemon                 |    |
+| docker create | To create a new container.              |    |
+| docker kill   | To kill a container                     | docker kill myapp |
+| docker commit | To create a new image from container changes. | |
+| docker login  | To login into hub.docker.com            |   |
+| docker run -it -d `<image_name>` |create a docker container from an image -d means the container needs to start in the detached mode. | |
+|docker push `<username/image name>`| push it to docker hub | |
+| docker rm `<container id>`| delete a stopped container  | |
+| docker rmi `<image-id>` | delete an image from the local system | |
+| docker system prune | to remove all the stopped containers, all the networks that are not used, all dangling images and all build caches.| |
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

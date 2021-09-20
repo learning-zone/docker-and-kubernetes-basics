@@ -235,7 +235,12 @@ Docker containers are very easy to deploy in any cloud platform. It can get more
 
 ## Q. ***Can I use JSON instead of YAML for my compose file in Docker?***
 
-You can use JSON instead of YAML for your compose file, to use JSON file with compose, specify the JSON filename to use, for eg: `$ docker-compose -f docker-compose.json up`
+You can use JSON instead of YAML for your compose file, to use JSON file with compose, specify the JSON filename to use, 
+for eg:
+
+```js
+$ docker-compose -f docker-compose.json up
+```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -401,14 +406,6 @@ DockerHub is a cloud-based registry service which allows you to link to code rep
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***Can I use JSON instead of YAML for my Docker Compose file***
-
-Yes. Yaml is a superset of json so any JSON file should be valid Yaml. To use a JSON file with Compose, specify the filename to use, for example: `docker-compose -f docker-compose.json up`
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 ## Q. ***How to create Docker container***
 
 We can use Docker image to create Docker container by using the below command:
@@ -553,7 +550,7 @@ Compose uses the project name to create unique identifiers for all of a project�
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***What’s the difference between up, run, and start under Docker Compose?***
+## Q. ***What is the difference between up, run, and start under Docker Compose?***
 
 Typically, you want docker-compose up. Use up to start or restart all the services defined in a docker-compose.yml. In the default “attached” mode, you see all the logs from all the containers. In “detached” mode (-d), Compose exits after starting the containers, but the containers continue to run in the background.
 
@@ -706,7 +703,7 @@ Mainly we have four mode of networking for Docker
 | docker ps     | List containers ( process status )      | $ docker ps              |
 | docker images | List images                             | $ docker images          |
 | docker logs   | Show container logs                     | $ docker logs -f myapp   |
-| docker exec   | Execute a command in a running container| $ docker exec myapp ls, $ docker exec -it myapp bash |
+| docker exec   | Execute a command in a running container| $ docker exec myapp ls   |
 | docker cp     | Copy files between a container and local file system|              |
 | docker build  | Build a new image                       |                          |
 | docker start  | Start a Docker container                | $ docker start myapp     |
@@ -716,7 +713,7 @@ Mainly we have four mode of networking for Docker
 | docker build  | Build docker image                      | $ docker build . -t myapp:1.0.0 |
 | docker dockerd| To launch Docker daemon                 |    |
 | docker create | To create a new container.              |    |
-| docker kill   | To kill a container                     | docker kill myapp |
+| docker kill   | To kill a container                     | $ docker kill myapp |
 | docker commit | To create a new image from container changes. | |
 | docker login  | To login into hub.docker.com            |   |
 | docker run -it -d `<image_name>` |create a docker container from an image -d means the container needs to start in the detached mode. | |
@@ -738,7 +735,7 @@ Mainly we have four mode of networking for Docker
 #### Q. Do I lose my data when the Docker container exits?
 #### Q. What is Build Cache in Docker?
 #### Q. What is the difference between "docker run" and "docker create"?
-#### Q. What’s the difference between a repository and a registry?
+#### Q. What is the difference between a repository and a registry?
 #### Q. What is the default CPU limit set for a container?
 #### Q. Can you create containers without their own PID namespace
 #### Q. Explain basic Docker usage workflow?
@@ -769,9 +766,7 @@ Mainly we have four mode of networking for Docker
 #### Q. Data collection for support
 #### Q. What is the difference between a Docker image and a container?
 #### Q. Do I lose my data when the Docker container exits?
-#### Q. How to stop and restart the Docker container?
 #### Q. What is Docker container? How to create Docker container?
-#### Q. Can I use json instead of yaml for my compose file in Docker?
 #### Q. How is Docker different from other container technologies?
 #### Q. How exactly are containers (Docker in our case) different from hypervisor virtualization (vSphere)? What are the benefits?
 

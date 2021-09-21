@@ -698,29 +698,29 @@ Mainly we have four mode of networking for Docker
 
 | Command       | Description                             | Example                  |
 |---------------|-----------------------------------------|--------------------------|
-| docker pull   | Download an image from docker hub       |                          |
-| docker run    | Run a container ( create and start a container )|                  |
-| docker ps     | List containers ( process status )      | $ docker ps              |
-| docker images | List images                             | $ docker images          |
-| docker logs   | Show container logs                     | $ docker logs -f myapp   |
-| docker exec   | Execute a command in a running container| $ docker exec myapp ls   |
-| docker cp     | Copy files between a container and local file system|              |
-| docker build  | Build a new image                       |                          |
-| docker start  | Start a Docker container                | $ docker start myapp     |
-| docker stop   | Stop a docker container                 | $ docker stop myapp      |
-| docker version| Display Docker Client and Docker Server version| $ docker version  |
-| docker info   | Display number of containers running, paused, stopped, number of images etc.| $ docker info |
-| docker build  | Build docker image                      | $ docker build . -t myapp:1.0.0 |
-| docker dockerd| To launch Docker daemon                 |    |
-| docker create | To create a new container.              |    |
-| docker kill   | To kill a container                     | $ docker kill myapp |
-| docker commit | To create a new image from container changes. | |
-| docker login  | To login into hub.docker.com            |   |
-| docker run -it -d `<image_name>` |create a docker container from an image -d means the container needs to start in the detached mode. | |
-|docker push `<username/image name>`| push it to docker hub | |
-| docker rm `<container id>`| delete a stopped container  | |
-| docker rmi `<image-id>` | delete an image from the local system | |
-| docker system prune | to remove all the stopped containers, all the networks that are not used, all dangling images and all build caches.| |
+|pull   | Download an image from docker hub       |                          |
+|run    | Run a container ( create and start a container )|                  |
+|ps     | List containers ( process status )      | $ docker ps              |
+|images | List images                             | $ docker images          |
+|logs   | Show container logs                     | $ docker logs -f myapp   |
+|exec   | Execute a command in a running container| $ docker exec myapp ls   |
+|cp     | Copy files between a container and local file system|              |
+|build  | Build a new image                       |                          |
+|start  | Start a Docker container                | $ docker start myapp     |
+|stop   | Stop a docker container                 | $ docker stop myapp      |
+|version| Display Docker Client and Docker Server version| $ docker version  |
+|info   | Display number of containers running, paused, stopped, number of images etc.| $ docker info |
+|build  | Build docker image                      | $ docker build . -t myapp:1.0.0 |
+|dockerd| To launch Docker daemon                 |    |
+|create | To create a new container.              |    |
+|kill   | To kill a container                     | $ docker kill myapp |
+|commit | To create a new image from container changes. | |
+|login  | To login into hub.docker.com            |   |
+|run -it -d `<image_name>` |create a docker container from an image -d means the container needs to start in the detached mode. | |
+|push `<username/image name>`| push it to docker hub | |
+|rm `<container id>`| delete a stopped container  | |
+|rmi `<image-id>` | delete an image from the local system | |
+|system prune | to remove all the stopped containers, all the networks that are not used, all dangling images and all build caches.| |
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

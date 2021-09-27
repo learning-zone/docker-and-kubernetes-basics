@@ -22,64 +22,64 @@
 * Docker Installation
 * [VS Code docker plugin](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 
-```js
-docker version          // display docker version 
+```docker
+docker version          # display docker version 
 docker info 
-docker run hello-world  // check image in local and download from docker hub 
+docker run hello-world  # check image in local and download from docker hub 
 ```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 2. Images and Containers
+##  2. Images and Containers
 
-```js
-docker container ls         // Display list of containers running 
-docker ps                   // Display list of containers running 
-docker container ls -a      // Display Container List History 
-docker image ls             // Display image List 
-docker images               // Display image List 
-docker history hello-world  // Show the history of an image 
+```docker
+docker container ls         # Display list of containers running 
+docker ps                   # Display list of containers running
+docker container ls -a      # Display Container List History 
+docker image ls             # Display image List 
+docker images               # Display image List 
+docker history hello-world  # Show the history of an image 
 ```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 3. Docker Default Commands
+##  3. Docker Default Commands
 
-```js
-docker container run hello-world                  // more simplified command 
-docker container run busybox                      // contains basic linux tools 
-docker container run busybox ls                   // display list of dictories 
-docker container run busybox echo "Hello World"   // display Hello World 
+```docker
+docker container run hello-world                  # more simplified command 
+docker container run busybox                      # contains basic linux tools 
+docker container run busybox ls                   # display list of dictories 
+docker container run busybox echo "Hello World"   # display Hello World 
 ```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 4. List, Create, and Start Containers
+##  4. List, Create, and Start Containers
 
-```js
-docker container ls                    // display list of containers running 
-docker container ls -a                 // display history of containers was running 
+```docker
+docker container ls                    # display list of containers running 
+docker container ls -a                 # display history of containers was running 
 docker container run hello-world
-docker container create hello-world    // returns id of conatiner created 
+docker container create hello-world    # returns id of conatiner created 
 docker container ls -a
-docker container start -a 814d7eaba88d // Start a conatiner using conatiner-id 
+docker container start -a 814d7eaba88d # Start a conatiner using conatiner-id 
 docker conatiner ls -a 
-docker system prune --all               // Clear dangling and unused images 
+docker system prune --all               # Clear dangling and unused images 
 ```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 5. Logs, Stop, and Kill Containers
+##  5. Logs, Stop, and Kill Containers
 
-```js
+```docker
 docker container ls
 docker container create busybox ls 
 docker container start 5268e3bde091
@@ -89,22 +89,22 @@ docker container create busybox ping google.com
 docker container ls -a
 docker container start c4ea136fc7a1
 docker container ls -a
-docker container stop c4ea136fc7a1     // Does the cleanup before stopping the conatiner 
-docker container kill c4ea136fc7a1     // Stop the container immediately 
+docker container stop c4ea136fc7a1     # Does the cleanup before stopping the conatiner 
+docker container kill c4ea136fc7a1     # Stop the container immediately 
 ```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 6. Remove and Inspect Containers
+##  6. Remove and Inspect Containers
 
-```js
+```docker
 docker container ls -a
-docker container rm c4ea136fc7a1        // Remove container 
-docker container rm -f c4ea136fc7a1     // Force removal container 
+docker container rm c4ea136fc7a1        # Remove container 
+docker container rm -f c4ea136fc7a1     # Force removal container 
 docker container ls -a 
-docker container inspect c4ea136fc7a1   // Inspect docker image 
+docker container inspect c4ea136fc7a1   # Inspect docker image 
 docker system prune --all
 ```
 
@@ -112,21 +112,21 @@ docker system prune --all
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 7. Run a Command in a Running Container with exec
+##  7. Run a Command in a Running Container with exec
 
-```js
-docker container run redis                       // Redis is an open-source, networked, in-memory, key-value data store 
+```docker
+docker container run redis                       # Redis is an open-source, networked, in-memory, key-value data store 
 new terminal > docker container ls -a
-docker container exec dd4c1b706977 redis-cli     // Execute "redis-cli" in local terminal 
-docker container exec -it dd4c1b706977 redis-cli // Execute "redis-cli" command inside redis terminal 
+docker container exec dd4c1b706977 redis-cli     # Execute "redis-cli" in local terminal 
+docker container exec -it dd4c1b706977 redis-cli # Execute "redis-cli" command inside redis terminal 
 # help
 # exit
 docker container exec -it dd4c1b706977 sh
 # cd /
 # ls 
 # exit
-docker container run -it busybox sh       // Open sh terminal in busybox 
-# ls -la                                  // show list of files and directories 
+docker container run -it busybox sh       # Open sh terminal in busybox 
+# ls -la                                  # show list of files and directories 
 # exit
 ```
 
@@ -134,37 +134,37 @@ docker container run -it busybox sh       // Open sh terminal in busybox
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 8. Creating Custom Images
+##  8. Creating Custom Images
 
-```js
-docker container run -it --name scm-container alpine:latest /bin/sh   // Create a new custom conatiner "scm-container" 
-# apk add --update redis                                              // Updates apk package in redis 
-docker container commit scm-container scm-image                       // Creates a new image from "scm-container" 
-docker image ls                                                       // display image list 
-docker container run scm-image redis-server                           // Star custom container using redis server 
-docker container exec -it angry_banzai redis-cli                      // Validate redis server using redis-cli 
+```docker
+docker container run -it --name scm-container alpine:latest /bin/sh   # Create a new custom conatiner "scm-container" 
+# apk add --update redis                                              # Updates apk package in redis 
+docker container commit scm-container scm-image                       # Creates a new image from "scm-container" 
+docker image ls                                                       # display image list 
+docker container run scm-image redis-server                           # Star custom container using redis server 
+docker container exec -it angry_banzai redis-cli                      # Validate redis server using redis-cli 
 ```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 9. Create an Image from a Dockerfile
+##  9. Create an Image from a Dockerfile
 
 * **Dockerfile**
 
-```js
+```docker
 FROM alpine:latest
 RUN apk add --update redis
 CMD ["redis-server"]
 ```
 
-```js
-docker build .                    // Build image from current directory using Dockerfile 
-docker image ls                   // View build image 
-docker image rm -f 0d62f500bf1c   // Remove build image 
+```docker
+docker build .                    # Build image from current directory using Dockerfile 
+docker image ls                   # View build image 
+docker image rm -f 0d62f500bf1c   # Remove build image 
 docker image ls
-docker build -t sofyspace/scm-redis:latest .  // Build image from current directory using Dockerfile 
+docker build -t sofyspace/scm-redis:latest .  # Build image from current directory using Dockerfile 
 docker run sofyspace/scm-redis
 ```
 
@@ -172,11 +172,11 @@ docker run sofyspace/scm-redis
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 10. COPY and ADD Commands
+##  10. COPY and ADD Commands
 
 * **Dockerfile**
 
-```js
+```docker
 # From alpine library
 FROM alpine
 
@@ -193,14 +193,14 @@ ADD corn.tar /app
 ADD https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/svg/docker.svg /app/images/logo.svg
 ```
 
-```js
-docker build .                  // Build image from current directory using Dockerfile ]
+```docker
+docker build .                  # Build image from current directory using Dockerfile ]
 docker image ls   
-docker run -it 0f7408b5dc7f sh  // Rnu the build container in interactive mode 
-# ls -la                        // Display all directories 
-# cd app/                       // app directory 
-# ls -la                        // List all files and directories 
-# cd ..                         // Parent directory 
+docker run -it 0f7408b5dc7f sh  # Rnu the build container in interactive mode 
+# ls -la                        # Display all directories 
+# cd app/                       # app directory 
+# ls -la                        # List all files and directories 
+# cd ..                         # Parent directory 
 ```
 
 <div align="right">
@@ -240,7 +240,7 @@ app.listen(8080, () => {
 
 * **Dockerfile**
 
-```js
+```docker
 # alpine will download only basic version of node.js
 FROM node:alpine
 
@@ -257,10 +257,10 @@ RUN npm install
 CMD ["npm", "start"]
 ```
 
-```js
+```docker
 docker build -t sofyspace/scm-website:latest .
-docker run sofyspace/scm-website                      // Project will run on docker conatiner
-docker run -p 8085:8085 sofyspace/scm-website         // Project will run on local and will map to docker conatiner port 
+docker run sofyspace/scm-website                      # Project will run on docker conatiner
+docker run -p 8085:8085 sofyspace/scm-website         # Project will run on local and will map to docker conatiner port 
 ```
 
 <div align="right">
@@ -269,7 +269,7 @@ docker run -p 8085:8085 sofyspace/scm-website         // Project will run on loc
 
 ## 12. Push Project in Docker Hub
 
-```js
+```docker
 docker login
 docker push sofyspace/scm-website 
 ```
@@ -286,7 +286,7 @@ docker push sofyspace/scm-website
 
 * **Dockerfile**
 
-```js
+```docker
 FROM node:10
 
 WORKDIR /usr/src/app
@@ -304,7 +304,7 @@ CMD ["npm", "start"]
 
 * **docker-compose.yml**
 
-```js
+```docker
 version: '3'
 services:
   app:
@@ -323,10 +323,10 @@ services:
 
 ```
 
-```js
-docker-compose up    // Install nodejs and mongoDB image  
-localhost            // Default port is 80
-docker-compose down  // Remove Container 
+```docker
+docker-compose up    # Install nodejs and mongoDB image  
+localhost            # Default port is 80
+docker-compose down  # Remove Container 
 ```
 
 <div align="right">

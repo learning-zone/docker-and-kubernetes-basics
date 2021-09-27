@@ -2,6 +2,11 @@
 
 ## Q. ***What is the Difference Between Containers and Virtual Machines?***
 
+
+<p align="center">
+  <img src="assets/container-vs-virtual-machine.png" alt="Containers and Virtual Machines" width="600px" />
+</p>
+
 **Virtual Machines:**
 
 A virtual machine (VM) is best described as a software program that emulates the functionality of a physical hardware or computing system. It runs on top of an emulating software, called the hypervisor, which replicates the functionality of the underlying physical hardware resources with a software environment. These resources may be referred to as the host machine, while the VM that runs on the hypervisor is often called a guest machine.

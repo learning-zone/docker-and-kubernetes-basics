@@ -278,7 +278,58 @@ docker push sofyspace/scm-website
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 13. Docker Compose
+## 13. MSSQL Server
+
+```js
+docker pull mcr.microsoft.com/mssql/server:2019-latest  // Pull MSSQL-2019 container image
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" -p 1433:1433 --name sql1 -h sql1 -d mcr.microsoft.com/mssql/server:2019-latest
+```
+
+| Parameter          | Description                  |
+|--------------------|------------------------------|
+|-e "ACCEPT_EULA=Y"  | End-User Licensing Agreement |
+|-e "SA_PASSWORD=<YourStrong@Passw0rd>" | Required setting for the SQL Server image.|
+|-p 1433:1433        |Map a TCP port on the host environment (first value) with a TCP port in the container (second value).|
+| --name sql1        |Specify a custom name for the container rather than a randomly generated one|
+| -h sql1            |Used to explicitly set the container hostname|
+| mcr.microsoft.com/mssql/server:2019-latest |The SQL Server 2019 Ubuntu Linux container image.|
+
+**Connect to SQL Server:**
+
+```js
+docker exec -it sql1 "bash"
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "<YourNewStrong@Passw0rd>"
+```
+
+**Create a new database:**
+
+```js
+CREATE DATABASE TestDB
+SELECT Name from sys.Databases
+GO
+```
+
+**Insert Data:**
+
+```js
+USE TestDB
+CREATE TABLE Inventory (id INT, name NVARCHAR(50), quantity INT)
+INSERT INTO Inventory VALUES (1, 'banana', 150); INSERT INTO Inventory VALUES (2, 'orange', 154);
+GO
+```
+
+**Select Data:**
+
+```js
+SELECT * FROM Inventory WHERE quantity > 152;
+GO
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## 14. Docker Compose
 
 * [docker-node-mongo](https://github.com/bradtraversy/docker-node-mongo)
 

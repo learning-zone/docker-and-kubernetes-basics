@@ -238,7 +238,7 @@ Docker machine is a tool that lets you install Docker Engine on virtual hosts. T
 The following command lets us access a running container:
 
 ```js
-$ docker exec -it bash
+docker exec -it bash
 ```
 
 The exec command lets you get inside a container and work with it.
@@ -281,11 +281,11 @@ Docker containers are very easy to deploy in any cloud platform. It can get more
 
 ## Q. ***Can I use JSON instead of YAML for my compose file in Docker?***
 
-You can use JSON instead of YAML for your compose file, to use JSON file with compose, specify the JSON filename to use, 
+You can use JSON instead of YAML for your compose file, to use JSON file with compose, specify the JSON filename to use,
 for eg:
 
 ```js
-$ docker-compose -f docker-compose.json up
+docker-compose -f docker-compose.json up
 ```
 
 <div align="right">
@@ -457,13 +457,13 @@ DockerHub is a cloud-based registry service which allows you to link to code rep
 We can use Docker image to create Docker container by using the below command:
 
 ```js
-$ docker run -t -i command name
+docker run -t -i command name
 ```
 
 This command will create and start a container.If you want to verify the list of all running container with the status on a host use the below command:
 
 ```js
-$ docker ps -a
+docker ps -a
 ```
 
 <div align="right">
@@ -483,7 +483,7 @@ Docker containers do not package up the OS. They package up the applications wit
 There are two ways to configure the Docker daemon:
 
 * Using a JSON configuration file. This is the preferred option, since it keeps all configurations in a single place.
-* Using flags when starting dockerd. You can use both of these options together as long as you don’t specify the same option both as a flag and in the JSON file. If that happens, the Docker daemon won’t start and prints an error message. 
+* Using flags when starting dockerd. You can use both of these options together as long as you don’t specify the same option both as a flag and in the JSON file. If that happens, the Docker daemon won’t start and prints an error message.
 
 ```js
 $ dockerd --debug --tls=true --tlscert=/var/docker/server.pem --tlskey=/var/docker/serverkey.pem
@@ -557,7 +557,7 @@ Steps to Backup a container
 Then un-tar the backup file in the new container`s data volume:
 
 ```js
-$ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1"
+docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1"
 ```
 
 <div align="right">
@@ -669,8 +669,8 @@ If the objects on the file system that Docker is about to produce are unchanged 
 
 ## Q. ***Why Docker Monitoring is necessary?***
 
-* Monitoring helps to identify issues proactively that would help to avoid system outages. 
-* The monitoring time-series data provide insights to fine-tune applications for better performance and robustness. 
+* Monitoring helps to identify issues proactively that would help to avoid system outages.
+* The monitoring time-series data provide insights to fine-tune applications for better performance and robustness.
 * With full monitoring in place, changes could be rolled out safely as issues will be caught early on and be resolved quickly before that transforms into root-cause for an outage.
 * The changes are inherent in container based environments and impact of that too gets monitored indirectly.
 
@@ -773,47 +773,89 @@ Mainly we have four mode of networking for Docker
 </div>
 
 #### Q. How to build envrionment-agnostic systems with Docker?
+
 #### Q. When would you use "docker kill" or "docker rm -f"?
+
 #### Q. How to link containers?
+
 #### Q. What is the difference between the COPY and ADD commands in a Dockerfile?
+
 #### Q. What is the difference between CMD and ENTRYPOINT in a Dockerfile?
+
 #### Q. How do I transfer a Docker image from one machine to another one without using a repository, no matter private or public?
+
 #### Q. Do I lose my data when the Docker container exits?
+
 #### Q. What is Build Cache in Docker?
+
 #### Q. What is the difference between "docker run" and "docker create"?
+
 #### Q. What is the difference between a repository and a registry?
+
 #### Q. What is the default CPU limit set for a container?
+
 #### Q. Can you create containers without their own PID namespace
+
 #### Q. Explain basic Docker usage workflow?
+
 #### Q. What is the difference between Docker Image and Layer?
+
 #### Q. Could you explain what is Emulation?
+
 #### Q. Should I use Vagrant or Docker for creating an isolated environment?
+
 #### Q. What is the difference between “expose” and “publish” in Docker?
+
 #### Q. Docker Compose vs. Dockerfile - which is better?
+
 #### Q. What exactly do you mean by “Dockerized node”? Can this node be on-premises or in the cloud?
+
 #### Q. How can we control the startup order of services in Docker compose?
+
 #### Q. How will you monitor Docker in production?
+
 #### Q. What happens if you add more than one CMD instruction to a Dockerfile?
+
 #### Q. When you limit the memory for a container, does it reserve (guarantee) the memory?
+
 #### Q. What is an orphant volume and how to remove it?
+
 #### Q. How virtualization works at low level?
+
 #### Q. What is Paravirtualization?
+
 #### Q. How is Docker different from a virtual machine?
+
 #### Q. Is it possible to generate a Dockerfile from an image?
+
 #### Q. Can you explain dockerfile ONBUILD instruction?
+
 #### Q. Why did Docker jump from version 1.13 to 17.03?
+
 #### Q. How does Docker run containers in non-Linux systems?
+
 #### Q. How containers works at low level?
+
 #### Q. Name some limitations of containers vs VM
+
 #### Q. How to use Docker with multiple environments?
+
 #### Q. Why Docker compose does not wait for a container to be ready before moving on to start next service in dependency order?
+
 #### Q. How to push personal container to Docker Hub
+
 #### Q. Create a container by Dockerfile
+
 #### Q. Data collection for support
+
 #### Q. What is the difference between a Docker image and a container?
+
 #### Q. Do I lose my data when the Docker container exits?
+
 #### Q. What is Docker container? How to create Docker container?
+
 #### Q. How is Docker different from other container technologies?
+
 #### Q. How exactly are containers (Docker in our case) different from hypervisor virtualization (vSphere)? What are the benefits?
 
 <div align="right">

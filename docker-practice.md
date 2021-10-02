@@ -1,4 +1,4 @@
-# Docker Practice Questions
+# Docker Session
 
 1. Introduction
 1. Images and Containers

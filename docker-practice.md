@@ -47,22 +47,13 @@ docker history hello-world  // Show the history of an image
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 3. Docker Default Commands
+## 3. List, Create, and Start Containers
 
 ```js
 docker container run hello-world                  // more simplified command 
 docker container run busybox                      // contains basic linux tools 
 docker container run busybox ls                   // display list of dictories 
 docker container run busybox echo "Hello World"   // display Hello World 
-```
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
-## 4. List, Create, and Start Containers
-
-```js
 docker container ls                    // display list of containers running 
 docker container ls -a                 // display history of containers was running 
 docker container run hello-world
@@ -77,7 +68,7 @@ docker system prune --all               // Clear dangling and unused images
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 5. Logs, Stop, and Kill Containers
+## 4. Logs, Stop, and Kill Containers
 
 ```js
 docker container ls
@@ -97,7 +88,7 @@ docker container kill c4ea136fc7a1     // Stop the container immediately
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 6. Remove and Inspect Containers
+## 5. Remove and Inspect Containers
 
 ```js
 docker container ls -a
@@ -112,7 +103,7 @@ docker system prune --all
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 7. Run a Command in a Running Container with exec
+## 6. Run a Command in a Running Container with exec
 
 ```js
 docker container run redis                       // Redis is an open-source, networked, in-memory, key-value data store 
@@ -134,7 +125,7 @@ docker container run -it busybox sh       // Open sh terminal in busybox
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 8. Creating Custom Images
+## 7. Creating Custom Images
 
 ```js
 docker container run -it --name scm-container alpine:latest /bin/sh   // Create a new custom conatiner "scm-container" 
@@ -149,7 +140,7 @@ docker container exec -it angry_banzai redis-cli                      // Validat
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 9. Create an Image from a Dockerfile
+## 8. Create an Image from a Dockerfile
 
 * **Dockerfile**
 
@@ -172,7 +163,7 @@ docker run sofyspace/scm-redis
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 10. COPY and ADD Commands
+## 9. COPY and ADD Commands
 
 * **Dockerfile**
 
@@ -207,7 +198,7 @@ docker run -it 0f7408b5dc7f sh  // Rnu the build container in interactive mode
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 11. Creating a project
+## 10. Creating a project
 
 * **Website directory**
 
@@ -267,7 +258,7 @@ docker run -p 8085:8085 sofyspace/scm-website         // Project will run on loc
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 12. Push Project in Docker Hub
+## 11. Push Project in Docker Hub
 
 ```js
 docker login
@@ -278,7 +269,7 @@ docker push sofyspace/scm-website
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 13. MSSQL Server
+## 12. MSSQL Server
 
 ```js
 docker pull mcr.microsoft.com/mssql/server:2019-latest  // Pull MSSQL-2019 container image
@@ -329,7 +320,7 @@ GO
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 14. Docker Compose
+## 13. Docker Compose
 
 * [docker-node-mongo](https://github.com/bradtraversy/docker-node-mongo)
 

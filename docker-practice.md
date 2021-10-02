@@ -171,16 +171,16 @@ docker run sofyspace/scm-redis
 # From alpine library
 FROM alpine
 
-# Copy all the files from source directory to image
+# Copy all the files from source directory to Docker image
 COPY ./html_files /app/html
 
-# Copy Sample.txt file to image
-COPY Sample.txt /app/sample.txt
+# Copy Text file to Docker image
+COPY sample.txt /app/sample.txt
 
-# Copy corn.tar file to image
-ADD corn.tar /app
+# Copy tar file to Docker image
+ADD file.tar /app
 
-# Copy svg file directly from url to image
+# Copy svg file directly from url to Docker image
 ADD https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/svg/docker.svg /app/images/logo.svg
 ```
 

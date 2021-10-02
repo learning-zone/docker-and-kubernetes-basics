@@ -83,6 +83,10 @@ Docker is a containerization platform which packages your application and all it
 Docker containers, wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries, etc.
 It wraps basically anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
 
+<p align="center">
+  <img src="assets/docker-architecture.png" alt="Docker Architecture" width="600px" />
+</p>
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

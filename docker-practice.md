@@ -1,21 +1,21 @@
 # Docker Practice Questions
 
-1. Introduction (Download and Install)
-2. Images, Containers, and Docker Server (Daemon)
-3. Default Commands
-4. List, Create, and Start Containers
-5. Logs, Stop, and Kill Containers
-6. Remove and Inspect Containers
-7. Run a Command in a Running Container with exec
-8. Creating Custom Images
-9. Create an Image from a Dockerfile
-10. COPY and ADD commands
-11. Creating a Realistic Project
-12. Debugging and Running Project
+1. Introduction
+1. Images and Containers
+1. List, Create and Start Containers
+1. Logs, Stop and Kill Containers
+1. Remove and Inspect Containers
+1. Run a Command in a Running Container with exec
+1. Creating Custom Image
+1. Creating an Image from a Dockerfile
+1. COPY and ADD commands
+1. Creating a Project and deploy in Docker-Hub
+1. Run SQL Server on Docker
+1. Docker Compose
 
 <br/>
 
-## 1. Introduction ( Download and Install )
+## 1. Introduction
 
 * [Containers and Virtual Machines](https://www.docker.com/resources/what-container)
 * [Docker Hub](https://hub.docker.com/)
@@ -47,7 +47,7 @@ docker history hello-world  // Show the history of an image
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 3. List, Create, and Start Containers
+## 3. List, Create and Start Containers
 
 ```js
 docker container run hello-world                  // more simplified command 
@@ -125,7 +125,7 @@ docker container run -it busybox sh       // Open sh terminal in busybox
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 7. Creating Custom Images
+## 7. Creating Custom Image
 
 ```js
 docker container run -it --name scm-container alpine:latest /bin/sh   // Create a new custom conatiner "scm-container" 
@@ -140,7 +140,7 @@ docker container exec -it angry_banzai redis-cli                      // Validat
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 8. Create an Image from a Dockerfile
+## 8. Creating an Image from a Dockerfile
 
 * **Dockerfile**
 
@@ -198,7 +198,7 @@ docker run -it 0f7408b5dc7f sh  // Rnu the build container in interactive mode
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 10. Creating a project
+## 10. Creating a project and deploy in Docker-Hub
 
 * **Website directory**
 
@@ -252,24 +252,15 @@ CMD ["npm", "start"]
 docker build -t sofyspace/scm-website:latest .
 docker run sofyspace/scm-website                      // Project will run on docker conatiner
 docker run -p 8085:8085 sofyspace/scm-website         // Project will run on local and will map to docker conatiner port 
-```
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
-## 11. Push Project in Docker Hub
-
-```js
 docker login
-docker push sofyspace/scm-website 
+docker push sofyspace/scm-website                     // Deploy in Docker Hub
 ```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 12. MSSQL Server
+## 12. Run SQL Server on Docker
 
 ```js
 docker pull mcr.microsoft.com/mssql/server:2019-latest  // Pull MSSQL-2019 container image

@@ -200,8 +200,6 @@ docker run -it 0f7408b5dc7f sh  // Rnu the build container in interactive mode
 
 ## 10. Creating a project and deploy in Docker-Hub
 
-* **Website directory**
-
 * **index.js**
 
 ```js
@@ -215,10 +213,11 @@ app.get('/', (req, res) => {
 app.listen(8080, () => {
    console.log('Listening on port 8080');
 });
+```
 
+* **package.json**
 
->> package.json
-
+```js
 {
     "dependencies": {
         "express": "*"
@@ -251,7 +250,7 @@ CMD ["npm", "start"]
 ```js
 docker build -t sofyspace/scm-website:latest .
 docker run sofyspace/scm-website                      // Project will run on docker conatiner
-docker run -p 8085:8085 sofyspace/scm-website         // Project will run on local and will map to docker conatiner port 
+docker run -p 3000:3000 sofyspace/scm-website         // Project will run on local and will map to docker conatiner port 
 docker login
 docker push sofyspace/scm-website                     // Deploy in Docker Hub
 ```

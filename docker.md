@@ -772,13 +772,47 @@ Mainly we have four mode of networking for Docker
     <b><a href="#">↥ back to top</a></b>
 </div>
 
+## Q. What is the difference between the COPY and ADD commands in a Dockerfile?
+
+**COPY** takes in a src and destination. It only lets you copy in a local file or directory from your host (the machine building the Docker image) into the Docker image itself.
+
+**ADD** lets you do that too, but it also supports 2 other sources. First, you can use a URL instead of a local file / directory. Secondly, you can extract a **tar** file from the source directly into the destination.
+
+**Syntax:**
+
+```js
+COPY <source> <destination>
+ADD <source> <destination>
+```
+
+**Example:** Dockerfile
+
+```js
+# From alpine library
+FROM alpine
+
+# Copy all the files from source directory to image
+COPY ./html_files /app/html
+
+# Copy Sample.txt file to image
+COPY Sample.txt /app/sample.txt
+
+# Copy corn.tar file to image
+ADD corn.tar /app
+
+# Copy svg file directly from url to image
+ADD https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/svg/docker.svg /app/images/logo.svg
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How to build envrionment-agnostic systems with Docker?
 
 #### Q. When would you use "docker kill" or "docker rm -f"?
 
 #### Q. How to link containers?
-
-#### Q. What is the difference between the COPY and ADD commands in a Dockerfile?
 
 #### Q. What is the difference between CMD and ENTRYPOINT in a Dockerfile?
 

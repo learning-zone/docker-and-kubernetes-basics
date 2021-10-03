@@ -200,6 +200,10 @@ docker run -it 0f7408b5dc7f sh  // Rnu the build container in interactive mode
 
 ## 10. Creating a project and deploy in Docker-Hub
 
+```js
+npm init  // create package.json file
+```
+
 * **index.js**
 
 ```js

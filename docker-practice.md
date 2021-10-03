@@ -130,6 +130,7 @@ docker container run -it busybox sh       // Open sh terminal in busybox
 ```js
 docker container run -it --name scm-container alpine:latest /bin/sh   // Create a new custom conatiner "scm-container" 
 # apk add --update redis                                              // Updates apk package in redis 
+# exit                                             
 docker container commit scm-container scm-image                       // Creates a new image from "scm-container" 
 docker image ls                                                       // display image list 
 docker container run scm-image redis-server                           // Star custom container using redis server 

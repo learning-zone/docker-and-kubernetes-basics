@@ -4,7 +4,7 @@
 1. Images and Containers
 1. List, Create and Start Containers
 1. Logs, Stop and Kill Containers
-1. Remove and Inspect Containers
+1. Inspect and Remove Containers
 1. Run a Command in a Running Container with exec
 1. Creating Custom Image
 1. Creating an Image from a Dockerfile
@@ -88,7 +88,7 @@ docker container kill <container-id>     // Stop the container immediately
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 5. Inspect Containers and Remove
+## 5. Inspect and Remove Containers
 
 ```js
 docker container ls -a 

@@ -59,7 +59,7 @@ docker container ls -a                 // display history of containers was runn
 docker container run hello-world
 docker container create hello-world    // returns id of conatiner created 
 docker container ls -a
-docker container start -a 814d7eaba88d // Start a container using container-id, -a = Attach STDOUT/STDERR and forward signals 
+docker container start -a <container-id> // Start a container using container-id, -a = Attach STDOUT/STDERR and forward signals 
 docker conatiner ls -a 
 docker system prune --all               // Clear dangling and unused images 
 ```
@@ -73,29 +73,29 @@ docker system prune --all               // Clear dangling and unused images
 ```js
 docker container ls
 docker container create busybox ls 
-docker container start 5268e3bde091
-docker container logs 5268e3bde091
+docker container start <container-id>
+docker container logs <container-id>
 ping google.com
 docker container create busybox ping google.com
 docker container ls -a
-docker container start c4ea136fc7a1
+docker container start <container-id>
 docker container ls -a
-docker container stop c4ea136fc7a1     // Does the cleanup before stopping the conatiner 
-docker container kill c4ea136fc7a1     // Stop the container immediately 
+docker container stop <container-id>     // Does the cleanup before stopping the conatiner 
+docker container kill <container-id>     // Stop the container immediately 
 ```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 5. Remove and Inspect Containers
+## 5. Inspect Containers and Remove
 
 ```js
-docker container ls -a
-docker container rm c4ea136fc7a1        // Remove container 
-docker container rm -f c4ea136fc7a1     // Force removal container 
 docker container ls -a 
-docker container inspect c4ea136fc7a1   // Inspect docker image 
+docker container inspect <container-id>   // Inspect docker image 
+docker container ls -a
+docker container rm <container-id>        // Remove container 
+docker container rm -f <container-id>     // Force removal container 
 docker system prune --all
 ```
 
@@ -108,11 +108,11 @@ docker system prune --all
 ```js
 docker container run redis                       // Redis is an open-source, networked, in-memory, key-value data store 
 new terminal > docker container ls -a
-docker container exec dd4c1b706977 redis-cli     // Execute "redis-cli" in local terminal 
-docker container exec -it dd4c1b706977 redis-cli // Execute "redis-cli" command inside redis terminal 
+docker container exec <container-id> redis-cli     // Execute "redis-cli" in local terminal 
+docker container exec -it <container-id> redis-cli // Execute "redis-cli" command inside redis terminal 
 # help
 # exit
-docker container exec -it dd4c1b706977 sh
+docker container exec -it <container-id> sh
 # cd /
 # ls 
 # exit
@@ -153,7 +153,7 @@ CMD ["redis-server"]
 ```js
 docker build .                    // Build image from current directory using Dockerfile 
 docker image ls                   // View build image 
-docker image rm -f 0d62f500bf1c   // Remove build image 
+docker image rm -f <image-id>   // Remove build image 
 docker image ls
 docker build -t sofyspace/scm-redis:latest .  // Build image from current directory using Dockerfile 
 docker run sofyspace/scm-redis
@@ -187,7 +187,7 @@ ADD https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/svg/docker.svg /ap
 ```js
 docker build .                  // Build image from current directory using Dockerfile ]
 docker image ls   
-docker run -it 0f7408b5dc7f sh  // Rnu the build container in interactive mode 
+docker run -it <image-id> sh  // Rnu the build container in interactive mode 
 # ls -la                        // Display all directories 
 # cd app/                       // app directory 
 # ls -la                        // List all files and directories 

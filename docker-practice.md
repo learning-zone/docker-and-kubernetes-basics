@@ -134,7 +134,7 @@ docker container run -it --name scm-container alpine:latest /bin/sh   // Create 
 docker container commit scm-container scm-image                       // Creates a new image from "scm-container" 
 docker image ls                                                       // display image list 
 docker container run scm-image redis-server                           // Star custom container using redis server 
-docker container exec -it angry_banzai redis-cli                      // Validate redis server using redis-cli 
+docker container exec -it <container-id> redis-cli                      // Validate redis server using redis-cli 
 ```
 
 <div align="right">

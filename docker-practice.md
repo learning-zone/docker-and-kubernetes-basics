@@ -59,7 +59,7 @@ docker container ls -a                 // display history of containers was runn
 docker container run hello-world
 docker container create hello-world    // returns id of conatiner created 
 docker container ls -a
-docker container start -a 814d7eaba88d // Start a conatiner using conatiner-id 
+docker container start -a 814d7eaba88d // Start a conatiner using container-id, -a = Attach STDOUT/STDERR and forward signals 
 docker conatiner ls -a 
 docker system prune --all               // Clear dangling and unused images 
 ```

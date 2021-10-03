@@ -214,8 +214,8 @@ app.get('/', (req, res) => {
     res.send('Node.js Server Running!');
 });
 
-app.listen(8080, () => {
-   console.log('Listening on port 8080');
+app.listen(3000, () => {
+   console.log('Listening on port 3000');
 });
 ```
 
@@ -252,7 +252,7 @@ CMD ["npm", "start"]
 ```
 
 ```js
-docker build -t sofyspace/scm-website:latest .
+docker build -t sofyspace/scm-website:latest .        // --tag , -t   ==> Name and optionally a tag in the 'name:tag' format
 docker run sofyspace/scm-website                      // Project will run on docker conatiner
 docker run -p 3000:3000 sofyspace/scm-website         // Project will run on local and will map to docker conatiner port 
 docker login
@@ -266,8 +266,8 @@ docker push sofyspace/scm-website                     // Deploy in Docker Hub
 ## 12. Run SQL Server on Docker
 
 ```js
-docker pull mcr.microsoft.com/mssql/server:2019-latest  // Pull MSSQL-2019 container image
-docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" -p 1433:1433 --name sql1 -h sql1 -d mcr.microsoft.com/mssql/server:2019-latest
+docker pull mcr.microsoft.com/mssql/server:2017-CU8-ubuntu  // Pull MSSQL-2019 container image
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" -p 1433:1433 --name sql1 -h sql1 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
 ```
 
 | Parameter          | Description                  |
@@ -277,7 +277,7 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" -p 1433:143
 |-p 1433:1433        |Map a TCP port on the host environment (first value) with a TCP port in the container (second value).|
 | --name sql1        |Specify a custom name for the container rather than a randomly generated one|
 | -h sql1            |Used to explicitly set the container hostname|
-| mcr.microsoft.com/mssql/server:2019-latest |The SQL Server 2019 Ubuntu Linux container image.|
+| mcr.microsoft.com/mssql/server:2017-CU8-ubuntu |The SQL Server 2017 Ubuntu Linux container image.|
 
 **Connect to SQL Server:**
 

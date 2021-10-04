@@ -336,28 +336,6 @@ Large web deployments like Google and Twitter and platform providers such as Her
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***What platforms does docker run on?***
-
-This is a very straightforward question but can get tricky. Do some company research before going for the interview and find out how the company is using Docker. Make sure you mention the platform company is using in this answer. Docker runs on various Linux administration:
-
-* Ubuntu 12.04, 13.04 et al
-* Fedora 19/20+
-* RHEL 6.5+
-* CentOS 6+
-* Gentoo
-* ArchLinux
-* openSUSE 12.3+
-* CRUX 3.0+ It can also be used in production with Cloud platforms with the following services:
-* Amazon EC2
-* Amazon ECS
-* Google Compute Engine
-* Microsoft Azure
-* Rackspace
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 ## Q. ***Is there a way to identify the status of a Docker container?***
 
 There are six possible states a container can be at any given point –

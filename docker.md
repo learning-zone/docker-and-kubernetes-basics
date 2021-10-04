@@ -915,9 +915,13 @@ Hello Docker hostname
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How do I transfer a Docker image from one machine to another one without using a repository, no matter private or public?
+## Q. ***Do I lose my data when the Docker container exits?***
 
-#### Q. Do I lose my data when the Docker container exits?
+No, you won\'t lose any data when Docker container exits. Any data that your application writes to the container gets preserved on the disk until you explicitly delete the container. The file system for the container persists even after the container halts.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is Build Cache in Docker?
 

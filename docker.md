@@ -857,7 +857,7 @@ Docker has two options for containers to store files in the host machine so that
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How to build envrionment-agnostic systems with Docker?
+#### Q. How to build environment-agnostic systems with Docker?
 
 #### Q. When would you use "docker kill" or "docker rm -f"?
 
@@ -932,10 +932,6 @@ Docker has two options for containers to store files in the host machine so that
 #### Q. Data collection for support
 
 #### Q. What is the difference between a Docker image and a container?
-
-#### Q. Do I lose my data when the Docker container exits?
-
-#### Q. What is Docker container? How to create Docker container?
 
 #### Q. How is Docker different from other container technologies?
 

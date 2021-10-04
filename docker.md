@@ -857,9 +857,23 @@ Docker has two options for containers to store files in the host machine so that
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How to build environment-agnostic systems with Docker?
+## Q. When would you use "docker kill" or "docker rm -f"?
 
-#### Q. When would you use "docker kill" or "docker rm -f"?
+The `docker stop` command attempts to stop a running container first by sending a SIGTERM signal to the root process (PID 1) in the container. If the process hasn\'t exited within the timeout period a SIGKILL signal will be sent.
+
+```js
+docker stop ----time=30 foo
+```
+
+By default, the `docker kill` command doesn\'t give the container process an opportunity to exit gracefully -- it simply issues a SIGKILL to terminate the container. However, it does accept a `--signal` flag which will let you send something other than a SIGKILL to the container process.
+
+```js
+docker kill ----signal=SIGINT foo
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. How to link containers?
 
@@ -936,6 +950,8 @@ Docker has two options for containers to store files in the host machine so that
 #### Q. How is Docker different from other container technologies?
 
 #### Q. How exactly are containers (Docker in our case) different from hypervisor virtualization (vSphere)? What are the benefits?
+
+#### Q. How to build environment-agnostic systems with Docker?
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

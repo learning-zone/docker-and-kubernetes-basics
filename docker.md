@@ -687,14 +687,6 @@ Please note that EXPOSE will not allow communication via the defined ports to co
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***Why Build cache in Docker is so important?***
-
-If the objects on the file system that Docker is about to produce are unchanged between builds, reusing a cache of a previous build on the host is a great time-saver. It makes building a new container really, really fast. None of those file structures have to be created and written to disk this time — the reference to them is sufficient to locate and reuse the previously built structures.
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 ## Q. ***Why Docker Monitoring is necessary?***
 
 * Monitoring helps to identify issues proactively that would help to avoid system outages.
@@ -923,7 +915,15 @@ No, you won\'t lose any data when Docker container exits. Any data that your app
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is Build Cache in Docker?
+## Q. ***What is Build Cache in Docker?***
+
+Docker creates container images using layers. Each command that is found in a Dockerfile creates a new layer. Each layers contains the filesystem changes of the image between the state before the execution of the command and the state after the execution of the command.
+
+Docker uses a layer cache to optimize the process of building Docker images and make it faster. Docker Layer Caching mainly works on **RUN**, **COPY** and **ADD** commands.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is the difference between "docker run" and "docker create"?
 

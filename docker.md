@@ -875,9 +875,45 @@ docker kill ----signal=SIGINT foo
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How to link containers?
+## Q. ***What is the difference between CMD and ENTRYPOINT in a Dockerfile?***
 
-#### Q. What is the difference between CMD and ENTRYPOINT in a Dockerfile?
+* **CMD** defines default commands and/or parameters for a container. CMD is an instruction that is best to use if you need a default command which users can easily override. If a Dockerfile has multiple CMDs, it only applies the instructions from the last one.
+
+```JS
+FROM centos:8.1.1911
+
+CMD ["echo", "Hello Docker"]
+```
+
+Run result
+
+ ```js
+$ sudo docker run <image-id>
+Hello Docker
+$ sudo docker run <image-id> hostname   # hostname is exec to override CMD
+244be5006f32
+```
+
+* **ENTRYPOINT** is preferred when you want to define a container with a specific executable.
+
+```js
+FROM centos:8.1.1911
+
+ENTRYPOINT ["echo", "Hello Docker"]
+```
+
+Run result
+
+```js
+$ sudo docker run <image-id>
+Hello Docker
+$ sudo docker run <image-id> hostname   # hostname as parameter to exec
+Hello Docker hostname
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. How do I transfer a Docker image from one machine to another one without using a repository, no matter private or public?
 
@@ -952,6 +988,8 @@ docker kill ----signal=SIGINT foo
 #### Q. How exactly are containers (Docker in our case) different from hypervisor virtualization (vSphere)? What are the benefits?
 
 #### Q. How to build environment-agnostic systems with Docker?
+
+#### Q. How to link containers?
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

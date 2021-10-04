@@ -137,6 +137,25 @@ Docker can build images automatically by reading the instructions from a file ca
 A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
 Using docker build, users can create an automated build that executes several command-line instructions in succession.
 
+**Example:**
+
+```js
+# alpine will download only basic version of node.js
+FROM node:alpine
+
+# Instead of root directory, program will use "/usr/app" directory
+WORKDIR /usr/app
+
+# Copy local directory to nodejs directory
+COPY ./ ./
+
+# Perform npm install
+RUN npm install
+
+# Run npm start in command prompt
+CMD ["npm", "start"]
+```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

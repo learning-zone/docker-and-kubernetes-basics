@@ -156,6 +156,11 @@ RUN npm install
 CMD ["npm", "start"]
 ```
 
+```js
+docker build -t sofyspace/scm-website:latest .        // --tag , -t   ==> Name and optionally a tag in the 'name:tag' format
+docker run -p 3000:3000 sofyspace/scm-website         // Project will run on local and will map to docker conatiner port 
+```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

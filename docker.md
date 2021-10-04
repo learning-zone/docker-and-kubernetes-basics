@@ -894,7 +894,7 @@ $ sudo docker run <image-id> hostname   # hostname is exec to override CMD
 244be5006f32
 ```
 
-* **ENTRYPOINT** is preferred when you want to define a container with a specific executable.
+* **ENTRYPOINT** is preferred when you want to define a container with a specific executable. Default parameters that cannot be overridden when Docker Containers run with CLI parameters.
 
 ```js
 FROM centos:8.1.1911

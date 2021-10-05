@@ -903,7 +903,23 @@ Docker uses a layer cache to optimize the process of building Docker images and 
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is the difference between "docker run" and "docker create"?
+## Q. What is the difference between "docker run" and "docker create"?
+
+Docker create command creates a fresh new container from a docker image. However, it doesn\'t run it immediately.
+
+```js
+docker start -a $(docker create myimage)          // The -a option causes the terminal to attach so that the container runs in the foreground 
+```
+
+Docker run command is a combination of create and start as it creates a new container and starts it immediately. In fact, the docker run command can even pull an image from Docker Hub if it doesn’t find the mentioned image on your system.
+
+```js
+docker run myimage
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is the difference between a repository and a registry?
 
@@ -958,8 +974,6 @@ Docker uses a layer cache to optimize the process of building Docker images and 
 #### Q. Why Docker compose does not wait for a container to be ready before moving on to start next service in dependency order?
 
 #### Q. How to push personal container to Docker Hub
-
-#### Q. Create a container by Dockerfile
 
 #### Q. Data collection for support
 

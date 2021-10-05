@@ -922,7 +922,29 @@ docker run myimage
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is the difference between a repository and a registry?
+## Q. ***What is the difference between a docker registry and repository?***
+
+**Registry:**
+
+A service responsible for hosting and distributing images. The default registry is the Docker Hub.
+
+**Repository:**
+
+A collection of related images (usually providing different versions of the same application or service).
+
+**Tag:**
+
+An alphanumeric identifier attached to images within a repository (e.g., 14.04 or stable ).
+
+**Syntax:**
+
+```js
+docker pull myregistryhost:3000/namespace/repo-name:tag
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is the default CPU limit set for a container?
 

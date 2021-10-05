@@ -40,7 +40,6 @@ docker ps                   // Display list of containers running
 docker container ls -a      // Display Container List History 
 docker image ls             // Display image List 
 docker images               // Display image List 
-docker history hello-world  // Show the history of an image 
 ```
 
 <div align="right">

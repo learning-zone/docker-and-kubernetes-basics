@@ -908,7 +908,8 @@ Docker uses a layer cache to optimize the process of building Docker images and 
 Docker create command creates a fresh new container from a docker image. However, it doesn\'t run it immediately.
 
 ```js
-docker start -a $(docker create myimage)          // The -a option causes the terminal to attach so that the container runs in the foreground 
+docker start -a $(docker create myimage)          // The -a option causes the terminal to attach so that 
+                                                  // the container runs in the foreground 
 ```
 
 Docker run command is a combination of create and start as it creates a new container and starts it immediately. In fact, the docker run command can even pull an image from Docker Hub if it doesn’t find the mentioned image on your system.

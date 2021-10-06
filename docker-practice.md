@@ -52,7 +52,6 @@ docker images               // Display image List
 docker container run hello-world                  // more simplified command 
 docker container run busybox                      // contains basic linux tools 
 docker container run busybox ls                   // display list of dictories 
-docker container run busybox echo "Hello World"   // display Hello World 
 docker container ls                    // display list of containers running 
 docker container ls -a                 // display history of containers was running 
 docker container run hello-world

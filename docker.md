@@ -978,9 +978,34 @@ Without a PID namespace, the processes running inside a container would share th
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Explain basic Docker usage workflow?
+## Q. ***What is the difference between Docker Image and Layer?***
 
-#### Q. What is the difference between Docker Image and Layer?
+Layers are what compose the file system for both Docker images and Docker containers. When you pull a image, you eventually don\'t have to download all of its filesystem. If you already have another image that has some of the layers of the image you pull, only the missing layers are actually downloaded.
+
+**show case**
+
+```js
+docker pull busybox
+docker history busybox
+
+// Output
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+d7057cb02084        39 hours ago        /bin/sh -c #(nop) CMD ["sh"]                    0 B
+cfa753dfea5e        39 hours ago        /bin/sh -c #(nop) ADD file:6cccb5f0a3b3947116   1.096 MB
+```
+
+Now create a new container from layer `cfa753dfea5e` as if it was an image:
+
+```js
+docker run -it cfa753dfea5e sh -c "ls /"
+
+// Output
+bin   dev   etc   home  proc  root  sys   tmp   usr   var
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Could you explain what is Emulation?
 

@@ -604,9 +604,9 @@ Compose uses the project name to create unique identifiers for all of a project�
 
 ## Q. ***What is the difference between up, run, and start under Docker Compose?***
 
-Typically, you want docker-compose up. Use up to start or restart all the services defined in a docker-compose.yml. In the default “attached” mode, you see all the logs from all the containers. In “detached” mode (-d), Compose exits after starting the containers, but the containers continue to run in the background.
+Typically, you want docker-compose up. Use up to start or restart all the services defined in a docker-compose.yml. In the default "attached" mode, you see all the logs from all the containers. In "detached" mode (-d), Compose exits after starting the containers, but the containers continue to run in the background.
 
-The docker-compose run command is for running “one-off” or “adhoc” tasks. It requires the service name you want to run and only starts containers for services that the running service depends on. Use run to run tests or perform an administrative task such as removing or adding data to a data volume container. The run command acts like docker run -ti in that it opens an interactive terminal to the container and returns an exit status matching the exit status of the process in the container. The docker-compose start command is useful only to restart containers that were previously created, but were stopped. It never creates new containers.
+The docker-compose run command is for running "one-off" or "adhoc" tasks. It requires the service name you want to run and only starts containers for services that the running service depends on. Use run to run tests or perform an administrative task such as removing or adding data to a data volume container. The run command acts like docker run -ti in that it opens an interactive terminal to the container and returns an exit status matching the exit status of the process in the container. The docker-compose start command is useful only to restart containers that were previously created, but were stopped. It never creates new containers.
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -946,7 +946,27 @@ docker pull myregistryhost:3000/namespace/repo-name:tag
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is the default CPU limit set for a container?
+## Q. ***What is the default CPU limit set for a container?***
+
+By default, a container has no resource constraints and can use as much of a given resource as the host\'s kernel scheduler allows. Docker provides ways to control how much memory, or CPU a container can use, setting runtime configuration flags of the docker run command.
+
+To limit the maximum amount of memory usage for a container, add the `--memory` option to the docker run command. Alternatively, you can use the shortcut `-m`.
+
+**Syntax:**
+
+```js
+docker run -it --memory="[memory_limit]" [docker_image]
+```
+
+**Example:**
+
+```js
+docker run -it --memory="1g" ubuntu
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Can you create containers without their own PID namespace
 
@@ -958,11 +978,11 @@ docker pull myregistryhost:3000/namespace/repo-name:tag
 
 #### Q. Should I use Vagrant or Docker for creating an isolated environment?
 
-#### Q. What is the difference between “expose” and “publish” in Docker?
+#### Q. What is the difference between "expose" and "publish" in Docker?
 
 #### Q. Docker Compose vs. Dockerfile - which is better?
 
-#### Q. What exactly do you mean by “Dockerized node”? Can this node be on-premises or in the cloud?
+#### Q. What exactly do you mean by "Dockerized node"? Can this node be on-premises or in the cloud?
 
 #### Q. How can we control the startup order of services in Docker compose?
 

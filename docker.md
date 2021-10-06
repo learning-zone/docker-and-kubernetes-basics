@@ -827,7 +827,7 @@ Docker has two options for containers to store files in the host machine so that
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. When would you use "docker kill" or "docker rm -f"?
+## Q. ***When would you use "docker kill" or "docker rm -f"?***
 
 The `docker stop` command attempts to stop a running container first by sending a SIGTERM signal to the root process (PID 1) in the container. If the process hasn\'t exited within the timeout period a SIGKILL signal will be sent.
 
@@ -903,7 +903,7 @@ Docker uses a layer cache to optimize the process of building Docker images and 
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. What is the difference between "docker run" and "docker create"?
+## Q. ***What is the difference between "docker run" and "docker create"?***
 
 Docker create command creates a fresh new container from a docker image. However, it doesn\'t run it immediately.
 

@@ -1083,7 +1083,29 @@ Docker can manage nodes that exist on-premises as well as in the cloud. Docker D
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How can we control the startup order of services in Docker compose?
+## Q. ***How can we control the startup order of services in Docker compose?***
+
+Compose always starts and stops containers in dependency order, where dependencies are determined by **depends_on**, **links**, **volumes_from**, and **network_mode: "service:..."**.
+
+**Example:** to use wait-for-it.sh or wait-for to wrap your service\'s command:
+
+```js
+version: "2"
+services:
+  web:
+    build: .
+    ports:
+      - "80:8000"
+    depends_on:
+      - "db"
+    command: ["./wait-for-it.sh", "db:5432", "--", "python", "app.py"]
+  db:
+    image: postgres
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. How will you monitor Docker in production?
 

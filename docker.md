@@ -1007,11 +1007,31 @@ bin   dev   etc   home  proc  root  sys   tmp   usr   var
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Could you explain what is Emulation?
+## Q. ***What is the difference between "expose" and "publish" in Docker?***
 
-#### Q. Should I use Vagrant or Docker for creating an isolated environment?
+In Docker networking, there are two different mechanisms that directly involve network ports: exposing and publishing ports. This applies to the default bridge network and user-defined bridge networks.
 
-#### Q. What is the difference between "expose" and "publish" in Docker?
+You expose ports using the **EXPOSE** keyword in the Dockerfile or the `--expose` flag to docker run. Exposing ports is a way of documenting which ports are used, but does not actually map or open any ports. Exposing ports is optional.
+
+**Example:** Dockerfile
+
+```js
+...
+EXPOSE 3000
+...
+```
+
+You publish ports using the `--publish` or `--publish-all` flag to docker run. This tells Docker which ports to open on the container\'s network interface.
+
+**Example:**
+
+```js
+docker run -d -p 3000 <image_id>
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Docker Compose vs. Dockerfile - which is better?
 
@@ -1062,6 +1082,8 @@ bin   dev   etc   home  proc  root  sys   tmp   usr   var
 #### Q. How to build environment-agnostic systems with Docker?
 
 #### Q. How to link containers?
+
+#### Q. Could you explain what is Emulation?
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

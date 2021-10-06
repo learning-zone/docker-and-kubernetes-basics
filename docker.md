@@ -1075,7 +1075,13 @@ volumes:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What exactly do you mean by "Dockerized node"? Can this node be on-premises or in the cloud?
+## Q. ***What exactly do you mean by "Dockerized node"? Can this node be on-premises or in the cloud?***
+
+Docker can manage nodes that exist on-premises as well as in the cloud. Docker Datacenter is an on-premises solution that enterprises use to create, manage, deploy and scale their applications and comes with support from the Docker team. It can manage hosts that exist in your datacenter as well as in your virtual private cloud or public cloud provider (AWS, Azure, Digital Ocean, SoftLayer etc.).
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. How can we control the startup order of services in Docker compose?
 

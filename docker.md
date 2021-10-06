@@ -968,7 +968,15 @@ docker run -it --memory="1g" ubuntu
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Can you create containers without their own PID namespace
+## Q. ***Can you create containers without their own PID namespace***
+
+Docker creates a new PID namespace for each container by default. A container\'s PID namespace isolates processes in that container from processes in other containers.
+
+Without a PID namespace, the processes running inside a container would share the same ID space as those in other containers or on the host. A process in a container would be able to determine what other processes were running on the host machine.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Explain basic Docker usage workflow?
 

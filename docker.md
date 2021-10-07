@@ -657,14 +657,6 @@ Please note that EXPOSE will not allow communication via the defined ports to co
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***How is ENTRYPOINT instruction under Dockerfile different from RUN instruction?***
-
-*ToDo*
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 ## Q. ***Why Docker Monitoring is necessary?***
 
 * Monitoring helps to identify issues proactively that would help to avoid system outages.
@@ -1107,13 +1099,25 @@ services:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How will you monitor Docker in production?
+## Q. What is an orphan volume and how to remove it?
 
-#### Q. What happens if you add more than one CMD instruction to a Dockerfile?
+If you want to see a list of the dangling volumes you can simply run:
 
-#### Q. When you limit the memory for a container, does it reserve (guarantee) the memory?
+```js
+docker volume ls -qf dangling=true
+```
 
-#### Q. What is an orphant volume and how to remove it?
+**docker volume ls** lists the volumes and **-qf** means list only the ids and filter on **dangling=true**.
+
+To delete these volumes we\'ll pass them in to the **docker volume rm** function which takes a volume id or list of ids. The final command is:
+
+```js
+docker volume rm $(docker volume ls -qf dangling=true)
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. How virtualization works at low level?
 
@@ -1152,6 +1156,8 @@ services:
 #### Q. How to link containers?
 
 #### Q. Could you explain what is Emulation?
+
+#### Q. How will you monitor Docker in production?
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* *[Docker Session](docker-practice.md)*
+* *[Docker Workshop](docker-practice.md)*
 
 ## Q. ***What is the Difference Between Containers and Virtual Machines?***
 

@@ -1,4 +1,4 @@
-# Docker Session
+# Docker Workshop
 
 1. Introduction
 1. Images and Containers

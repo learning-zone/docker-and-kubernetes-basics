@@ -1119,11 +1119,7 @@ docker volume rm $(docker volume ls -qf dangling=true)
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How virtualization works at low level?
-
 #### Q. What is Paravirtualization?
-
-#### Q. How is Docker different from a virtual machine?
 
 #### Q. Is it possible to generate a Dockerfile from an image?
 

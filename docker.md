@@ -1137,10 +1137,6 @@ docker volume rm $(docker volume ls -qf dangling=true)
 
 #### Q. Why Docker compose does not wait for a container to be ready before moving on to start next service in dependency order?
 
-#### Q. How to push personal container to Docker Hub
-
-#### Q. Data collection for support
-
 #### Q. What is the difference between a Docker image and a container?
 
 #### Q. How is Docker different from other container technologies?

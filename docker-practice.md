@@ -367,9 +367,12 @@ docker-compose down  // Remove Container
 ## Docker Commands
 
 ```js
-// find the image id and parent id for all image created after the image in question with the following:
-
+// Find the image id and parent id for all image created after the image in question with the following
 docker inspect --format='{{.Id}} {{.Parent}}' $(docker images --filter since=<image_id> -q)
+
+
+// docker container rename
+docker container rename <CONTAINER_ID> <NEW_NAME>
 ```
 
 <div align="right">

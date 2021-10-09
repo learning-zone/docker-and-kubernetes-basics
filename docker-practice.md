@@ -298,7 +298,7 @@ GO
 ```js
 USE TestDB
 CREATE TABLE Inventory (id INT, name NVARCHAR(50), quantity INT)
-INSERT INTO Inventory VALUES (1, 'banana', 150); INSERT INTO Inventory VALUES (2, 'orange', 154);
+INSERT INTO Inventory VALUES (1, 'Banana', 150); INSERT INTO Inventory VALUES (2, 'Orange', 154); INSERT INTO Inventory VALUES (3, 'Apricot', 200); INSERT INTO Inventory VALUES (4, 'Avocado', 120); INSERT INTO Inventory VALUES (5, 'Cherry', 230); INSERT INTO Inventory VALUES (6, 'Grapes', 420); INSERT INTO Inventory VALUES (7, 'Black plum', 194); INSERT INTO Inventory VALUES (8, 'Guava', 154); INSERT INTO Inventory VALUES (9, 'Kiwi', 110); INSERT INTO Inventory VALUES (10, 'Lychee', 300);
 GO
 ```
 

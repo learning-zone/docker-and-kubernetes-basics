@@ -364,6 +364,14 @@ localhost            // Default port is 80
 docker-compose down  // Remove Container 
 ```
 
+## Docker Commands
+
+```js
+// find the image id and parent id for all image created after the image in question with the following:
+
+docker inspect --format='{{.Id}} {{.Parent}}' $(docker images --filter since=<image_id> -q)
+```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

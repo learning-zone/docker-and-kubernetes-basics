@@ -278,6 +278,40 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" -p 1433:143
 | -h sql1            |Used to explicitly set the container hostname|
 | mcr.microsoft.com/mssql/server:2017-CU8-ubuntu |The SQL Server 2017 Ubuntu Linux container image.|
 
+**Push SQL-Server to Docker Hub:**
+
+**Dockerfile:**
+
+```js
+FROM mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
+
+# Create work directory
+RUN mkdir -p /usr/work
+WORKDIR /usr/work
+
+# Copy all scripts into working directory
+COPY . /usr/work/
+
+# Grant permissions for the import-data script to be executable
+RUN chmod +x /usr/work/import-data.sh
+EXPOSE 1433
+CMD /bin/bash ./entrypoint.sh
+```
+
+```js
+// Build SQL Server Image
+docker build -t sofyspace/sqlserver:dev .
+
+// Push to Docker Hub
+docker push sofyspace/sqlserver:dev
+
+// Connect to Sql Server
+docker exec -it sqlserver "bash"
+
+// Start the Sql Server Container
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourNewStrong@Passw0rd>" -p 1433:1433 -d sofyspace/sqlserver:dev
+```
+
 **Connect to SQL Server:**
 
 ```js

@@ -1,24 +1,30 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from "react";
+import axios from "axios";
 
 export default class App extends Component {
   state = {
-    items: []
-  }
+    items: [],
+  };
 
   componentDidMount() {
-    axios.get(`/api/get/items`)
-    .then(res => {
+    axios.get(`/api/get/items`).then((res) => {
       const items = res.data.recordset;
       this.setState({ items });
-    })
+    });
   }
 
   render() {
     return (
-      <ui>
-        { this.state.items.map(item => <li>{item.name} - {item.quantity}</li>)}
-      </ui>
-    )
+      <>
+        <h1>Inventory Details</h1>
+        <ui>
+          {this.state.items.map((item) => (
+            <li>
+              {item.name} - {item.quantity}
+            </li>
+          ))}
+        </ui>
+      </>
+    );
   }
 }

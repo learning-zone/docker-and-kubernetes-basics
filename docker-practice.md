@@ -9,8 +9,8 @@
 1. Creating Custom Image
 1. Creating an Image from a Dockerfile
 1. COPY and ADD commands
-1. Creating a Project and deploy in Docker-Hub
-1. Run SQL Server on Docker
+1. Dockerizing a Node.js project and deploy in Docker-Hub
+1. React and SQL-Server connectivity
 1. Docker Compose
 
 <br/>
@@ -197,7 +197,7 @@ docker run -it <image-id> sh  // Rnu the build container in interactive mode
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 10. Creating a project and deploy in Docker-Hub
+## 10. Dockerizing a Node.js project and deploy in Docker-Hub
 
 ```js
 npm init  // create package.json file

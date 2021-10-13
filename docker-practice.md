@@ -1,17 +1,17 @@
 # Docker Workshop
 
-1. Introduction
-1. Images and Containers
-1. List, Create and Start Containers
-1. Logs, Stop and Kill Containers
-1. Inspect and Remove Containers
-1. Run a Command in a Running Container with exec
-1. Creating Custom Image
-1. Creating an Image from a Dockerfile
-1. COPY and ADD commands
-1. Dockerizing a Node.js project and deploy in Docker-Hub
-1. React and SQL-Server connectivity
-1. Docker Compose
+1. [Introduction](#1-introduction)
+1. [Images and Containers](#2-images-and-containers)
+1. [List, Create and Start Containers](#3-list-create-and-start-containers)
+1. [Logs, Stop and Kill Containers](#4-logs-stop-and-kill-containers)
+1. [Inspect and Remove Containers](#5-inspect-and-remove-containers)
+1. [Run a Command in a Running Container with exec](#6-run-a-command-in-a-running-container-with-exec)
+1. [Creating Custom Image](#7-creating-custom-image)
+1. [Creating an Image from a Dockerfile](#8-creating-an-image-from-a-dockerfile)
+1. [COPY and ADD commands](#9-copy-and-add-commands)
+1. [Dockerizing a Nodejs project and deploy in Docker-Hub](#10-dockerizing-a-nodejs-project-and-deploy-in-docker-hub)
+1. [React and SQL-Server connectivity](#11-react-and-sql-server-connectivity)
+1. [Docker Compose](#12-docker-compose)
 
 <br/>
 
@@ -197,7 +197,7 @@ docker run -it <image-id> sh  // Rnu the build container in interactive mode
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 10. Dockerizing a Node.js project and deploy in Docker-Hub
+## 10. Dockerizing a Nodejs project and deploy in Docker-Hub
 
 ```js
 npm init  // create package.json file
@@ -262,7 +262,7 @@ docker push sofyspace/scm-website                     // Deploy in Docker Hub
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 12. Run SQL Server on Docker
+## 11. Run SQL Server on Docker
 
 ```js
 docker pull mcr.microsoft.com/mssql/server:2017-CU8-ubuntu  // Pull MSSQL-2019 container image
@@ -351,7 +351,7 @@ GO
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 13. Docker Compose
+## 12. Docker Compose
 
 * [docker-node-mongo](https://github.com/bradtraversy/docker-node-mongo)
 
@@ -402,7 +402,11 @@ localhost            // Default port is 80
 docker-compose down  // Remove Container 
 ```
 
-## Docker Commands
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## 13. Docker Commands
 
 ```js
 // Find the image id and parent id for all image created after the image in question with the following

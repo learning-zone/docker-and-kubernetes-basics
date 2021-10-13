@@ -1156,7 +1156,13 @@ Windows and Macintosh systems can\'t run Linux containers directly, since they\'
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How containers works at low level?
+## Q. ***How containers work at low level?***
+
+Containers are implemented using **Linux namespaces** and **cgroups**. Namespaces let you virtualize system resources, like the file system or networking for each container. On the other hand, cgroups provide a way to limit the amount of resources, such as CPU and memory, that each container can use. At their core, low-level container runtimes are responsible for setting up these namespaces and cgroups for containers, and then running commands inside those namespaces and cgroups.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Name some limitations of containers vs VM
 

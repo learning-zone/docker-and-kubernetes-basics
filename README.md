@@ -1126,11 +1126,27 @@ docker volume rm $(docker volume ls -qf dangling=true)
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is Paravirtualization?
+## Q. Can you explain dockerfile ONBUILD instruction?
 
-#### Q. Is it possible to generate a Dockerfile from an image?
+The `ONBUILD` instruction adds to the image a trigger instruction to be executed at a later time, when the image is used as the base for another build. The trigger will be executed in the context of the downstream build, as if it had been inserted immediately after the `FROM` instruction in the downstream Dockerfile.
 
-#### Q. Can you explain dockerfile ONBUILD instruction?
+This is useful if you are building an image which will be used as a base to build other images, for example an application build environment or a daemon which may be customized with user-specific configuration.
+
+**Example:**
+
+```js
+ONBUILD ADD . /app/src
+ONBUILD RUN /usr/local/bin/python-build --dir /app/src
+```
+
+*Note:*
+
+* Chaining **ONBUILD** instructions using **ONBUILD** isn\'t allowed.
+* The **ONBUILD** instruction may not trigger **FROM** or **MAINTAINER** instructions.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Why did Docker jump from version 1.13 to 17.03?
 
@@ -1157,6 +1173,10 @@ docker volume rm $(docker volume ls -qf dangling=true)
 #### Q. Could you explain what is Emulation?
 
 #### Q. How will you monitor Docker in production?
+
+#### Q. What is Paravirtualization?
+
+#### Q. Is it possible to generate a Dockerfile from an image?
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

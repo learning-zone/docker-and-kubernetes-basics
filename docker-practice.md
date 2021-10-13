@@ -353,10 +353,6 @@ GO
 
 ## 12. Docker Compose
 
-* [docker-node-mongo](https://github.com/bradtraversy/docker-node-mongo)
-
-* **docker-node-mongo directory**
-
 * **Dockerfile**
 
 ```js
@@ -401,6 +397,10 @@ docker-compose up    // Install nodejs and mongoDB image
 localhost            // Default port is 80
 docker-compose down  // Remove Container 
 ```
+
+**Reference:**
+
+* *[https://github.com/bradtraversy/docker-node-mongo](https://github.com/bradtraversy/docker-node-mongo)*
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

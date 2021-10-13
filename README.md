@@ -1164,7 +1164,7 @@ Containers are implemented using **Linux namespaces** and **cgroups**. Namespace
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. Name some limitations of containers vs VM
+## Q. ***Name some limitations of containers vs VM***
 
 | VMs                          |Containers                |
 |------------------------------|--------------------------|
@@ -1172,11 +1172,52 @@ Containers are implemented using **Linux namespaces** and **cgroups**. Namespace
 | Limited performance          | Native performance    |
 | Each VM runs in its own OS   | All containers share the host OS|
 | Hardware-level virtualization| OS virtualization|
-| Startup time in minutes|	Startup time in milliseconds|
-| Allocates required memory|	Requires less memory space|
+| Startup time in minutes      | Startup time in milliseconds|
+| Allocates required memory    | Requires less memory space|
 | Fully isolated and hence more secure|	Process-level isolation, possibly less secure|
 
-#### Q. How to use Docker with multiple environments?
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to use Docker with multiple environments?***
+
+In a software development lifecycle, there may be as little deployment environments as just **development** and **production**. However, there may also be as many as **development**, **integration**, **testing**, **staging** and **production**.
+
+Docker Compose is a Docker companion tool used to coordinate multiple containers with configurations. Compose will only need you one file `docker-compose.yaml` which defines everything from build-time to run-time and one command docker-compose up.
+
+**Example:**
+
+```js
+FROM node:8-alpine
+
+WORKDIR /usr/src/your-app
+
+COPY package*.json ./
+
+RUN if [ "$NODE_ENV" = "development" ]; \
+	then npm install;  \
+	else npm install --only=production; \
+	fi
+
+COPY . .
+```
+
+Development command:
+
+```js
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+```
+
+Production command:
+
+```js
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Why Docker compose does not wait for a container to be ready before moving on to start next service in dependency order?
 

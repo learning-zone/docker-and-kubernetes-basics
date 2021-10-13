@@ -1164,7 +1164,17 @@ Containers are implemented using **Linux namespaces** and **cgroups**. Namespace
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Name some limitations of containers vs VM
+## Q. Name some limitations of containers vs VM
+
+| VMs                          |Containers                |
+|------------------------------|--------------------------|
+| Heavyweight	               | Lightweight               |
+| Limited performance          | Native performance    |
+| Each VM runs in its own OS   | All containers share the host OS|
+| Hardware-level virtualization| OS virtualization|
+| Startup time in minutes|	Startup time in milliseconds|
+| Allocates required memory|	Requires less memory space|
+| Fully isolated and hence more secure|	Process-level isolation, possibly less secure|
 
 #### Q. How to use Docker with multiple environments?
 

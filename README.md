@@ -1106,7 +1106,7 @@ services:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. What is an orphan volume and how to remove it?
+## Q. ***What is an orphan volume and how to remove it?***
 
 If you want to see a list of the dangling volumes you can simply run:
 
@@ -1126,7 +1126,7 @@ docker volume rm $(docker volume ls -qf dangling=true)
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. Can you explain dockerfile ONBUILD instruction?
+## Q. ***Can you explain dockerfile ONBUILD instruction?***
 
 The `ONBUILD` instruction adds to the image a trigger instruction to be executed at a later time, when the image is used as the base for another build. The trigger will be executed in the context of the downstream build, as if it had been inserted immediately after the `FROM` instruction in the downstream Dockerfile.
 
@@ -1148,9 +1148,13 @@ ONBUILD RUN /usr/local/bin/python-build --dir /app/src
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Why did Docker jump from version 1.13 to 17.03?
+## Q. ***How does Docker run containers in non-Linux systems?***
 
-#### Q. How does Docker run containers in non-Linux systems?
+Windows and Macintosh systems can\'t run Linux containers directly, since they\'re not Linux kernels with the appropriate facilities to run even Linux programs, much less supporting the same extra cgroup facilities. So when you install Docker on these, generally it installs a Linux VM on which to run the containers. Almost invariably it will install only a single VM and run all containers in that one VM.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. How containers works at low level?
 

@@ -1237,7 +1237,17 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How to link containers?
+## Q. ***How to link containers?***
+
+**Connect using network port mapping:**
+
+```js
+docker run -d -p 3000:3000 sofyspace/react-app
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Could you explain what is Emulation?
 

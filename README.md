@@ -1219,9 +1219,23 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Why Docker compose does not wait for a container to be ready before moving on to start next service in dependency order?
+## Q. ***What is the difference between a Docker image and a container?***
 
-#### Q. What is the difference between a Docker image and a container?
+|Docker Image	                   | Docker Container       |
+|----------------------------------|------------------------|
+|It is Blueprint of the Container. |It is instance of the Image.
+|Image is a logical entity.	       |Container is a real world entity.
+|Image is created only once.	   |Containers are created any number of times using image.
+|Images are immutable.	           |Containers changes only if old image is deleted and new is used to build the container.
+|Images does not require computing resource to work.|Containers requires computing resources to run as they run as Docker Virtual Machine.|
+|To make a docker image, you have to write script in Dockerfile.|To make container from image, you have to run “docker build” command|
+|Docker Images are used to package up applications and pre-configured server environments.|Containers use server information and file system provided by image in order to operate.|
+|Images can be shared on Docker Hub.|It makes no sense in sharing a running entity, always docker images are shared.|
+|There is no such running state of Docker Image.|Containers uses RAM when created and in running state.|
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. How is Docker different from other container technologies?
 

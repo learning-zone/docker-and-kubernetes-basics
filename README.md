@@ -1237,12 +1237,6 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How is Docker different from other container technologies?
-
-#### Q. How exactly are containers (Docker in our case) different from hypervisor virtualization (vSphere)? What are the benefits?
-
-#### Q. How to build environment-agnostic systems with Docker?
-
 #### Q. How to link containers?
 
 #### Q. Could you explain what is Emulation?

@@ -416,6 +416,21 @@ The answer is yes. Docker compose always runs in the dependency order. These dep
 
 Docker provides functionalities like docker stats and docker events to monitor docker in production. Docker stats provides CPU and memory usage of the container. Docker events provide information about the activities taking place in the docker daemon.
 
+**Monitoring Tools for Docker:**
+
+1. [Sematext](https://sematext.com/)
+2. [Dynatrace](https://www.dynatrace.com/)
+3. [Datadog](https://www.datadoghq.com/)
+4. [Prometheus & Grafana](https://prometheus.io/docs/visualization/grafana/)
+5. [Elasticsearch & Kibana](https://www.elastic.co/kibana/)
+6. [SolarWinds Server & Application Monitor](https://www.solarwinds.com/server-application-monitor)
+7. [AppOptics Docker Monitoring with APM](https://www.appoptics.com/use-cases/docker-performance-monitoring)
+8. [cAdvisor](https://github.com/google/cadvisor)
+9. [Sysdig](https://sysdig.com/)
+10.[ManageEngine Applications Manager](https://www.manageengine.com/products/applications_manager/)
+11.[Sumo Logic](https://www.sumologic.com/)
+12.[Splunk](https://www.splunk.com/)
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
@@ -1249,13 +1264,15 @@ docker run -d -p 3000:3000 sofyspace/react-app
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Could you explain what is Emulation?
+## Q. ***What is Paravirtualization?***
 
-#### Q. How will you monitor Docker in production?
+Paravirtualization is a computer hardware virtualization technique that allows virtual machines (VMs) to have an interface similar to that of the underlying or host hardware. This technique aims to improve the VM\'s performance by modifying the guest operating system (OS).
 
-#### Q. What is Paravirtualization?
+With paravirtualization, the guest OS is modified, so it knows that it is running in a virtualized environment on top of a hypervisor (the hardware running the VM) and not on the physical hardware.
 
-#### Q. Is it possible to generate a Dockerfile from an image?
+<p align="center">
+  <img src="assets/paravirtualization.png" alt="Paravirtualization" width="600px" />
+</p>
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

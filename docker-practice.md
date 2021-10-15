@@ -35,11 +35,11 @@ docker run hello-world  // check image in local and download from docker hub
 ## 2. Images and Containers
 
 ```js
-docker container ls         // Display list of containers running 
-docker ps                   // Display list of containers running 
-docker container ls -a      // Display Container List History 
-docker image ls             // Display image List 
-docker images               // Display image List 
+docker container ls         // Display list of running containers  
+docker ps                   // Display list of running containers  
+docker container ls -a      // Display list of container history 
+docker image ls             // Display list of images
+docker images               // Display list of images 
 ```
 
 <div align="right">
@@ -49,17 +49,16 @@ docker images               // Display image List
 ## 3. Create and Start Containers
 
 ```js
-docker container run hello-world                  // more simplified command 
-docker container run busybox                      // contains basic linux tools 
-docker container run busybox ls                   // display list of dictories 
-docker container ls                    // display list of containers running 
-docker container ls -a                 // display history of containers was running 
+docker container run hello-world        // more simplified command 
+docker container run busybox            // It is tiny versions of many common UNIX utilities into a single small executable 
+docker container run busybox ls         // display list of directories 
+docker container ls -a                  // display history of containers was running 
 docker container run hello-world
-docker container create hello-world    // returns id of conatiner created 
+docker container create hello-world     // returns id of conatiner created 
 docker container ls -a
 docker container start -a <container-id> // Start a container using container-id, -a = Attach STDOUT/STDERR and forward signals 
 docker conatiner ls -a 
-docker system prune --all               // Clear dangling and unused images 
+docker system prune --all                // Remove all dangling and unused images 
 ```
 
 <div align="right">
@@ -115,7 +114,7 @@ docker container exec -it <container-id> sh
 # ls 
 # exit
 docker container run -it busybox sh       // Open sh terminal in busybox 
-# ls -la                                  // show list of files and directories 
+# ls -la                                  // Show list of files and directories 
 # exit
 ```
 

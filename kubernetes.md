@@ -156,6 +156,10 @@ The primary controller managers that can run on the master node are the endpoint
 
 Kubernetes uses etcd as a distributed key-value store for all of its data, including metadata and configuration data, and allows nodes in Kubernetes clusters to read and write data. Although etcd was purposely built for CoreOS, it also works on a variety of operating systems (e.g., Linux, BSB, and OS X) because it is open-source. Etcd represents the state of a cluster at a specific moment in time and is a canonical hub for state management and cluster coordination of a Kubernetes cluster.
 
+<p align="center">
+  <img src="assets/etcd.png" alt="Namespace" width="600px" />
+</p>
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

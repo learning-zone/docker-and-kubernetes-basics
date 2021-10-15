@@ -4,6 +4,10 @@
 
 Kubernetes is an open-source container orchestration tool or system that is used to automate tasks such as the management, monitoring, scaling, and deployment of containerized applications. It is used to easily manage several containers (since it can handle grouping of containers), which provides for logical units that can be discovered and managed.
 
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 ## Q. ***How Container orchestration is beneficial?***
 
 Container orchestration is a process of managing the life cycles of containers more specifically in large & dynamic environments. All the services in the individual container are in synchronization to fulfill the needs of the server. Container orchestration is used to regulate and automate tasks such as:
@@ -19,8 +23,12 @@ Container orchestration is a process of managing the life cycles of containers m
 * Configuring an application relative to the containers running it
 
 <p align="center">
-  <img src="assets/orchestration.png" alt="Docker Architecture" width="600px" />
+  <img src="assets/orchestration.png" alt="Container Orchestration" width="400px" />
 </p>
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 ## Q.  ***How are Kubernetes and Docker related?***
 
@@ -268,7 +276,6 @@ spec:
   - name: workdir
     emptyDir: {}
 ```
-
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

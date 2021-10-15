@@ -32,7 +32,7 @@ Container orchestration is a process of managing the life cycles of containers m
 
 ## Q.  ***How are Kubernetes and Docker related?***
 
-Docker is an open-source platform used to handle software development. Its main benefit is that it packages the settings and dependencies that the software/application needs to run into a container, which allows for portability and several other advantages. Kubernetes allows for the manual linking and orchestration of several containers, running on multiple hosts that have been created using Docker. 
+Docker is an open-source platform used to handle software development. Its main benefit is that it packages the settings and dependencies that the software/application needs to run into a container, which allows for portability and several other advantages. Kubernetes allows for the manual linking and orchestration of several containers, running on multiple hosts that have been created using Docker.
 
 <p align="center">
   <img src="assets/dicker-kubernetes.png" alt="Container Orchestration" width="600px" />
@@ -98,6 +98,10 @@ A Daemon set is a set of pods that runs only once on a host. They are used for h
 ## Q.  ***What is Heapster in Kubernetes?***
 
 A Heapster is a performance monitoring and metrics collection system for data collected by the Kublet. This aggregator is natively supported and runs like any other pod within a Kubernetes cluster, which allows it to discover and query usage data from all nodes within the cluster.
+
+<p align="center">
+  <img src="assets/heapster.png" alt="Heapster" width="600px" />
+</p>
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

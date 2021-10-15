@@ -2,7 +2,7 @@
 
 1. [Introduction](#1-introduction)
 1. [Images and Containers](#2-images-and-containers)
-1. [List, Create and Start Containers](#3-list-create-and-start-containers)
+1. [Create and Start Containers](#3-create-and-start-containers)
 1. [Logs, Stop and Kill Containers](#4-logs-stop-and-kill-containers)
 1. [Inspect and Remove Containers](#5-inspect-and-remove-containers)
 1. [Run a Command in a Running Container with exec](#6-run-a-command-in-a-running-container-with-exec)
@@ -46,7 +46,7 @@ docker images               // Display image List
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 3. List, Create and Start Containers
+## 3. Create and Start Containers
 
 ```js
 docker container run hello-world                  // more simplified command 

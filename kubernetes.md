@@ -189,6 +189,10 @@ The ClusterIP is the default Kubernetes service that provides a service inside a
 
 The NodePort service is the most fundamental way to get external traffic directly to your service. It opens a specific port on all Nodes and forwards any traffic sent to this port to the service.
 
+<p align="center">
+  <img src="assets/nodeport.png" alt="Namespace" width="600px" />
+</p>
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

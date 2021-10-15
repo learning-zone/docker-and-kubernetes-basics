@@ -111,6 +111,10 @@ A Heapster is a performance monitoring and metrics collection system for data co
 
 Namespaces are used for dividing cluster resources between multiple users. They are meant for environments where there are many users spread across projects or teams and provide a scope of resources.
 
+<p align="center">
+  <img src="assets/namespace.png" alt="Namespace" width="600px" />
+</p>
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

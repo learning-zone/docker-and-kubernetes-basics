@@ -34,6 +34,10 @@ Container orchestration is a process of managing the life cycles of containers m
 
 Docker is an open-source platform used to handle software development. Its main benefit is that it packages the settings and dependencies that the software/application needs to run into a container, which allows for portability and several other advantages. Kubernetes allows for the manual linking and orchestration of several containers, running on multiple hosts that have been created using Docker. 
 
+<p align="center">
+  <img src="assets/dicker-kubernetes.png" alt="Container Orchestration" width="600px" />
+</p>
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

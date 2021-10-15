@@ -4,9 +4,23 @@
 
 Kubernetes is an open-source container orchestration tool or system that is used to automate tasks such as the management, monitoring, scaling, and deployment of containerized applications. It is used to easily manage several containers (since it can handle grouping of containers), which provides for logical units that can be discovered and managed.
 
-## Q. ***What is orchestration when it comes to software and DevOps?***
+## Q. ***How Container orchestration is beneficial?***
 
-Orchestration refers to the integration of multiple services that allows them to automate processes or synchronize information in a timely fashion. Say, for example, you have six or seven microservices for an application to run. If you place them in separate containers, this would inevitably create obstacles for communication. Orchestration would help in such a situation by enabling all services in individual containers to work seamlessly to accomplish a single goal.
+Container orchestration is a process of managing the life cycles of containers more specifically in large & dynamic environments. All the services in the individual container are in synchronization to fulfill the needs of the server. Container orchestration is used to regulate and automate tasks such as:
+
+* Provisioning and deployment of containers
+* Upscaling or removing containers to divide application load evenly all across host infrastructure
+* Redundancy and availability of containers
+* Moving of containers from one host to another in case there is a shortage of resources in a host (or when the host dies)
+* Allocation resources across containers
+* Health monitoring of containers and hosts
+* Externally exposing services running in a container to the outside world
+* Load balancing of service discovery across containers
+* Configuring an application relative to the containers running it
+
+<p align="center">
+  <img src="assets/orchestration.png" alt="Docker Architecture" width="600px" />
+</p>
 
 ## Q.  ***How are Kubernetes and Docker related?***
 
@@ -34,7 +48,7 @@ Docker Swarm can share storage volumes with any container easily, while Kubernet
 
 ## Q.  ***What is a node in Kubernetes?***
 
-A node is the smallest fundamental unit of computing hardware. It represents a single machine in a cluster, which could be a physical machine in a data center or a virtual machine from a cloud provider. Each machine can substitute any other machine in a Kubernetes cluster. The master in Kubernetes controls the nodes that have containers. 
+A node is the smallest fundamental unit of computing hardware. It represents a single machine in a cluster, which could be a physical machine in a data center or a virtual machine from a cloud provider. Each machine can substitute any other machine in a Kubernetes cluster. The master in Kubernetes controls the nodes that have containers.
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -48,9 +62,14 @@ Pods are high-level structures that wrap one or more containers. This is because
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q.  ***What is a cluster of containers in Kubernetes?***
+## Q.  ***What are clusters in Kubernetes?***
 
-A cluster of containers is a set of machine elements that are nodes. Clusters initiate specific routes so that the containers running on the nodes can communicate with each other. In Kubernetes, the container engine (not the server of the Kubernetes API) provides hosting for the API server.
+Kubernetes cluster is a set of nodes used for running containerized applications, so when you are running Kubernetes, you are running a cluster. A cluster contains a control plane & one or maybe more than one compute machines/nodes.
+
+* The control plane is used to maintain the desired state of the cluster, such as which applications are running or which container images they use.
+* Whereas, the nodes run the applications and the workloads.
+
+Clusters are the heart of Kubernetes that gives the ability to schedule and run the containers across a group of machines - physical, virtual, on-premise, or in the cloud. Kubernetes containers aren’t tied to any particular machines, they are abstracted across the cluster.
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -64,7 +83,7 @@ A Daemon set is a set of pods that runs only once on a host. They are used for h
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q.  ***What is ‘Heapster’ in Kubernetes?***
+## Q.  ***What is Heapster in Kubernetes?***
 
 A Heapster is a performance monitoring and metrics collection system for data collected by the Kublet. This aggregator is natively supported and runs like any other pod within a Kubernetes cluster, which allows it to discover and query usage data from all nodes within the cluster.
 
@@ -113,7 +132,7 @@ The primary controller managers that can run on the master node are the endpoint
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q.  ***What is etcd?***
+## Q.  ***What is ETCD in Kubernetes?***
 
 Kubernetes uses etcd as a distributed key-value store for all of its data, including metadata and configuration data, and allows nodes in Kubernetes clusters to read and write data. Although etcd was purposely built for CoreOS, it also works on a variety of operating systems (e.g., Linux, BSB, and OS X) because it is open-source. Etcd represents the state of a cluster at a specific moment in time and is a canonical hub for state management and cluster coordination of a Kubernetes cluster.
 
@@ -167,6 +186,10 @@ The kubelet is a service agent that controls and maintains a set of pods by watc
 </div>
 
 ## Q.  ***What is the Load Balancer in Kubernetes?***
+
+<p align="center">
+  <img src="assets/load-balancer.png" alt="Docker Architecture" width="400px" />
+</p>
 
 A load balancer gives a standard method to convey network traffic among various backend administrations, subsequently boosting adaptability. Contingent upon the workplace, there can be two kinds of load balancer, Internal or External. The Internal Load Balancer can naturally adjust the load and distribute the necessary configuration to the pods. Then again, the External Load Balancer directs the outside load traffic to the backend pods. In Kubernetes, the two load adjusting techniques work through the kube-proxy highlight.
 
@@ -524,6 +547,10 @@ The characteristics of Kubernetes are:
 
 ## Q. ***Define Ingress network***
 
+<p align="center">
+  <img src="assets/ingress-network.png" alt="Ingress network" width="300px" />
+</p>
+
 Ingress network is an assortment of rules which goes about as a section highlighting the Kubernetes cluster. This permits inbound associations that can be arranged to give benefits remotely through load balance traffic, reachable URLs, or by providing name-based virtual facilitating. In this way, Ingress is an API object which oversees outer admittance to the services in a cluster, generally by HTTP, and is the most remarkable method of uncovering administration.
 
 <div align="right">
@@ -588,7 +615,7 @@ spec:
 
 Mainly K8 cluster consists of two types of nodes, executor and master.
 
-**Executor node: (This runs on master node)**
+**Executor node:** (This runs on master node)
 
 * Kube-proxy: This service is responsible for the communication of pods within the cluster and to the outside network, which runs on every node. This service is responsible to maintain network protocols when your pod establishes a network communication.
 * kubelet: Each node has a running kubelet service that updates the running node accordingly with the configuration(YAML or JSON) file.
@@ -715,6 +742,167 @@ Operators are software extensions to K8s which make use of custom resources to m
 The process of managing applications in Kubernetes isn't as straightforward as managing stateless applications, where reaching the desired status and upgrades are both handled the same way for every replica. In stateful applications, upgrading each replica might require different handling due to the stateful nature of the app, each replica might be in a different status. As a result, we often need a human operator to manage stateful applications. Kubernetes Operator is supposed to assist with this.
 
 This will also help with automating a standard process on multiple Kubernetes clusters
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What difference do you find between Docker Swarm and Kubernetes?***
+
+|Parameters    | Kubernetes                 | Docker Swarm
+|--------------|----------------------------|---------------------|
+| GUI          | Kubernetes Dashboard is the GUI   | Has no GUI
+|Installation & cluster configuration| Setups are quite complicated but the cluster is robust.| Setup is easy but the cluster is not robust.|
+|Auto-scaling  |Can do auto-scaling. | Cannot do auto-scaling.|
+|Scalability   |Scales fast.         |Scales 5 times faster than Kubernetes.
+|Load Balancing|Manual support needed for load balancing traffic between containers & pods.|Does auto load balancing of traffic between containers in clusters.|
+|Data volumes |Can only share storage volumes with containers in the same pod.|Can share storage volumes with other containers.|
+|Rolling updates and rollbacks|Does rolling updates and automatic rollbacks.|Can do rolling updates but no automatic rollbacks.|
+|Logging and monitoring |Has in-built tools to perform logging and monitoring.|Requires 3rd party tools like ELK stack to do logging and monitoring.|
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What difference do you find between deploying applications on the host and containers?***
+
+<p align="center">
+  <img src="assets/deploy.png" alt="Docker Architecture" width="600px" />
+</p>
+
+**When you deploy the application on hosts:**
+
+* There will be an operating system and that operating system will have a kernel which again will have diverse libraries (installed on the operating system) that are required for the application.
+* In this kind of framework, you can have several applications and you will see all the applications sharing the libraries present in the operating system.
+
+**When you deploy an application on the container:**
+
+* In this architecture, you will have a kernel which will be the only common thing between all the applications.
+* Here you will see every application has their necessary libraries and binaries isolated from the rest of the system, which cannot be approached by any other application.
+* Like if one app needs access to Python, that particular app will get it, if the particular application needs access to Java, then only that particular app will have access to Java.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is Minikube?***
+
+Minikube is a tool used for easy running Kubernetes locally, it runs a single-code Kubernetes cluster within a virtual machine.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How Kubernetes simplifies the containerized Deployment***
+
+A cluster of containers of applications running across multiple hosts requires communications. To make the communication happen, we require something that can scale, balance, and monitor the containers. As Kubernetes is an anti-agnostic tool that can run on any public to a private provider, it is the best choice that can simplify the containerized deployment.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is the role of Kube-apiserver and Kube-scheduler?***
+
+**Kube-Episerver:**
+
+* It follows the scale-out architecture & is the front-end of the master node control panel. 
+* Exposes all the APIs of the Kubernetes Master node components and establishes communication between the Kubernetes Node and the Kubernetes master components.
+
+**Kube-scheduler:**
+
+* It does distribution and management of workload on the worker nodes. 
+* It opts the most suitable node to run the unscheduled pod (based on resource requirements) & keeps a track on the resource utilization.
+* It makes sure that no workload is scheduled on already full nodes.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How do master nodes in Kubernetes work?***
+
+* Kubernetes master controls the nodes, and nodes have the containers in it.
+* The individual containers are contained inside the pods and each pod can contain various numbers of containers based on the requirements & configuration.
+* So when pods have to be deployed, they have to be deployed either using the interface or CLI (command line interface).
+* These pods are scheduled on the nodes and on the basis of resource requirements, the pods are allocated to these nodes.
+* Kube-apiserver (which is master node services) ensures that there is a communication between the Kubernetes node and master components.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What are the different types of services in Kubernetes?***
+
+There are four types of services in Kubernetes:
+
+* **Cluster IP** - Kubernetes Service is an abstraction defining a logical set of Pods running somewhere in your cluster, all providing the same functionality. When created, each Service is given a unique IP address which is also called clusterIP.
+* **Node Port** - A NodePort is an open port that is on every node of your cluster. Kubernetes routes incoming traffic transparently on the NodePort to your service, even if the application is running on a different node.
+* **Load Balancer** - It exposes the service externally using the load balancer of the cloud provider. Services to which the load balancer will route are automatically created.
+* **External name** - It exposes the Service by using an arbitrary name (specified by ExternalName in the spec) by returning a CNAME record with its value.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What do you understand about Cloud controller managers?***
+
+Cloud Controller Manager has to ensure consistent storage, abstract the cloud-specific code from the Kubernetes specific code, network routing, and manage the communication with the cloud services. 
+
+All these can be split into different containers (it depends on which cloud platform you are using) and this further allows the Kubernetes and cloud vendors code to get developed without creating any inter-dependency. So, the cloud vendor develops its code and connects with the cloud-controller-manager while running the Kubernetes.
+
+There are 4 types of cloud controller managers:
+
+* **Node controller** - Ensures that the node is deleted as soon it is stopped.
+* **Volume controller** - Manages the storage and interacts with the cloud provider to orchestrate volume.
+* **Route Controller** - Manages traffic routes in the underlying cloud infrastructures.
+* **Service Controller** - It ensures the management of cloud provider load balancers.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is the difference between a replica set and a replication controller?***
+
+Both replica set and replication controller ensure that the given number of pod replicas are running at a given time. But the only point of difference between them is, replica leverages set-based selectors, while the replication controller uses equity-based controllers.
+
+**Selector-based Selectors:**
+
+It filters the keys according to a set of values. The selector based selector locks for pods whose label is mentioned in the set.
+
+**Equity-Based Selectors:**
+
+It filters by both label keys and values. The equity-based selector looks for the pods that have the exact phrase as mentioned in the label.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What are federated clusters?***
+
+The Multiple Kubernetes clusters can be controlled/managed as a single cluster with the help of federated clusters. You can generate multiple Kubernetes clusters within a data center/cloud and use federation clusters to control/manage all of them in one place.
+
+The federated clusters can achieve this by doing the following two things. 
+
+* **Cross cluster discovery** - Provides the ability to have DNS and Load Balancer with backends from all participating clusters.
+* **Sync Resources across clusters** - Syncs resources across the clusters for deploying the same deployment set across multiple clusters.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What are the best security measures that you can take while using Kubernetes?***
+
+Here are a few ways to ensure security while using Kubernetes:
+
+* By restricting access to ETCD
+* By applying security updates to the environment regularly
+* By implementing network segmentation
+* By logging everything on the producing environment
+* By having continuous security vulnerability scanning
+* By having a strict policy or protocol for resources
+* By enabling auditing
+* By defining resource quota
+* By limiting direct access to Kubernetes nodes
+* By using images from the authorized repository only
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

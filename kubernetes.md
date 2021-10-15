@@ -908,17 +908,8 @@ Here are a few ways to ensure security while using Kubernetes:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is Pod?
 #### Q. ReplicaSet
-#### Q. Deployment
-#### Q. Services
 #### Q. Rolling update
-#### Q. Environment
-#### Q. Persistent volumes
-#### Q. Namespace
-#### Q. Troubleshooting
-#### Q. What is containers Orchestration in Kubernetes?
-#### Q. What problems have you actually solved with kubernetes?
 #### Q. What is the difference between Docker Compose and Kubernetes?
 #### Q. How to use local docker images with Minikube?
 #### Q. What is the difference between ClusterIP, NodePort and LoadBalancer service types in Kubernetes?
@@ -928,7 +919,6 @@ Here are a few ways to ensure security while using Kubernetes:
 #### Q. How do I force Kubernetes to re-pull an image?
 #### Q. How can I keep a container running on Kubernetes?
 #### Q. How can I trigger a Kubernetes Scheduled Job manually?
-
 #### Q. What is required to deploy a simple application, like a web server in Kubernetes? How would you go about deploying/updating your app?
 #### Q. When defining an application, how would you choose between using the various Kubernetes workloads? For example, when would you use a Deployment versus a StatefulSet versus a DaemonSet?
 #### Q. What are container orchestrators and why are they required?

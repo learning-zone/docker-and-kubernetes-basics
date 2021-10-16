@@ -939,7 +939,7 @@ Here are a few ways to ensure security while using Kubernetes:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is Kube Proxy in Kubernetes?
+#### Q. What is kube-proxy?
 #### Q. How to use secrets in Kubernetes?
 #### Q. How to Create and Use ConfigMap with Kubernetes?
 #### Q. What is a Kubernetes deployment?

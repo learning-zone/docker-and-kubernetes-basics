@@ -48,11 +48,11 @@ Docker Swarm is Docker\'s native, open-source container orchestration platform t
 
 * Docker Swarm is more convenient to set up but doesn\'t have a robust cluster, while Kubernetes is more complicated to set up but the benefit of having the assurance of a robust cluster
 * Docker Swarm can\'t do auto-scaling (as can Kubernetes); however, Docker scaling is five times faster than Kubernetes 
-* Docker Swarm doesn’t have a GUI; Kubernetes has a GUI in the form of a dashboard
+* Docker Swarm doesn\'t have a GUI; Kubernetes has a GUI in the form of a dashboard
 * Docker Swarm does automatic load balancing of traffic between containers in a cluster, while Kubernetes requires manual intervention for load balancing such traffic  
 * Docker requires third-party tools like ELK stack for logging and monitoring, while Kubernetes has integrated tools for the same 
 Docker Swarm can share storage volumes with any container easily, while Kubernetes can only share storage volumes with containers in the same pod
-* Docker can deploy rolling updates but can’t deploy automatic rollbacks; Kubernetes can deploy rolling updates as well as automatic rollbacks
+* Docker can deploy rolling updates but can\'t deploy automatic rollbacks; Kubernetes can deploy rolling updates as well as automatic rollbacks
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -81,7 +81,7 @@ Kubernetes cluster is a set of nodes used for running containerized applications
 * The control plane is used to maintain the desired state of the cluster, such as which applications are running or which container images they use.
 * Whereas, the nodes run the applications and the workloads.
 
-Clusters are the heart of Kubernetes that gives the ability to schedule and run the containers across a group of machines - physical, virtual, on-premise, or in the cloud. Kubernetes containers aren’t tied to any particular machines, they are abstracted across the cluster.
+Clusters are the heart of Kubernetes that gives the ability to schedule and run the containers across a group of machines - physical, virtual, on-premise, or in the cloud. Kubernetes containers aren\'t tied to any particular machines, they are abstracted across the cluster.
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -945,12 +945,12 @@ Here are a few ways to ensure security while using Kubernetes:
 #### Q. What is a Kubernetes deployment?
 #### Q. What is a Kubernetes StatefulSet?
 #### Q. What are levels of abstraction in Kubernetes?
-#### Q. ReplicaSet
-#### Q. Rolling update
+#### Q. what is replicaset in kubernetes?
+#### Q. How to Configure Kubernetes for Rolling Update?
 #### Q. What is the difference between Docker Compose and Kubernetes?
 #### Q. How to use local docker images with Minikube?
 #### Q. What is the difference between ClusterIP, NodePort and LoadBalancer service types in Kubernetes?
-#### Q. Ingress vs Load Balancer
+#### Q. What is the difference between kubernetes load balancer and ingress controller?
 #### Q. What is the difference between a pod and a deployment?
 #### Q. Command to delete all pods in all kubernetes namespaces
 #### Q. How do I force Kubernetes to re-pull an image?

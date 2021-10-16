@@ -939,6 +939,12 @@ Here are a few ways to ensure security while using Kubernetes:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
+#### Q. What is Kube Proxy in Kubernetes?
+#### Q. How to use secrets in Kubernetes?
+#### Q. How to Create and Use ConfigMap with Kubernetes?
+#### Q. What is a Kubernetes deployment?
+#### Q. What is a Kubernetes StatefulSet?
+#### Q. What are levels of abstraction in Kubernetes?
 #### Q. ReplicaSet
 #### Q. Rolling update
 #### Q. What is the difference between Docker Compose and Kubernetes?

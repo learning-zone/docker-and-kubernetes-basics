@@ -15,6 +15,8 @@ kubectl proxy                               // Launch Kubernetes Dashboard
 ## Kubectl Basic Commands
 
 ```js
+kubectl get nodes | pod | services | replicaset | deployment
+
 kubectl get pod
 kubectl get services
 kubectl create deployment nginx-depl --image=nginx  // create deployment using nginx
@@ -69,14 +71,7 @@ kubectl apply -f nginx-deployment.yaml
 kubectl get pod
 kubectl get deployment
 kubectl delete -f <file_name>
-kubectl get nodes | pod | services | replicaset | deployment
 ```
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
-## Kubernetes YAML File
 
 **nginx-service.yaml:**
 

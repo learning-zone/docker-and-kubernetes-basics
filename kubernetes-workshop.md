@@ -8,7 +8,11 @@ kubectl proxy                               // Launch Kubernetes Dashboard
 
 * [http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login)
 
-## Kubernetes Commands
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Kubectl Basic Commands
 
 ```js
 kubectl get pod
@@ -34,7 +38,7 @@ kubectl get replicaset
 kubectl apply -f <file_name>                // Deployment using .yaml config file
 ```
 
-**nginx-deployment.yaml:** Default Value
+**nginx-deployment.yaml:**
 
 ```js
 apiVersion: apps/v1
@@ -43,22 +47,21 @@ metadata:
   name: nginx-deployment
   labels:
     app: nginx
-spec: # Specification for replicaset
-  replicas: 1
+spec:
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
-  replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
         app: nginx
-    spec:  # Specification for containers
+    spec:
       containers:
       - name: nginx
         image: nginx:1.16
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 ```
 
 ```js
@@ -67,6 +70,37 @@ kubectl get pod
 kubectl get deployment
 kubectl delete -f <file_name>
 kubectl get nodes | pod | services | replicaset | deployment
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Kubernetes YAML File
+
+**nginx-service.yaml:**
+
+```js
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+```
+
+```js
+kubectl apply -f nginx-service.yaml                                             // Apply nginx service
+kubectl get pod
+kubectl get service                             
+kubectl describe service nginx-service                                          // Get service description
+kubectl get pod -o wide                                                         // Get detail information of POD
+kubectl get deployment nginx-deployment -o yaml > nginx-deployment-result.yaml  // Deployment yaml result
 ```
 
 <div align="right">

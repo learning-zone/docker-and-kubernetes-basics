@@ -12,7 +12,7 @@ kubectl get replicaset
 kubectl edit deployment nginx-depl  // get auto-generated configuration file with default values
 kubectl get pod                     // Old pod will terminate and new pod will be generated based on new values
 kubectl get replicaset              // Old replicaset will have zero pod
-kubectl logs nginx-depl-7fc44fc5d4-pwhw9  // Get pod logs
+kubectl logs <deployment_name>      // Get pod logs
 kubectl create deployment mongo-depl --image=mongo
 kubectl describe pod <pod_name>
 kubectl logs <pod_name>

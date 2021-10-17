@@ -164,19 +164,6 @@ Kubernetes uses etcd as a distributed key-value store for all of its data, inclu
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q.  ***What are the different services within Kubernetes?***
-
-Different types of Kubernetes services include:
-
-* Cluster IP service
-* Node Port service
-* External Name Creation service and
-* Load Balancer service
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 ## Q.  ***What is ClusterIP?***
 
 The ClusterIP is the default Kubernetes service that provides a service inside a cluster (with no external access) that other apps inside your cluster can access.

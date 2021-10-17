@@ -57,6 +57,7 @@ spec: # Specification for replicaset
 ```js
 kubectl apply -f nginx-deployment.yaml
 kubectl get pod
+kubectl get deployment
 ```
 
 <div align="right">

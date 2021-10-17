@@ -4,7 +4,7 @@
  var config = {
     "user": "sa",
     "password": "P@ssw0rd",
-    "server": "localhost",
+    "server": "192.168.43.120",
     "database": "TestDB",
     "driver": "msnodesqlv8",
     "port": 1433,

@@ -27,6 +27,38 @@ kubectl get replicaset
 kubectl apply -f <file_name>
 ```
 
+**nginx-deployment.yaml:** Default Value
+
+```js
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec: # Specification for replicaset
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:  # Specification for containers
+      containers:
+      - name: nginx
+        image: nginx:1.16
+        ports:
+        - containerPort: 80
+```
+
+```js
+kubectl apply -f nginx-deployment.yaml
+kubectl get pod
+```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

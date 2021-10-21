@@ -1,12 +1,16 @@
 # Kubernetes Workshop
 
-## Launch Kubernetes Dashboard
+## Kubernetes Dashboard Setup
+
+* [Kubernetes UI Dashboard Docker Image](https://hub.docker.com/r/kubernetesui/dashboard)
+* [Dashboard Settings](https://github.com/kubernetes/dashboard)
+* [Creating Sample User](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md)
 
 ```js
 kubectl proxy                               // Launch Kubernetes Dashboard
 ```
 
-* [http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login)
+* [Kubernetes UI Dashboard Login](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

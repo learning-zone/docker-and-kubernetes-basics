@@ -115,6 +115,21 @@ Namespaces are used for dividing cluster resources between multiple users. They 
   <img src="assets/namespace.png" alt="Namespace" width="600px" />
 </p>
 
+**Example:**
+
+```js
+// Get Kubernetes Namespace
+kubectl get namespace
+
+// Output
+NAME                   STATUS   AGE
+default                Active   24h
+kube-node-lease        Active   24h
+kube-public            Active   24h
+kube-system            Active   24h
+kubernetes-dashboard   Active   23h
+```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

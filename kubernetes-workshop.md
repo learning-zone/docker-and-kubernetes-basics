@@ -258,6 +258,9 @@ kubectl apply -f mongo-express.yaml         // Apply mongo-express
 kubectl get pod                             
 kubectl logs mongo-express-78fcf796b8-xhp2f // Get Mongo-Express logs
 minikube service mongo-express-service      // Access MongoDB from external URL
+kubectl get namespace                       // Get Kubernetes Namespace
+kubectl create namespace my-namespace       // Create a new namespace
+kubectl cluster-info                        // 
 ```
 
 <div align="right">

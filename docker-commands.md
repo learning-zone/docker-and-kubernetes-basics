@@ -80,6 +80,24 @@ Attach local standard input, output, and error streams to a running container:
 docker container attach <CONTAINER_ID>
 ```
 
+SSH into container
+
+```js
+docker exec -it <CONTAINER_ID> /bin/sh
+```
+
+Check docker daemon disk space usage
+
+```js
+docker system df
+```
+
+Remove all dangling and unused images and containers
+
+```js
+docker system prune --all
+```
+
 ## Docker Image Commands
 
 Create an image from a Dockerfile:

@@ -7,6 +7,7 @@
 * *[Docker Workshop](docker-practice.md)*
 * *[Kubernetes Interview Questions](kubernetes.md)*
 * *[Kubernetes Workshop](kubernetes-workshop.md)*
+* *[Kubectl Command Cheatsheet](kubernetes-commands.md)*
 * *[Cloud Computing Interview Questions](cloud.md)*
 * *[Jenkins Interview Questions](jenkins.md)*
 

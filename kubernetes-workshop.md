@@ -262,8 +262,41 @@ kubectl logs mongo-express-78fcf796b8-xhp2f // Get Mongo-Express logs
 minikube service mongo-express-service      // Access MongoDB from external URL
 kubectl get namespace                       // Get Kubernetes Namespace
 kubectl create namespace my-namespace       // Create a new namespace
-kubectl cluster-info                        // 
+kubectl delete namespace my-namespace       // Delete namespace
+kubectl cluster-info                        // Display cluster info
+kubectl get ns                              // Display list of namespaces
+kubectl get all -n kubernetes-dashboard     // 
 ```
+
+**dashboard-ingress.yaml**
+
+```js
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dashboard-ingress
+  namespace: kubernetes-dashboard
+spec:
+  rules:
+  - host: dashboard.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: kubernetes-dashboard
+            port: 
+              number: 80
+```
+
+```js
+kubectl apply -f dashboard-ingress.yaml                 // Create Ingress controller on Kubernetes Dashboard
+kubectl get ingress -n kubernetes-dashboard             // Display Ingress controller details
+kubectl get ingress -n kubernetes-dashboard --watch     // To watch IP Address 
+kubectl describe ingress dashboard-ingress -n kubernetes-dashboard // 
+```
+
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

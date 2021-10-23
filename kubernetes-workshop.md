@@ -21,8 +21,10 @@ kubectl proxy                               // Launch Kubernetes Dashboard
 ```js
 kubectl get nodes | pod | services | replicaset | deployment
 
-kubectl get pod
-kubectl get services
+kubectl version                             // Kubectl version
+kubectl version --client                    // Kubectl client version
+kubectl get pod                             // Get list of PODs
+kubectl get services                        // Display list of services
 kubectl create deployment nginx-depl --image=nginx  // create deployment using nginx
 kubectl get deployment                              // Get deployment list
 kubectl get replicaset

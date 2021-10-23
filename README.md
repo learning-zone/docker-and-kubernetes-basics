@@ -5,7 +5,7 @@
 ## Table of Contents
 
 * *[Docker Workshop](docker-practice.md)*
-* *[Docker Command Cheatsheet](Docker-commands.md)*
+* *[Docker Command Cheatsheet](docker-commands.md)*
 * *[Kubernetes Interview Questions](kubernetes.md)*
 * *[Kubernetes Workshop](kubernetes-workshop.md)*
 * *[Kubectl Command Cheatsheet](kubernetes-commands.md)*

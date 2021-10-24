@@ -968,7 +968,7 @@ Here are a few ways to ensure security while using Kubernetes:
 #### Q. How can RBAC be used to grant permission to Kubernetes resources? Are there any limitations?
 #### Q. How would you expose an application running in a Kubernetes cluster to the outside world?
 #### Q. What tools can be used to monitor your cluster and your applications?
-#### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean, and why are declarative APIs so useful in DevOps?
+#### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean?
 #### Q. What is Helm Charts?
 #### Q. How to use persistent volume in kubernetes?
 

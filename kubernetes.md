@@ -954,7 +954,7 @@ Here are a few ways to ensure security while using Kubernetes:
 #### Q. What is the difference between ClusterIP, NodePort and LoadBalancer service types in Kubernetes?
 #### Q. What is the difference between kubernetes load balancer and ingress controller?
 #### Q. What is the difference between a pod and a deployment?
-#### Q. Command to delete all pods in all kubernetes namespaces
+#### Q. How to delete all pods in all kubernetes namespaces?
 #### Q. How do I force Kubernetes to re-pull an image?
 #### Q. How can I keep a container running on Kubernetes?
 #### Q. How can I trigger a Kubernetes Scheduled Job manually?
@@ -972,11 +972,6 @@ Here are a few ways to ensure security while using Kubernetes:
 #### Q. How would you expose an application running in a Kubernetes cluster to the outside world?
 #### Q. What tools can be used to monitor your cluster and your applications?
 #### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean, and why are declarative APIs so useful in DevOps?
-
-<br/>
-
-# Helm Charts
-
 #### Q. What is Helm Charts?
 #### Q. Helm installation
 #### Q. Create Helm project

@@ -701,7 +701,7 @@ By default, POD can communicate with any other POD, we can set up network polici
 
 ## Q. ***How to monitor the Kubernetes cluster?***
 
-Prometheus is used for Kubernetes monitoring. The Prometheus ecosystem consists of multiple components.
+**[Prometheus](https://prometheus.io/)** is used for Kubernetes cluster monitoring. The Prometheus ecosystem consists of multiple components.
 
 * Mainly Prometheus server which scrapes and stores time-series data.
 * Client libraries for instrumenting application code.

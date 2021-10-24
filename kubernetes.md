@@ -971,6 +971,7 @@ Here are a few ways to ensure security while using Kubernetes:
 #### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean?
 #### Q. What is Helm Charts?
 #### Q. How to persist data in kubernetes using volumes?
+#### Q. How to create storage class in kubernetes?
 #### Q. How to deploy to kubernetes cluster on google cloud?
 
 <div align="right">

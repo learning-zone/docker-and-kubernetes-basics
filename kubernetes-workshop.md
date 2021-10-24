@@ -392,6 +392,8 @@ $ netstat -ln                                     // Display list of IP Address
 $ curl localhost:80
 $ exit
 kubectl logs nginx -c nginx-container             // View nginx logs
+minikube start                                    // Install minikube
+minikube ssh                                      // SSH to minikibe
 ```
 
 <div align="right">

@@ -265,7 +265,7 @@ kubectl create namespace my-namespace       // Create a new namespace
 kubectl delete namespace my-namespace       // Delete namespace
 kubectl cluster-info                        // Display cluster info
 kubectl get ns                              // Display list of namespaces
-kubectl get all -n kubernetes-dashboard     // 
+kubectl get all -n kubernetes-dashboard     // Get POD, Service, Deployment and Replicaset details of namespace
 ```
 
 **dashboard-ingress.yaml**
@@ -297,6 +297,102 @@ kubectl get ingress -n kubernetes-dashboard --watch     // To watch IP Address
 kubectl describe ingress dashboard-ingress -n kubernetes-dashboard // 
 ```
 
+**postgres.yaml**
+
+```js
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres
+  labels:
+    name: postgres
+spec:
+  containers:
+  - name: postgres
+    image: postgres:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+    - containerPort: 5432
+    env:
+    - name: POSTGRES_PASSWORD
+      value: "pwd"
+```
+
+```js
+kubectl apply -f postgres.yaml
+kubectl get pod
+```
+
+**postgres.yaml**
+
+```js
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres-2
+  labels:
+    name: postgres-2
+spec:
+  containers:
+  - name: postgres
+    image: postgres:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+    - containerPort: 5432
+    env:
+    - name: POSTGRES_PASSWORD
+      value: "pwd"
+```
+
+```js
+kubectl apply -f postgres.yaml
+kubectl get pod
+```
+
+**nginx-sidecar-container.yaml**
+
+```js
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    name: nginx
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+    - containerPort: 80
+  - name: sidecar
+    image: curlimages/curl
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    command: ["/bin/sh"]
+    args: ["-c", "echo Hello from the sidecar container; sleep 300"]
+```
+
+```js
+kubectl apply -f nginx-sidecar-container.yaml
+kubectl get pod
+kubectl exec -it nginx -c sidecar -- /bin/sh
+$ netstat -ln                                     // Display list of IP Address
+$ curl localhost:80
+$ exit
+kubectl logs nginx -c nginx-container             // View nginx logs
+```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

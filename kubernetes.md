@@ -958,14 +958,11 @@ Here are a few ways to ensure security while using Kubernetes:
 #### Q. How do I force Kubernetes to re-pull an image?
 #### Q. How can I keep a container running on Kubernetes?
 #### Q. How can I trigger a Kubernetes Scheduled Job manually?
-#### Q. What is required to deploy a simple application, like a web server in Kubernetes? How would you go about deploying/updating your app?
-#### Q. When defining an application, how would you choose between using the various Kubernetes workloads? For example, when would you use a Deployment versus a StatefulSet versus a DaemonSet?
+#### Q. What is required to deploy a simple application, like a web server in Kubernetes?
+#### Q. When would you use a Deployment versus a StatefulSet versus a DaemonSet?
 #### Q. What are container orchestrators and why are they required?
-#### Q. Tell me about a Kubernetes cluster you deployed. How did you test for load? What monitoring did you implement? What metrics did you track?
-#### Q. What experience do you have with containers? What tooling have you used to manage containers? What advantages and disadvantages did you see in the tooling?
-#### Q. Tell me about a time you had difficulty deploying new software you did not write. How did you resolve the difficulty? Where did you go for additional information?
-#### Q. If you had to redo a project you just completed, would you be upset?
-#### Q. How do you like to learn new concepts? If you failed, would you be upset?
+#### Q. Tell me about a Kubernetes cluster you deployed. How did you test for load? 
+#### Q. What monitoring did you implement? What metrics did you track?
 #### Q. What types of workloads run well on Kubernetes, and what types do not?
 #### Q. What is the Operator pattern and when should you use it?
 #### Q. How can RBAC be used to grant permission to Kubernetes resources? Are there any limitations?
@@ -973,10 +970,7 @@ Here are a few ways to ensure security while using Kubernetes:
 #### Q. What tools can be used to monitor your cluster and your applications?
 #### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean, and why are declarative APIs so useful in DevOps?
 #### Q. What is Helm Charts?
-#### Q. Helm installation
-#### Q. Create Helm project
-#### Q. Deploy Helm chart
-#### Q. Troubleshooting
+#### Q. How to use persistent volume in kubernetes?
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

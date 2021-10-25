@@ -394,6 +394,16 @@ $ exit
 kubectl logs nginx -c nginx-container             // View nginx logs
 minikube start                                    // Install minikube
 minikube ssh                                      // SSH to minikibe
+kubectl get configmap                             // Display Config Map details
+```
+
+**[Install Prometheus Operator](https://grafana.com/docs/grafana-cloud/quickstart/prometheus_operator/)**
+
+```js
+kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/master/bundle.yaml
+kubectl get deploy
+kubectl get secret                                // Get Secrets
+kubectl get statefulset
 ```
 
 <div align="right">

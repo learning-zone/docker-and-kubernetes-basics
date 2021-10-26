@@ -401,7 +401,10 @@ kubectl get configmap                             // Display Config Map details
 
 ```js
 kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/master/bundle.yaml
-kubectl get deploy
+kubectl get deploy                                // Verify Prometheus Operator
+mkdir operator_k8s
+cd operator_k8s
+
 kubectl get secret                                // Get Secrets
 kubectl get statefulset
 ```

@@ -762,7 +762,7 @@ spec:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***what is a Kubernetes Operator?***
+## Q. ***What is a Kubernetes Operator?***
 
 Operators are software extensions to K8s which make use of custom resources to manage applications and their components. Operators follow Kubernetes principles, notably the control loop.
 

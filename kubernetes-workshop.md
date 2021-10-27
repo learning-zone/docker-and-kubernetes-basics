@@ -409,6 +409,28 @@ kubectl get secret                                // Get Secrets
 kubectl get statefulset
 ```
 
+## Install Promethus Operator using Helm:**
+
+**add repo:**
+
+```js
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo add stable https://charts.helm.sh/stable
+helm repo update
+```
+
+**install chart:**
+
+```js
+helm install prometheus prometheus-community/kube-prometheus-stack
+```
+
+```js
+kubectl get pod
+kubectl get svc
+kubectl port-forward service/prometheus-kube-prometheus-prometheus 9090
+kubectl get servicemonitor
+```
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

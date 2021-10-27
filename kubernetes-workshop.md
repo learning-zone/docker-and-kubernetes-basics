@@ -397,7 +397,7 @@ minikube ssh                                      // SSH to minikibe
 kubectl get configmap                             // Display Config Map details
 ```
 
-**[Install Prometheus Operator](https://grafana.com/docs/grafana-cloud/quickstart/prometheus_operator/)**
+## [Install Prometheus Operator](https://grafana.com/docs/grafana-cloud/quickstart/prometheus_operator/)
 
 ```js
 kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/master/bundle.yaml
@@ -409,7 +409,7 @@ kubectl get secret                                // Get Secrets
 kubectl get statefulset
 ```
 
-## Install Promethus Operator using Helm:**
+## Install Promethus Operator using Helm
 
 **add repo:**
 
@@ -430,7 +430,10 @@ kubectl get pod
 kubectl get svc
 kubectl port-forward service/prometheus-kube-prometheus-prometheus 9090
 kubectl get servicemonitor
+kubectl get servicemonitor prometheus-kube-prometheus-grafana -oyaml       // View yaml file
+kubectl get crd                                       // Display Custom Resource Definitions
 ```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

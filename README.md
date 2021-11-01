@@ -742,7 +742,7 @@ Mainly we have four mode of networking for Docker
 | Command       | Description                             | Example                  |
 |---------------|-----------------------------------------|--------------------------|
 |pull   | Download an image from docker hub               | $ docker pull hello-world |
-|run    | Run a container ( create and start a container )| docker run hello-world   |
+|run    | Run a container ( create and start a container )| $ docker run hello-world |
 |ps     | List containers ( process status )              | $ docker ps              |
 |images | List images                                     | $ docker images          |
 |logs   | Show container logs                             | $ docker logs -f myapp   |
@@ -759,7 +759,6 @@ Mainly we have four mode of networking for Docker
 |kill   | To kill a container                             | $ docker kill myapp |
 |commit | To create a new image from container changes.   | $ docker container commit mycontainer myimage |
 |login  | To login into hub.docker.com                    | $ docker login  |
-|run -it -d `<image_name>` |create a docker container from an image -d means the container needs to start in the detached mode. | |
 |push `<username/image name>`| push it to docker hub      | $ docker push myapp |
 |rm `<container id>`| delete a stopped container          | $ docker rm myapp |
 |rmi `<image-id>` | delete an image from the local system | $ docker rmi myapp |

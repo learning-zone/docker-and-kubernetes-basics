@@ -741,29 +741,29 @@ Mainly we have four mode of networking for Docker
 
 | Command       | Description                             | Example                  |
 |---------------|-----------------------------------------|--------------------------|
-|pull   | Download an image from docker hub       |                          |
-|run    | Run a container ( create and start a container )|                  |
-|ps     | List containers ( process status )      | $ docker ps              |
-|images | List images                             | $ docker images          |
-|logs   | Show container logs                     | $ docker logs -f myapp   |
-|exec   | Execute a command in a running container| $ docker exec myapp ls   |
-|cp     | Copy files between a container and local file system|              |
-|build  | Build a new image                       |                          |
-|start  | Start a Docker container                | $ docker start myapp     |
-|stop   | Stop a docker container                 | $ docker stop myapp      |
-|version| Display Docker Client and Docker Server version| $ docker version  |
+|pull   | Download an image from docker hub               | $ docker pull hello-world |
+|run    | Run a container ( create and start a container )| docker run hello-world   |
+|ps     | List containers ( process status )              | $ docker ps              |
+|images | List images                                     | $ docker images          |
+|logs   | Show container logs                             | $ docker logs -f myapp   |
+|exec   | Execute a command in a running container        | $ docker exec myapp ls   |
+|cp     | Copy files between a container and local file system| $ docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH |
+|build  | Build a new image                               | $ docker build -t myapp:latest . |
+|start  | Start a Docker container                        | $ docker start myapp     |
+|stop   | Stop a docker container                         | $ docker stop myapp      |
+|version| Display Docker Client and Docker Server version | $ docker version  |
 |info   | Display number of containers running, paused, stopped, number of images etc.| $ docker info |
-|build  | Build docker image                      | $ docker build . -t myapp:1.0.0 |
-|dockerd| To launch Docker daemon                 |    |
-|create | To create a new container.              |    |
-|kill   | To kill a container                     | $ docker kill myapp |
-|commit | To create a new image from container changes. | |
-|login  | To login into hub.docker.com            |   |
+|build  | Build docker image                              | $ docker build . -t myapp:1.0.0 |
+|dockerd| To launch Docker daemon                         | $ dockerd   |
+|create | To create a new container.                      | $ docker create hello-world   |
+|kill   | To kill a container                             | $ docker kill myapp |
+|commit | To create a new image from container changes.   | $ docker container commit mycontainer myimage |
+|login  | To login into hub.docker.com                    | $ docker login  |
 |run -it -d `<image_name>` |create a docker container from an image -d means the container needs to start in the detached mode. | |
-|push `<username/image name>`| push it to docker hub | |
-|rm `<container id>`| delete a stopped container  | |
-|rmi `<image-id>` | delete an image from the local system | |
-|system prune | to remove all the stopped containers, all the networks that are not used, all dangling images and all build caches.| |
+|push `<username/image name>`| push it to docker hub      | $ docker push myapp |
+|rm `<container id>`| delete a stopped container          | $ docker rm myapp |
+|rmi `<image-id>` | delete an image from the local system | $ docker rmi myapp |
+|system prune | to remove all the stopped containers, all the networks that are not used, all dangling images and all build caches.| $ docker system prune --all |
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

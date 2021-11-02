@@ -15,7 +15,7 @@ docker login [OPTIONS] [SERVER]
 -u/--username username
 -p/--password password
 
-Example:
+// Example:
 
 1. docker login localhost:8080 // Login to a registry on your localhost
 2. docker login
@@ -26,8 +26,7 @@ Example:
 ```js
 docker logout [SERVER]
 
-Example:
-
+// Example:
 docker logout localhost:8080 // Logout from a registry on your localhost
 ```
 
@@ -42,7 +41,7 @@ docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
 docker container create -t -i sofyspace/hello-world --name hello-world
 ```
 
-Rename an existing container
+**Rename an existing container:**
 
 ```js
 docker container rename CONTAINER NEW_NAME
@@ -51,7 +50,7 @@ docker container rename CONTAINER NEW_NAME
 docker container rename mssql sqlserver
 ```
 
-Run a command in a new container
+**Run a command in a new container:**
 
 ```js
 docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
@@ -60,7 +59,7 @@ docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 docker container run -it --name sqlserver -d sofypace/sqlserver
 ```
 
-Delete a container
+**Delete a container:**
 
 ```js
 docker container rm [OPTIONS] CONTAINER [CONTAINER...]
@@ -69,73 +68,73 @@ docker container rm [OPTIONS] CONTAINER [CONTAINER...]
 docker container rm hello-world
 ```
 
-Update the configuration of one or more containers:
+**Update the configuration of one or more containers:**
 
 ```js
 docker container update <CONTAINER_ID>
 ```
 
-Start a container
+**Start a container:**
 
 ```js
 docker container start <CONTAINER_ID>
 ```
 
-Stop a running container
+**Stop a running container:**
 
 ```js
 docker container stop <CONTAINER_ID>
 ```
 
-Stop a running container and start it up again:
+**Stop a running container and start it up again:**
 
 ```js
 docker container restart <CONTAINER_ID>
 ```
 
-Pause processes in a running container:
+**Pause processes in a running container:**
 
 ```js
 docker container pause <CONTAINER_ID>
 ```
 
-Unpause processes in a running container:
+**Unpause processes in a running container:**
 
 ```js
 docker container unpause <CONTAINER_ID>
 ```
 
-Block a container until others stop (after which it prints their exit codes):
+**Block a container until others stop (after which it prints their exit codes):**
 
 ```js
 docker container wait <CONTAINER_ID>
 ```
 
-Kill a container by sending a SIGKILL to a running container:
+**Kill a container by sending a SIGKILL to a running container:**
 
 ```js
 docker container kill <CONTAINER_ID>
 ```
 
-Attach local standard input, output, and error streams to a running container:
+**Attach local standard input, output, and error streams to a running container:**
 
 ```js
 docker container attach <CONTAINER_ID>
 ```
 
-SSH into container
+**SSH into container:**
 
 ```js
 docker exec -it <CONTAINER_ID> /bin/sh
 ```
 
-Check docker daemon disk space usage
+**Check docker daemon disk space usage:**
 
 ```js
 docker system df
 ```
 
-Remove all dangling and unused images and containers
+**Remove all dangling and unused images and containers:**
 
 ```js
 docker system prune --all
@@ -143,7 +142,7 @@ docker system prune --all
 
 ## Docker Image Commands
 
-Create an image from a Dockerfile:
+**Create an image from a Dockerfile:**
 
 ```js
 docker build <Dockerfile_url>
@@ -151,43 +150,43 @@ docker build <Dockerfile_url>
 
 docker build -t – builds an image from a Dockerfile in the current directory and tags the image
 
-Pull an image from a registry:
+**Pull an image from a registry:**
 
 ```js
 docker pull <IMAGE_NAME>
 ```
 
-Push an image to a registry:
+**Push an image to a registry:**
 
 ```js
 docker push <IMAGE_NAME>
 ```
 
-Create an image from a tarball:
+**Create an image from a tarball:**
 
 ```js
 docker import <URL/FILE>
 ```
 
-Create an image from a container:
+**Create an image from a container:**
 
 ```js
 docker container commit <CONTAINER_NAME> <new_image_name>
 ```
 
-Remove an image:
+**Remove an image:**
 
 ```js
 docker image rm <IMAGE_NAME>
 ```
 
-Load an image from a tar archive or stdin:
+**Load an image from a tar archive or stdin:**
 
 ```js
 docker load <TAR_FILE/STDIN_FILE>
 ```
 
-Save an image to a tar archive, streamed to STDOUT with all parent layers, tags, and versions:
+**Save an image to a tar archive, streamed to STDOUT with all parent layers, tags, and versions:**
 
 ```js
 docker save <IMAGE_NAME> > <TAR_FILE>
@@ -195,7 +194,7 @@ docker save <IMAGE_NAME> > <TAR_FILE>
 
 ## Docker Commands for Container and Image Information
 
-List running containers:
+**List running containers:**
 
 ```js
 docker ps
@@ -203,55 +202,55 @@ docker ps
 
 docker ps -a – lists both running containers and ones that have stopped
 
-List the logs from a running container:
+**List the logs from a running container:**
 
 ```js
 docker logs <CONTAINER_ID>
 ```
 
-List low-level information on Docker objects:
+**List low-level information on Docker objects:**
 
 ```js
 docker inspect [OBJECT_NAME/ID]
 ```
 
-List real-time events from a container:
+**List real-time events from a container:**
 
 ```js
 docker events <CONTAINER_ID>
 ```
 
-Show port (or specific) mapping for a container:
+**Show port (or specific) mapping for a container:**
 
 ```js
 docker port <CONTAINER_ID>
 ```
 
-Show running processes in a container:
+**Show running processes in a container:**
 
 ```js
 docker top <CONTAINER_ID>
 ```
 
-Show live resource usage statistics of containers:
+**Show live resource usage statistics of containers:**
 
 ```js
 docker stats <CONTAINER_ID>
 ```
 
-Show changes to files (or directories) on a filesystem:
+**Show changes to files (or directories) on a filesystem:**
 
 ```js
 docker diff <CONTAINER_ID>
 ```
 
-List all images that are locally stored with the docker engine:
+**List all images that are locally stored with the docker engine:**
 
 ```js
 docke image ls
 ```
 
-Show the history of an image:
+**Show the history of an image:**
 
 ```js
 docker history [IMAGE]
@@ -259,31 +258,31 @@ docker history [IMAGE]
 
 ## Networks
 
-List networks:
+**List networks:**
 
 ```js
 docker network ls
 ```
 
-Remove one or more networks:
+**Remove one or more networks:**
 
 ```js
 docker network rm <NETWORK_ID>
 ```
 
-Show information on one or more networks:
+**Show information on one or more networks:**
 
 ```js
 docker network inspect <NETWORK_ID>
 ```
-`
-Connects a container to a network:
+
+**Connects a container to a network:**
 
 ```js
 docker network connect <NETWORK_ID> <CONTAINER_ID>
 ```
 
-Disconnect a container from a network:
+**Disconnect a container from a network:**
 
 ```js
 docker network disconnect <NETWORK_ID> <CONTAINER_ID>

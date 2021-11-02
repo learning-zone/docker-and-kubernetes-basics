@@ -1,11 +1,19 @@
 # Docker Command Cheatsheet
 
+> ***[Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/)***
+
+<br/>
+
 ## Docker Container Commands
 
 Create a container
 
 ```js
+// Syntax
 docker create <CONTAINER_NAME>
+
+// Example
+docker create hello-world
 ```
 
 Rename an existing container

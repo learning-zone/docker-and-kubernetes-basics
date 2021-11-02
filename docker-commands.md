@@ -4,34 +4,69 @@
 
 <br/>
 
-## Docker Container Commands
+## Docker Login
 
-Create a container
+**Login to a registry:**
 
 ```js
-// Syntax
-docker create <CONTAINER_NAME>
+docker login [OPTIONS] [SERVER]
 
-// Example
-docker create hello-world
+[OPTIONS]:
+-u/--username username
+-p/--password password
+
+Example:
+
+1. docker login localhost:8080 // Login to a registry on your localhost
+2. docker login
+```
+
+**Logout from a registry:**
+
+```js
+docker logout [SERVER]
+
+Example:
+
+docker logout localhost:8080 // Logout from a registry on your localhost
+```
+
+## Docker Container Commands
+
+**Create a container:**
+
+```js
+docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+// Example:
+docker container create -t -i sofyspace/hello-world --name hello-world
 ```
 
 Rename an existing container
 
 ```js
-docker rename <CONTAINER_NAME> <NEW_CONTAINER_NAME>
+docker container rename CONTAINER NEW_NAME
+
+// Example:
+docker container rename mssql sqlserver
 ```
 
 Run a command in a new container
 
 ```js
-docker container run <CONTAINER_ID> <COMMAND>
+docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+// Example:
+docker container run -it --name sqlserver -d sofypace/sqlserver
 ```
 
 Delete a container
 
 ```js
-docker container rm <CONTAINER_ID>
+docker container rm [OPTIONS] CONTAINER [CONTAINER...]
+
+// Example:
+docker container rm hello-world
 ```
 
 Update the configuration of one or more containers:

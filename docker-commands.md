@@ -8,14 +8,14 @@
 
 **Login to a registry:**
 
-```js
+```bash
 docker login [OPTIONS] [SERVER]
 
 [OPTIONS]:
 -u/--username username
 -p/--password password
 
-// Example:
+# Example:
 
 1. docker login localhost:8080 // Login to a registry on your localhost
 2. docker login
@@ -23,128 +23,164 @@ docker login [OPTIONS] [SERVER]
 
 **Logout from a registry:**
 
-```js
+```bash
 docker logout [SERVER]
 
-// Example:
+# Example:
 docker logout localhost:8080 // Logout from a registry on your localhost
 ```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 ## Docker Container Commands
 
 **Create a container:**
 
-```js
+```bash
 docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
 
-// Example:
+# Example:
 docker container create -t -i sofyspace/hello-world --name hello-world
 ```
 
 **Rename an existing container:**
 
-```js
+```bash
 docker container rename CONTAINER NEW_NAME
 
-// Example:
+# Example:
 docker container rename mssql sqlserver
 ```
 
 **Run a command in a new container:**
 
-```js
+```bash
 docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
-// Example:
+# Example:
 docker container run -it --name sqlserver -d sofypace/sqlserver
 ```
 
 **Delete a container:**
 
-```js
+```bash
 docker container rm [OPTIONS] CONTAINER [CONTAINER...]
 
-// Example:
+# Example:
 docker container rm hello-world
 ```
 
 **Update the configuration of one or more containers:**
 
-```js
-docker container update <CONTAINER_ID>
+```bash
+docker container update [OPTIONS] CONTAINER [CONTAINER...]
+
+# Example:
+docker container update --memory "1g" --cpuset-cpu "1" golang // update the golang to use 1g of memory and only use cpu core 1
 ```
 
 **Start a container:**
 
-```js
-docker container start <CONTAINER_ID>
+```bash
+docker container start [OPTIONS] CONTAINER [CONTAINER...]
+
+# Example:
+docker container start redis
 ```
 
 **Stop a running container:**
 
-```js
-docker container stop <CONTAINER_ID>
+```bash
+docker container stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Example:
+docker container stop redis
+docker stop $(docker ps -a -q) // To stop all the containers
 ```
 
 **Stop a running container and start it up again:**
 
-```js
-docker container restart <CONTAINER_ID>
+```bash
+docker container restart [OPTIONS] CONTAINER [CONTAINER...]
+
+# Example:
+docker container restart redis
 ```
 
 **Pause processes in a running container:**
 
-```js
-docker container pause <CONTAINER_ID>
+```bash
+docker container pause CONTAINER [CONTAINER...]
+
+# Example:
+docker container pause redis
 ```
 
 **Unpause processes in a running container:**
 
-```js
-docker container unpause <CONTAINER_ID>
+```bash
+docker container unpause CONTAINER [CONTAINER...]
+
+# Example:
+docker container unpause redis
 ```
 
 **Block a container until others stop (after which it prints their exit codes):**
 
-```js
-docker container wait <CONTAINER_ID>
+```bash
+docker container wait CONTAINER [CONTAINER...]
+
+# Example:
+docker container wait redis
 ```
 
 **Kill a container by sending a SIGKILL to a running container:**
 
-```js
-docker container kill <CONTAINER_ID>
+```bash
+docker container kill [OPTIONS] CONTAINER [CONTAINER...]
+
+# Example:
+docker container kill redis
 ```
 
 **Attach local standard input, output, and error streams to a running container:**
 
-```js
-docker container attach <CONTAINER_ID>
+```bash
+docker container attach [OPTIONS] CONTAINER [CONTAINER...]
 ```
 
 **SSH into container:**
 
-```js
-docker exec -it <CONTAINER_ID> /bin/sh
+```bash
+docker exec -it [OPTIONS] CONTAINER [CONTAINER...] /bin/sh
+
+# Example
+docker container exec -it redis /bin/sh
 ```
 
 **Check docker daemon disk space usage:**
 
-```js
+```bash
 docker system df
 ```
 
 **Remove all dangling and unused images and containers:**
 
-```js
+```bash
 docker system prune --all
 ```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 ## Docker Image Commands
 
 **Create an image from a Dockerfile:**
 
-```js
+```bash
 docker build <Dockerfile_url>
 ```
 
@@ -152,141 +188,192 @@ docker build -t – builds an image from a Dockerfile in the current directory a
 
 **Pull an image from a registry:**
 
-```js
-docker pull <IMAGE_NAME>
+```bash
+docker image pull [OPTIONS] NAME[:TAG|@DIGEST]
+
+# Example:
+docker image pull redis:latest
 ```
 
 **Push an image to a registry:**
 
-```js
-docker push <IMAGE_NAME>
+```bash
+docker image push [OPTIONS] NAME[:TAG]
+
+# Example
+docker image push sofyspace/redis:6.2
 ```
 
 **Create an image from a tarball:**
 
-```js
+```bash
 docker import <URL/FILE>
 ```
 
 **Create an image from a container:**
 
-```js
+```bash
 docker container commit <CONTAINER_NAME> <new_image_name>
 ```
 
 **Remove an image:**
 
-```js
+```bash
 docker image rm <IMAGE_NAME>
+
+# Example
+docker image rm -f redis
 ```
 
 **Load an image from a tar archive or stdin:**
 
-```js
+```bash
 docker load <TAR_FILE/STDIN_FILE>
 ```
 
 **Save an image to a tar archive, streamed to STDOUT with all parent layers, tags, and versions:**
 
-```js
+```bash
 docker save <IMAGE_NAME> > <TAR_FILE>
 ```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 ## Docker Commands for Container and Image Information
 
 **List running containers:**
 
-```js
+```bash
 docker ps
+docker ps -a
 ```
 
 docker ps -a – lists both running containers and ones that have stopped
 
 **List the logs from a running container:**
 
-```js
-docker logs <CONTAINER_ID>
+```bash
+docker container logs <CONTAINER_ID>
+
+# Example
+docker container logs busybox  
 ```
 
 **List low-level information on Docker objects:**
 
-```js
-docker inspect [OBJECT_NAME/ID]
+```bash
+docker container inspect [OBJECT_NAME/ID]
+
+# Example
+docker container inspect busybox 
 ```
 
 **List real-time events from a container:**
 
-```js
+```bash
 docker events <CONTAINER_ID>
 ```
 
 **Show port (or specific) mapping for a container:**
 
-```js
+```bash
 docker port <CONTAINER_ID>
 ```
 
 **Show running processes in a container:**
 
-```js
+```bash
 docker top <CONTAINER_ID>
 ```
 
 **Show live resource usage statistics of containers:**
 
-```js
+```bash
 docker stats <CONTAINER_ID>
 ```
 
 **Show changes to files (or directories) on a filesystem:**
 
-```js
+```bash
 docker diff <CONTAINER_ID>
 ```
 
 **List all images that are locally stored with the docker engine:**
 
-```js
+```bash
 docke image ls
 ```
 
 **Show the history of an image:**
 
-```js
+```bash
 docker history [IMAGE]
 ```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 ## Networks
 
 **List networks:**
 
-```js
+```bash
 docker network ls
 ```
 
 **Remove one or more networks:**
 
-```js
-docker network rm <NETWORK_ID>
+```bash
+docker network rm NETWORK [NETWORK...]
+
+# Example:
+docker network rm my-network
 ```
 
-**Show information on one or more networks:**
+**Inspect network:**
 
-```js
-docker network inspect <NETWORK_ID>
+```bash
+docker network inspect networkname
+
+# Example:
+docker network inspect bridge
 ```
 
 **Connects a container to a network:**
 
-```js
-docker network connect <NETWORK_ID> <CONTAINER_ID>
+```bash
+docker network connect [OPTIONS] NETWORK CONTAINER
+
+# Example:
+docker network connect multi-host-network container1
 ```
 
 **Disconnect a container from a network:**
 
-```js
-docker network disconnect <NETWORK_ID> <CONTAINER_ID>
+```bash
+docker network disconnect [OPTIONS] NETWORK CONTAINER
+
+# Example:
+docker network disconnect multi-host-network container1
 ```
+
+**Create network:**
+
+It is possible to create a network in Docker before launching containers
+
+```bash
+docker network create [OPTIONS] NETWORK
+
+Example:
+sudo docker network create –-driver bridge some_network
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 ## Dockerfile Instruction Arguments
 

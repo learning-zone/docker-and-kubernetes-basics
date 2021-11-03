@@ -95,7 +95,7 @@ docker container start redis
 ```bash
 docker container stop [OPTIONS] CONTAINER [CONTAINER...]
 
-Example:
+# Example:
 docker container stop redis
 docker stop $(docker ps -a -q) // To stop all the containers
 ```
@@ -367,7 +367,7 @@ It is possible to create a network in Docker before launching containers
 ```bash
 docker network create [OPTIONS] NETWORK
 
-Example:
+# Example:
 sudo docker network create –-driver bridge some_network
 ```
 

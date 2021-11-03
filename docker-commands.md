@@ -368,7 +368,7 @@ It is possible to create a network in Docker before launching containers
 docker network create [OPTIONS] NETWORK
 
 # Example:
-sudo docker network create –-driver bridge some_network
+docker network create –-driver bridge some_network
 ```
 
 <div align="right">

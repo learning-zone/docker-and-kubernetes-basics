@@ -398,9 +398,9 @@ Dockerfile is a text document that contains set of commands and instructions whi
 |ONBUILD        | Adds an instruction to be executed later, when the image is used as the base for another build|
 |STOPSIGNAL     | Sets the system call signal that will be sent to the container to exit|
 
-**FROM:**
+**FROM**
 
-This command Sets the Base Image for subsequent instructions
+This command sets the base image for subsequent instructions
 
 ```bash
 FROM <image>
@@ -413,7 +413,7 @@ FROM ubuntu:latest
 FROM ubuntu:18.04
 ```
 
-**RUN:**
+**RUN**
 
 RUN instruction allows you to install your application and packages required for it. It executes any commands on top of the current image and creates a new layer by committing the results. It is quite common to have multiple RUN instructions in a Dockerfile.
 
@@ -426,7 +426,7 @@ RUN npm start
 RUN [ "npm", "start" ]
 ```
 
-**ENTRYPOINT:**
+**ENTRYPOINT**
 
 An ENTRYPOINT allows you to configure a container that will run as an executable. It is used to run when container starts.
 
@@ -455,7 +455,7 @@ docker container run entrypointImage // Print ENTRYPOINT instruction of Exec For
 docker run --entrypoint "/bin/echo" entrypointImage "Override ENTRYPOINT instruction" // Override ENTRYPOINT instruction
 ```
 
-**CMD:**
+**CMD**
 
 CMD instruction is used to set a default command, which will be executed only when you run a container without specifying a command. But if the docker container runs with a command, the default command will be ignored.
 
@@ -482,7 +482,7 @@ docker run executable parameters
 
 Note: There should only be one CMD command in your Dockerfile. Otherwise only the last instance of CMD will be executed.
 
-**COPY:**
+**COPY**
 
 The COPY instruction copies new files or directories from source and adds them to the destination filesystem of the container.
 
@@ -497,7 +497,7 @@ COPY tes? /absoluteDir/        # Copies all files or directories starting with t
 
 The path must be relative to the source directory that is being built. Whereas is an absolute path, or a path relative to WORKDIR.
 
-**ADD:**
+**ADD**
 
 The ADD instruction copies new files, directories or remote file URLs from source and adds them to the filesystem of the image at the destination path. The functionality is similar to COPY command and supports two forms of usage,
 
@@ -520,7 +520,7 @@ ADD http://source.file/url  /destination/path
 ADD source.file.tar.gz /temp
 ```
 
-**ENV:**
+**ENV**
 
 The ENV instruction sets the environment variable to the value . It has two forms,
 
@@ -537,7 +537,7 @@ ENV name Chand Anima
 ENV age 30
 ```
 
-**EXPOSE:**
+**EXPOSE**
 
 The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. i.e, It helps in inter-container communication. You can specify whether the port listens on TCP or UDP, and the default is TCP.
 
@@ -558,7 +558,7 @@ docker run -p <HOST_PORT>:<CONTAINER:PORT> IMAGE_NAME
 docker run -p 80:80/udp myDocker
 ```
 
-**WORKDIR:**
+**WORKDIR**
 
 The WORKDIR command is used to define the working directory of a Docker container at any given time for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile.
 
@@ -572,7 +572,7 @@ WORKDIR e
 RUN pwd  // /c/d/e
 ```
 
-**LABEL:**
+**LABEL**
 
 The LABEL instruction adds metadata as key-value pairs to an image. Labels included in base or parent images (images in the FROM line) are inherited by your image.
 
@@ -597,7 +597,7 @@ You can view an image\'s labels using the docker image inspect `--format=''` myi
 }
 ```
 
-**MAINTAINER:**
+**MAINTAINER**
 
 The MAINTAINER instruction sets the Author field of the generated images.
 
@@ -614,7 +614,7 @@ This command is deprecated status now and the recommended usage is with LABEL co
 LABEL maintainer="Gabby"
 ```
 
-**VOLUME:**
+**VOLUME**
 
 The VOLUME instruction creates a mount point with the specified name and mounted volumes from native host or other containers.
 
@@ -625,6 +625,36 @@ VOLUME ["/data"]
 FROM ubuntu
 RUN mkdir /test
 VOLUME /test
+```
+
+## Docker Compose
+
+Docker Compose is a tool for running multi-container applications on Docker defined using the Compose file format.
+
+Using Docker Compose is basically a three-step process:
+
+1. Define your app\'s environment with a Dockerfile so it can be reproduced anywhere.
+1. Define the services that make up your app in docker-compose.yml so they can be run together in an isolated environment.
+1. Lastly, run `docker compose up` and Compose will start and run your entire app.
+
+A `docker-compose.yml` looks like this:
+
+```bash
+version: "3.9"  # optional since v1.27.0
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/code
+      - logvolume01:/var/log
+    links:
+      - redis
+  redis:
+    image: redis
+volumes:
+  logvolume01: {}
 ```
 
 <div align="right">

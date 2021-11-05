@@ -472,7 +472,7 @@ CMD ["param1","param2"]
 CMD command param1 param2
 ```
 
-The main purpose of the CMD command is to launch the required software in a container. For example, running an executable .exe file or a Bash terminal as soon as the container starts.
+The main purpose of the CMD command is to launch the required software in a container. For example, running an executable `.exe` file or a Bash terminal as soon as the container starts.
 
 Remember, if docker runs with executable and parameters then CMD instruction will be overridden(Unlike ENTRYPOINT).
 

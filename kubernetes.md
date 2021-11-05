@@ -800,7 +800,7 @@ This will also help with automating a standard process on multiple Kubernetes cl
 ## Q. ***What difference do you find between deploying applications on the host and containers?***
 
 <p align="center">
-  <img src="assets/deploy.png" alt="Docker Architecture" width="600px" />
+  <img src="assets/deploy.png" alt="Docker Architecture" width="500px" />
 </p>
 
 **When you deploy the application on hosts:**
@@ -941,7 +941,18 @@ Here are a few ways to ensure security while using Kubernetes:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is kube-proxy?
+## Q. What is kube-proxy?
+
+Kube-proxy is an implementation of a network proxy and a load balance that serves as the link of each node with the api-server. It runs in each node of your cluster and allows you to connect to pods from inside or outside of the cluster.
+
+<p align="center">
+  <img src="assets/kube-proxy.png" alt="Kube-Proxy" width="600px" />
+</p>
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How to use secrets in Kubernetes?
 #### Q. How to Create and Use ConfigMap with Kubernetes?
 #### Q. What is a Kubernetes deployment?

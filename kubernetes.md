@@ -949,18 +949,6 @@ Here are a few ways to ensure security while using Kubernetes:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. What is kube-proxy?
-
-Kube-proxy is an implementation of a network proxy and a load balance that serves as the link of each node with the api-server. It runs in each node of your cluster and allows you to connect to pods from inside or outside of the cluster.
-
-<p align="center">
-  <img src="assets/kube-proxy.png" alt="Kube-Proxy" width="600px" />
-</p>
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 ## Q.  ***What are the main differences between the Docker Swarm and Kubernetes?***
 
 Docker Swarm is Docker\'s native, open-source container orchestration platform that is used to cluster and schedule Docker containers. Swarm differs from Kubernetes in the following ways:

@@ -42,22 +42,6 @@ Docker is an open-source platform used to handle software development. Its main 
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q.  ***What are the main differences between the Docker Swarm and Kubernetes?***
-
-Docker Swarm is Docker\'s native, open-source container orchestration platform that is used to cluster and schedule Docker containers. Swarm differs from Kubernetes in the following ways:
-
-* Docker Swarm is more convenient to set up but doesn\'t have a robust cluster, while Kubernetes is more complicated to set up but the benefit of having the assurance of a robust cluster
-* Docker Swarm can\'t do auto-scaling (as can Kubernetes); however, Docker scaling is five times faster than Kubernetes 
-* Docker Swarm doesn\'t have a GUI; Kubernetes has a GUI in the form of a dashboard
-* Docker Swarm does automatic load balancing of traffic between containers in a cluster, while Kubernetes requires manual intervention for load balancing such traffic  
-* Docker requires third-party tools like ELK stack for logging and monitoring, while Kubernetes has integrated tools for the same 
-Docker Swarm can share storage volumes with any container easily, while Kubernetes can only share storage volumes with containers in the same pod
-* Docker can deploy rolling updates but can\'t deploy automatic rollbacks; Kubernetes can deploy rolling updates as well as automatic rollbacks
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 ## Q.  ***What is a node in Kubernetes?***
 
 A node is the smallest fundamental unit of computing hardware. It represents a single machine in a cluster, which could be a physical machine in a data center or a virtual machine from a cloud provider. Each machine can substitute any other machine in a Kubernetes cluster. The master in Kubernetes controls the nodes that have containers.
@@ -66,9 +50,33 @@ A node is the smallest fundamental unit of computing hardware. It represents a s
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q.  ***What is a pod in Kubernetes?***
+## Q.  ***What are pods in Kubernetes?***
 
 Pods are high-level structures that wrap one or more containers. This is because containers are not run directly in Kubernetes. Containers in the same pod share a local network and the same resources, allowing them to easily communicate with other containers in the same pod as if they were on the same machine while at the same time maintaining a degree of isolation.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is a Kubernetes deployment?***
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is the difference between a pod and a deployment?***
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What are Kubernetes Services?***
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is replicaset in kubernetes?***
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -953,18 +961,31 @@ Kube-proxy is an implementation of a network proxy and a load balance that serve
     <b><a href="#">↥ back to top</a></b>
 </div>
 
+## Q.  ***What are the main differences between the Docker Swarm and Kubernetes?***
+
+Docker Swarm is Docker\'s native, open-source container orchestration platform that is used to cluster and schedule Docker containers. Swarm differs from Kubernetes in the following ways:
+
+* Docker Swarm is more convenient to set up but doesn\'t have a robust cluster, while Kubernetes is more complicated to set up but the benefit of having the assurance of a robust cluster
+* Docker Swarm can\'t do auto-scaling (as can Kubernetes); however, Docker scaling is five times faster than Kubernetes 
+* Docker Swarm doesn\'t have a GUI; Kubernetes has a GUI in the form of a dashboard
+* Docker Swarm does automatic load balancing of traffic between containers in a cluster, while Kubernetes requires manual intervention for load balancing such traffic  
+* Docker requires third-party tools like ELK stack for logging and monitoring, while Kubernetes has integrated tools for the same 
+Docker Swarm can share storage volumes with any container easily, while Kubernetes can only share storage volumes with containers in the same pod
+* Docker can deploy rolling updates but can\'t deploy automatic rollbacks; Kubernetes can deploy rolling updates as well as automatic rollbacks
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How to use secrets in Kubernetes?
 #### Q. How to Create and Use ConfigMap with Kubernetes?
-#### Q. What is a Kubernetes deployment?
 #### Q. What is a Kubernetes StatefulSet?
 #### Q. What are levels of abstraction in Kubernetes?
-#### Q. what is replicaset in kubernetes?
 #### Q. How to Configure Kubernetes for Rolling Update?
 #### Q. What is the difference between Docker Compose and Kubernetes?
 #### Q. How to use local docker images with Minikube?
 #### Q. What is the difference between ClusterIP, NodePort and LoadBalancer service types in Kubernetes?
 #### Q. What is the difference between kubernetes load balancer and ingress controller?
-#### Q. What is the difference between a pod and a deployment?
 #### Q. How to delete all pods in all kubernetes namespaces?
 #### Q. How do I force Kubernetes to re-pull an image?
 #### Q. How can I keep a container running on Kubernetes?

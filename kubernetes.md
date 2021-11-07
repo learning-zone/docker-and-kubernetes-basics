@@ -167,6 +167,44 @@ This specification creates a new Service object named "my-service", which target
 
 ## Q. ***What is replicaset in kubernetes?***
 
+A ReplicaSet\'s purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
+
+**Example:**
+
+```yaml
+# controllers/frontend.yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: php-redis
+        image: gcr.io/google_samples/gb-frontend:v3
+```
+
+Saving this manifest into frontend.yaml and submitting it to a Kubernetes cluster will create the defined ReplicaSet and the Pods that it manages.
+
+```bash
+kubectl apply -f https://kubernetes.io/examples/controllers/frontend.yaml
+
+# You can then get the current ReplicaSets deployed:
+kubectl get rs
+```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

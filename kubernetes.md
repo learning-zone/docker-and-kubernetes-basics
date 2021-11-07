@@ -110,6 +110,10 @@ The following are typical use cases for Deployments:
 
 ## Q. ***What is the difference between a pod and a deployment?***
 
+A pod is the core building block for running applications in a Kubernetes cluster; a deployment is a management tool used to control the way pods behave.
+
+Both Pod and Deployment are full-fledged objects in the Kubernetes API. Deployment manages creating Pods by means of ReplicaSets. What it boils down to is that Deployment will create Pods with spec taken from the template. It is rather unlikely that you will ever need to create Pods directly for a production use-case.
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

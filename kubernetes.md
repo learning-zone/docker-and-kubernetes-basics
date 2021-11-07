@@ -60,6 +60,34 @@ Pods are high-level structures that wrap one or more containers. This is because
 
 ## Q. ***What is a Kubernetes deployment?***
 
+A Kubernetes deployment is a resource object in Kubernetes that provides declarative updates to applications. A deployment allows you to describe an application\'s life cycle, such as which images to use for the app, the number of pods there should be, and the way in which they should be updated.
+
+**Example:** controllers/nginx-deployment.yaml
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

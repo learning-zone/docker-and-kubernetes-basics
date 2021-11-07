@@ -120,6 +120,28 @@ Both Pod and Deployment are full-fledged objects in the Kubernetes API. Deployme
 
 ## Q. ***What are Kubernetes Services?***
 
+A Kubernetes Service is an abstraction which defines a logical set of Pods running somewhere in your cluster, that all provide the same functionality. When created, each Service is assigned a unique IP address (also called clusterIP). This address is tied to the lifespan of the Service, and will not change while the Service is alive.
+
+Pods can be configured to talk to the Service, and know that communication to the Service will be automatically load-balanced out to some pod that is a member of the Service.
+
+**Example:**
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: MyApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+```
+
+This specification creates a new Service object named "my-service", which targets TCP port 9376 on any Pod with the app=MyApp label.
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
@@ -173,7 +195,7 @@ Namespaces are used for dividing cluster resources between multiple users. They 
 
 **Example:**
 
-```js
+```yaml
 // Get Kubernetes Namespace
 kubectl get namespace
 
@@ -326,7 +348,7 @@ All the init Containers will be executed sequentially and if there is an error i
 
 **Example:**
 
-```js
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -389,7 +411,7 @@ All the Containers will be executed parallelly and the whole functionality works
 
 **Example:**
 
-```js
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -454,7 +476,7 @@ All the Containers will be executed parallelly and the whole functionality works
 
 **Example:**
 
-```js
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -518,7 +540,7 @@ All the Containers will be executed parallelly and the whole functionality works
 
 **Example:**
 
-```js
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -678,7 +700,7 @@ Limit: An upper cap on the resources a single container can use. If it tries to 
 
 **Example:**
 
-```js
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -726,7 +748,7 @@ A Kubernetes administrator can create a deployment of a kind: PodDisruptionBudge
 
 **Example:** YAML Config using minAvailable
 
-```js
+```yaml
 apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
@@ -786,7 +808,7 @@ This architecture depends upon the application and many other factors. Following
 
 Adding type: LoadBalancer and nodePort as follows:
 
-```js
+```yaml
 spec:
  selector:
    app: some-app
@@ -806,7 +828,7 @@ spec:
 
 Add tls and secretName entries.
 
-```js
+```yaml
 spec:
  tls:
  - hosts:

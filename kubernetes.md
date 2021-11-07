@@ -111,7 +111,7 @@ spec:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***Exaplin the use case of Kubernetes deployment?***
+## Q. ***Explain the use case of Kubernetes deployment?***
 
 The following are typical use cases for Deployments:
 

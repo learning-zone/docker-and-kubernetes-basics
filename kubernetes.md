@@ -46,6 +46,10 @@ Docker is an open-source platform used to handle software development. Its main 
 
 A node is the smallest fundamental unit of computing hardware. It represents a single machine in a cluster, which could be a physical machine in a data center or a virtual machine from a cloud provider. Each machine can substitute any other machine in a Kubernetes cluster. The master in Kubernetes controls the nodes that have containers.
 
+<p align="center">
+  <img src="assets/node-overview.png" alt="Node Overview" width="400px" />
+</p>
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

@@ -52,7 +52,25 @@ A node is the smallest fundamental unit of computing hardware. It represents a s
 
 ## Q.  ***What are pods in Kubernetes?***
 
-Pods are high-level structures that wrap one or more containers. This is because containers are not run directly in Kubernetes. Containers in the same pod share a local network and the same resources, allowing them to easily communicate with other containers in the same pod as if they were on the same machine while at the same time maintaining a degree of isolation.
+Pods are the smallest deployable units of computing that you can create and manage in Kubernetes.
+
+A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers. Containers in the same pod share a local network and the same resources, allowing them to easily communicate with other containers in the same pod as if they were on the same machine while at the same time maintaining a degree of isolation.
+
+**Example:** The following is an example of a Pod which consists of a container running the image `nginx:1.14.2`.
+
+```yaml
+# pods/simple-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

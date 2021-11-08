@@ -14,6 +14,97 @@
 
 <br/>
 
+|Sl.No|  Questions                         |
+|-----|------------------------------------|
+| 01. |[What is Docker?](#q-what-is-docker)|
+| 02. |[What is a Docker Container?](#q-what-is-a-docker-container)|
+| 03. |[What are Docker Images?](#q-what-are-docker-images)|
+| 04. |[What is Docker Hub?](#q-what-is-docker-hub)|
+| 05. |[Explain Docker Architecture?](#q-explain-docker-architecture)|
+| 06. |[What is a Dockerfile?](#q-what-is-a-dockerfile)|
+| 07. |[Tell us something about Docker Compose.](#q-tell-us-something-about-docker-compose)|
+| 08. |[How is Dockerfile different from Docker Compose](#q-how-is-dockerfile-different-from-docker-compose)|
+| 09. |[What is Docker Swarm?](#q-what-is-docker-swarm)|
+| 10. |[What is a Docker Namespace?](#q-what-is-a-docker-namespace)|
+| 11. |[What is the lifecycle of a Docker Container?](#q-what-is-the-lifecycle-of-a-docker-container)|
+| 12. |[What is Docker Machine?](#q-what-is-docker-machine)|
+| 13. |[Suppose you have 3 containers running and out of these, you wish to access one of them. How do you access a running container?](#q-suppose-you-have-3-containers-running-and-out-of-these-you-wish-to-access-one-of-them-how-do-you-access-a-running-container)|
+| 14. |[Will you lose your data, when a docker container exits?](#q-will-you-lose-your-data-when-a-docker-container-exits)|
+| 15. |[Where all do you think Docker is being used?](#q-where-all-do-you-think-docker-is-being-used)|
+| 16. |[How is Docker different from other containerization methods?](#q-how-is-docker-different-from-other-containerization-methods)|
+| 17. |[Can I use JSON instead of YAML for my compose file in Docker?](#q-can-i-use-json-instead-of-yaml-for-my-compose-file-in-docker)|
+| 18. |[What is the Difference Between Containers and Virtual Machines?](#q-what-is-the-difference-between-containers-and-virtual-machines)|
+| 19. |[What is Hypervisor?](#q-what-is-hypervisor)|
+| 20. |[What is virtualization?](#q-what-is-virtualization)|
+| 21. |[What is containerization?](#q-what-is-containerization)|
+| 22. |[Difference between virtualization and containerization](#q-difference-between-virtualization-and-containerization)|
+| 23. |[Is there a way to identify the status of a Docker container?](#q-is-there-a-way-to-identify-the-status-of-a-docker-container)|
+| 24. |[Can you remove a paused container from Docker?](#q-can-you-remove-a-paused-container-from-docker)|
+| 25. |[Can a container restart by itself?](#q-can-a-container-restart-by-itself)|
+| 26. |[Is it better to directly remove the container using the rm command or stop the container followed by remove container?](#q-is-it-better-to-directly-remove-the-container-using-the-rm-command-or-stop-the-container-followed-by-remove-container)|
+| 27. |[Will cloud overtake the use of Containerization?](#q-will-cloud-overtake-the-use-of-containerization)|
+| 28. |[How many containers can run per host?](#q-how-many-containers-can-run-per-host)|
+| 29. |[Is it a good practice to run stateful applications on Docker? or What type of applications - Stateless or Stateful are more suitable for Docker Container?](#q-is-it-a-good-practice-to-run-stateful-applications-on-docker-or-what-type-of-applications-stateless-or-stateful-are-more-suitable-for-docker-container)|
+| 30. |[How will you monitor Docker in production?](#q-how-will-you-monitor-docker-in-production)|
+| 31. |[Is it a good practice to run Docker compose in production?](#q-is-it-a-good-practice-to-run-docker-compose-in-production)|
+| 32. |[What changes are expected in your docker compose file while moving it to production?](#q-what-changes-are-expected-in-your-docker-compose-file-while-moving-it-to-production)|
+| 33. |[Are you aware of load balancing across containers and hosts? How does it work?](#q-are-you-aware-of-load-balancing-across-containers-and-hosts-how-does-it-work)|
+| 34. |[What is a Docker Registry?](#q-what-is-a-docker-registry)|
+| 35. |[What is DockerHub?](#q-what-is-dockerhub)|
+| 36. |[How to create Docker container](#q-how-to-create-docker-container)|
+| 37. |[Does Docker container package up the entire OS?](#q-does-docker-container-package-up-the-entire-os)|
+| 38. |[Describe how many ways are available to configure Docker daemon?](#q-describe-how-many-ways-are-available-to-configure-docker-daemon)|
+| 39. |[Can you list reasons why Container Networking is so important?](#q-can-you-list-reasons-why-container-networking-is-so-important)|
+| 40. |[How to create a user-defined Bridge network ?](#q-how-to-create-a-user-defined-bridge-network)|
+| 41. |[What is memory-swap flag?](#q-what-is-memory-swap-flag)|
+| 42. |[Can you explain different volume mount types available in Docker?](#q-can-you-explain-different-volume-mount-types-available-in-docker)|
+| 43. |[How to share data among DockerHost?](#q-how-to-share-data-among-dockerhost)|
+| 44. |[How to Backup, Restore, or Migrate data volumes under Docker container?](#q-how-to-backup-restore-or-migrate-data-volumes-under-docker-container)|
+| 45. |[How to Configure Automated Builds on DockerHub](#q-how-to-configure-automated-builds-on-dockerhub)|
+| 46. |[How to configure the default logging driver under Docker?](#q-how-to-configure-the-default-logging-driver-under-docker)|
+| 47. |[Why do my services take 10 seconds to recreate or stop?](#q-why-do-my-services-take-10-seconds-to-recreate-or-stop)|
+| 48. |[How do I run multiple copies of a Compose file on the same host?](#q-how-do-i-run-multiple-copies-of-a-compose-file-on-the-same-host)|
+| 49. |[What is the difference between up, run, and start under Docker Compose?](#q-what-is-the-difference-between-up-run-and-start-under-docker-compose)|
+| 50. |[What is Docker Trusted Registry?](#q-what-is-docker-trusted-registry)|
+| 51. |[How to declare default environment variables under Docker Compose?](#q-how-to-declare-default-environment-variables-under-docker-compose)|
+| 52. |[Can you list out ways to share Compose configurations between files and projects under Docker Compose?](#q-can-you-list-out-ways-to-share-compose-configurations-between-files-and-projects-under-docker-compose)|
+| 53. |[What is the purpose of EXPOSE command in Dockerfile?](#q-what-is-the-purpose-of-expose-command-in-dockerfile)|
+| 54. |[Why Docker Monitoring is necessary?](#q-why-docker-monitoring-is-necessary)|
+| 55. |[Is it possible to run Kubernetes on Docker EE 2.0 Platform?](#q-is-it-possible-to-run-kubernetes-on-docker-ee-20-platform)|
+| 56. |[Can you use Docker Compose to build up Swarm/Kubernetes Cluster?](#q-can-you-use-docker-compose-to-build-up-swarm-kubernetes-cluster)|
+| 57. |[What is 'docker stack deploy' command meant for?](#q-what-is-docker-stack-deploy-command-meant-for)|
+| 58. |[Explain the concept of HA under Swarm Mode?](#q-explain-the-concept-of-ha-under-swarm-mode)|
+| 59. |[What are Docker secrets and why is it necessary](#q-what-are-docker-secrets-and-why-is-it-necessary)|
+| 60. |[What are docker networking](#q-what-are-docker-networking)|
+| 61. |[Explain a use case for Docker](#q-explain-a-use-case-for-docker)|
+| 62. |[Basic Docker Commands](#q-basic-docker-commands)|
+| 63. |[What is the difference between the COPY and ADD commands in a Dockerfile?](#q-what-is-the-difference-between-the-copy-and-add-commands-in-a-dockerfile)|
+| 64. |[What is Docker Volume?](#q-what-is-docker-volume)|
+| 65. |[When would you use "docker kill" or "docker rm -f"?](#q-when-would-you-use-docker-kill-or-docker-rm-f)|
+| 66. |[What is the difference between CMD and ENTRYPOINT in a Dockerfile?](#q-what-is-the-difference-between-cmd-and-entrypoint-in-a-dockerfile)|
+| 67. |[Do I lose my data when the Docker container exits?](#q-do-i-lose-my-data-when-the-docker-container-exits)|
+| 68. |[What is Build Cache in Docker?](#q-what-is-build-cache-in-docker)|
+| 69. |[What is the difference between "docker run" and "docker create"?](#q-what-is-the-difference-between-docker-run-and-docker-create)|
+| 70. |[What is the difference between a docker registry and repository?](#q-what-is-the-difference-between-a-docker-registry-and-repository)|
+| 71. |[What is the default CPU limit set for a container?](#q-what-is-the-default-cpu-limit-set-for-a-container)|
+| 72. |[Can you create containers without their own PID namespace](#q-can-you-create-containers-without-their-own-pid-namespace)|
+| 73. |[What is the difference between Docker Image and Layer?](#q-what-is-the-difference-between-docker-image-and-layer)|
+| 74. |[What is the difference between "expose" and "publish" in Docker?](#q-what-is-the-difference-between-expose-and-publish-in-docker)|
+| 75. |[Docker Compose vs. Dockerfile - which is better?](#q-docker-compose-vs-dockerfile-which-is-better)|
+| 76. |[What exactly do you mean by "Dockerized node"? Can this node be on-premises or in the cloud?](#q-what-exactly-do-you-mean-by-dockerized-node-can-this-node-be-on-premises-or-in-the-cloud)|
+| 77. |[How can we control the startup order of services in Docker compose?](#q-how-can-we-control-the-startup-order-of-services-in-docker-compose)|
+| 78. |[What is an orphan volume and how to remove it?](#q-what-is-an-orphan-volume-and-how-to-remove-it)|
+| 79. |[Can you explain dockerfile ONBUILD instruction?](#q-can-you-explain-dockerfile-onbuild-instruction)|
+| 80. |[How does Docker run containers in non-Linux systems?](#q-how-does-docker-run-containers-in-non-linux-systems)|
+| 81. |[How containers work at low level?](#q-how-containers-work-at-low-level)|
+| 82. |[Name some limitations of containers vs VM](#q-name-some-limitations-of-containers-vs-vm)|
+| 83. |[How to use Docker with multiple environments?](#q-how-to-use-docker-with-multiple-environments)|
+| 84. |[What is the difference between a Docker image and a container?](#q-what-is-the-difference-between-a-docker-image-and-a-container)|
+| 85. |[How to link containers?](#q-how-to-link-containers)|
+| 86. |[What is Paravirtualization?](#q-what-is-paravirtualization)|
+
+<br/>
+
 ## Q. ***What is Docker?***
 
 Docker is a containerization platform which packages your application and all its dependencies together in the form of containers so as to ensure that your application works seamlessly in any environment, be it development, test or production.

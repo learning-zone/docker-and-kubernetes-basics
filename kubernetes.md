@@ -1117,21 +1117,26 @@ Kubernetes provides several builtin types for some common usage scenarios. These
 
 ## Q. How to use secrets in Kubernetes?
 
-A `kubernetes.io/service-account-token` type of Secret is used to store a token that identifies a service account. When using this Secret type, you need to ensure that the `kubernetes.io/service-account.name` annotation is set to an existing service account name.
-
-The following example configuration declares a service account token Secret:
+Secrets can be defined as Kubernetes objects used to store sensitive data such as user name and passwords with encryption.
 
 ```yaml
 apiVersion: v1
 kind: Secret
 metadata:
-  name: secret-sa-sample
-  annotations:
-    kubernetes.io/service-account.name: "sa-name"
-type: kubernetes.io/service-account-token
+name: tomcat-pass
+type: Opaque
 data:
-  # You can include additional key value pairs as you do with Opaque Secrets
-  extra: YmFyCg==
+   password: <User Password>
+   username: <User Name>
+```
+
+**Creating the Secret:**
+
+```bash
+$ kubectl create –f Secret.yaml
+secrets/tomcat-pass
+
+$ kubectl apply -k .
 ```
 
 <div align="right">

@@ -1143,7 +1143,24 @@ $ kubectl apply -k .
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How to Create and Use ConfigMap with Kubernetes?
+## Q. How to Create and Use ConfigMap with Kubernetes?
+
+A Kubernetes ConfigMap is an API object that allows you to store data as key-value pairs. Kubernetes pods can use ConfigMaps as configuration files, environment variables or command-line arguments.
+
+ConfigMaps allow you to decouple environment-specific configurations from containers to make applications portable. However, they are not suitable for confidential data storage.
+
+**Create a ConfigMap:**
+
+```bash
+kubectl create configmap <map-name> <data-source>
+```
+
+where `<map-name>` is the name you want to assign to the ConfigMap and `<data-source>` is the directory, file, or literal value to draw the data from. The name of a ConfigMap object must be a valid DNS subdomain name.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. What is a Kubernetes StatefulSet?
 #### Q. What are levels of abstraction in Kubernetes?
 #### Q. How to Configure Kubernetes for Rolling Update?

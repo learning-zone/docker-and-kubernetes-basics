@@ -1096,7 +1096,48 @@ Docker Swarm can share storage volumes with any container easily, while Kubernet
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How to use secrets in Kubernetes?
+## Q. What are the types of secrets available in Kubernetes?
+
+Kubernetes provides several builtin types for some common usage scenarios. These types vary in terms of the validations performed and the constraints Kubernetes imposes on them.
+
+|Builtin Type   |Usage               |
+|---------------|--------------------|
+|Opaque|arbitrary user-defined data  |
+|kubernetes.io/service-account-token|service account token|
+|kubernetes.io/dockercfg|serialized ~/.dockercfg file|
+|kubernetes.io/dockerconfigjson|serialized ~/.docker/config.json file|
+|kubernetes.io/basic-auth|credentials for basic authentication|
+|kubernetes.io/ssh-auth|credentials for SSH authentication|
+|kubernetes.io/tls|data for a TLS client or server|
+|bootstrap.kubernetes.io/token|bootstrap token data|
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. How to use secrets in Kubernetes?
+
+A `kubernetes.io/service-account-token` type of Secret is used to store a token that identifies a service account. When using this Secret type, you need to ensure that the `kubernetes.io/service-account.name` annotation is set to an existing service account name.
+
+The following example configuration declares a service account token Secret:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-sa-sample
+  annotations:
+    kubernetes.io/service-account.name: "sa-name"
+type: kubernetes.io/service-account-token
+data:
+  # You can include additional key value pairs as you do with Opaque Secrets
+  extra: YmFyCg==
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How to Create and Use ConfigMap with Kubernetes?
 #### Q. What is a Kubernetes StatefulSet?
 #### Q. What are levels of abstraction in Kubernetes?

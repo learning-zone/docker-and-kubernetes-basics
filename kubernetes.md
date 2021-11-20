@@ -1233,7 +1233,27 @@ spec:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What are levels of abstraction in Kubernetes?
+## Q. What are levels of abstraction in Kubernetes?
+
+Deployments create and manage ReplicaSets, which create and manage Pods, which run on Nodes, which have a container runtime, which run the app code you put in your Docker image.
+
+Here are the six layers of abstractions when running a workload in Kubernetes starting with the highest-level abstraction.
+
+1. Deployment
+2. ReplicaSet
+3. Pod
+4. Node Cluster
+5. Node Processes
+6. Docker Container
+
+<p align="center">
+  <img src="assets/abstraction-2.png" alt="Container Orchestration" width="400px" />
+</p>
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How to Configure Kubernetes for Rolling Update?
 #### Q. What is the difference between Docker Compose and Kubernetes?
 #### Q. How to use local docker images with Minikube?

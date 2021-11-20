@@ -1391,7 +1391,82 @@ kubectl get pods
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is the difference between ClusterIP, NodePort and LoadBalancer service types in Kubernetes?
+## Q. What is the difference between ClusterIP, NodePort and LoadBalancer service types in Kubernetes?
+
+**ClusterIP:**
+
+A ClusterIP service is the default Kubernetes service. It gives you a service inside your cluster that other apps inside your cluster can access. There is no external access.
+
+The YAML for a ClusterIP service looks like this:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:  
+  name: my-internal-service
+spec:
+  selector:    
+    app: my-app
+  type: ClusterIP
+  ports:  
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
+```
+
+**NodePort:**
+
+A NodePort service is the most primitive way to get external traffic directly to your service. NodePort, as the name implies, opens a specific port on all the Nodes (the VMs), and any traffic that is sent to this port is forwarded to the service.
+
+The YAML for a NodePort service looks like this:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:  
+  name: my-nodeport-service
+spec:
+  selector:    
+    app: my-app
+  type: NodePort
+  ports:  
+  - name: http
+    port: 80
+    targetPort: 80
+    nodePort: 30036
+    protocol: TCP
+```
+
+**LoadBalancer:**
+
+A LoadBalancer service is the standard way to expose a service to the internet. On GKE, this will spin up a Network Load Balancer that will give you a single IP address that will forward all traffic to your service.
+
+The YAML for a LoadBalancer service looks like this:
+
+```yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "nginx-service"
+  namespace: "default"
+spec:
+  ports:
+    - port: 80
+  type: LoadBalancer
+  selector:
+    app: "nginx"
+```
+
+<p align="center">
+  <img src="assets/services.png" alt="Container Orchestration" width="400px" />
+</p>
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. What is the difference between kubernetes load balancer and ingress controller?
 #### Q. How to delete all pods in all kubernetes namespaces?
 #### Q. How do I force Kubernetes to re-pull an image?

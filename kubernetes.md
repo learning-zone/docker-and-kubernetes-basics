@@ -1333,7 +1333,31 @@ kubectl edit deployment nginx-deployment --record
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is the difference between Docker Compose and Kubernetes?
+## Q. What is the difference between Docker Compose and Kubernetes?
+
+Docker (or specifically, the docker command) is used to manage individual containers, docker-compose is used to manage multi-container applications and Kubernetes is a container orchestration tool.
+
+**Docker Compose:**
+
+* Docker Compose is the declarative version of the docker cli
+* It can start one or more containers
+* It can create one or more networks and attach containers to them
+* It can create one or more volumes and configure containers to mount them
+* All of this is for use on a single host
+
+**Kubernetes:**
+
+* Kubernetes is a platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.
+* are fault-tolerant,
+* can scale, and do this on-demand
+* use resources optimally
+* can discover other applications automatically, and communicate with each other
+* can update/rollback without any downtime.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How to use local docker images with Minikube?
 #### Q. What is the difference between ClusterIP, NodePort and LoadBalancer service types in Kubernetes?
 #### Q. What is the difference between kubernetes load balancer and ingress controller?

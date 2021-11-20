@@ -1478,7 +1478,18 @@ Load balancer distributes the requests among multiple backend services (of same 
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How to delete all pods in all kubernetes namespaces?
+## Q. How to delete all pods in kubernetes namespaces?
+
+Delete all the pods in a single namespace:
+
+```bash
+kubectl delete --all pods --namespace=foo
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How do I force Kubernetes to re-pull an image?
 #### Q. How can I keep a container running on Kubernetes?
 #### Q. How can I trigger a Kubernetes Scheduled Job manually?

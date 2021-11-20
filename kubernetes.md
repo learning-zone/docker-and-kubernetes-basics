@@ -1490,7 +1490,31 @@ kubectl delete --all pods --namespace=foo
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How do I force Kubernetes to re-pull an image?
+## Q. How do I force Kubernetes to re-pull an image?
+
+Kubernetes will pull upon Pod creation if either:
+
+* Using images tagged :latest
+* imagePullPolicy: Always is specified
+
+**Example:**
+
+```yaml
+spec:
+  containers:
+  - name: myapp
+    image: myregistry.com/myapp:5c3dda6b
+    ports:
+    - containerPort: 80
+    imagePullPolicy: Always
+  imagePullSecrets:
+    - name: myregistry.com-registry-key
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How can I keep a container running on Kubernetes?
 #### Q. How can I trigger a Kubernetes Scheduled Job manually?
 #### Q. What is required to deploy a simple application, like a web server in Kubernetes?

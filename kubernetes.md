@@ -1254,7 +1254,85 @@ Here are the six layers of abstractions when running a workload in Kubernetes st
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How to Configure Kubernetes for Rolling Update?
+## Q. How to Configure Kubernetes for Rolling Update?
+
+One of the primary benefits of using a Deployment to control your pods is the ability to perform rolling updates. Rolling updates allow you to update the configuration of your pods gradually, and Deployments offer many options to control this process.
+
+The deployment file properly configured for rolling updates should look like this:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 4
+  selector:
+
+    matchLabels:
+      app: nginx
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.0
+
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            successThreshold: 1
+```
+
+* **initialDelaySeconds** specifies how long the probe has to wait to start after the container starts.
+* **periodSeconds** is the time between two probes. The default is **10** seconds, while the minimal value is **1** second.
+* **successThreshold** is the minimum number of consecutive successful probes after a failed one for the entire process to be considered successful. The default and minimal values are both **1**.
+
+```bash
+kubectl apply -f nginx-text.yaml --record
+```
+
+There are three ways to perform rolling updates.
+
+For example, to change the app image:
+
+Option 1: You can use kubectl set to perform the action on the command line:
+
+```bash
+kubectl set image deployment nginx-deployment nginx=nginx:1.14.2 --record
+```
+
+Option 2: Alternatively, modify the image version in the spec.templates.spec.containers section of the yaml file. Then, use kubectl replace to perform the update:
+
+```bash
+kubectl replace -f nginx-test.yaml
+```
+
+Option 3: You can also use kubectl edit to edit the deployment directly:
+
+```bash
+kubectl edit deployment nginx-deployment --record
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. What is the difference between Docker Compose and Kubernetes?
 #### Q. How to use local docker images with Minikube?
 #### Q. What is the difference between ClusterIP, NodePort and LoadBalancer service types in Kubernetes?

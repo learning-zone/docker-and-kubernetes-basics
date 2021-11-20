@@ -1358,7 +1358,39 @@ Docker (or specifically, the docker command) is used to manage individual contai
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How to use local docker images with Minikube?
+## Q. How to use local docker images with Minikube?
+
+To use an image without uploading it, you can follow these steps:
+
+* Set the environment variables with `eval $(minikube docker-env)`
+* Build the image with the Docker daemon of Minikube (eg `docker build -t my-image .`)
+* Set the image in the pod spec like the build tag (eg `my-image`)
+* Set the `imagePullPolicy` to `Never`, otherwise Kubernetes will try to download the image.
+
+**Example:**
+
+```bash
+# Start minikube
+minikube start
+
+# Set docker env
+eval $(minikube docker-env)             # unix shells
+minikube docker-env | Invoke-Expression # PowerShell
+
+# Build image
+docker build -t foo:0.0.1 .
+
+# Run in minikube
+kubectl run hello-foo --image=foo:0.0.1 --image-pull-policy=Never
+
+# Check that it's running
+kubectl get pods
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. What is the difference between ClusterIP, NodePort and LoadBalancer service types in Kubernetes?
 #### Q. What is the difference between kubernetes load balancer and ingress controller?
 #### Q. How to delete all pods in all kubernetes namespaces?

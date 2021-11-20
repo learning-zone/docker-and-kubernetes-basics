@@ -1467,7 +1467,17 @@ spec:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is the difference between kubernetes load balancer and ingress controller?
+## Q. What is the difference between kubernetes load balancer and ingress controller?
+
+Load balancer distributes the requests among multiple backend services (of same type) whereas ingress is more like an API gateway (reverse proxy) which routes the request to a specific backend service based on, for instance, the URL.
+
+* A Kubernetes LoadBalancer is a type of Service.
+* A Kubernetes Ingress is not a type of Service. It is a collection of rules. An Ingress Controller in your cluster watches for Ingress resources, and attempts to update the server side configuration according to the rules specified in the Ingress.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How to delete all pods in all kubernetes namespaces?
 #### Q. How do I force Kubernetes to re-pull an image?
 #### Q. How can I keep a container running on Kubernetes?

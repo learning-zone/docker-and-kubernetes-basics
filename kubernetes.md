@@ -1515,7 +1515,34 @@ spec:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How can I keep a container running on Kubernetes?
+## Q. How can I keep a container running on Kubernetes?
+
+**Using POD Config:**
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu:latest
+    # Just spin & wait forever
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
+```
+
+**Using CMD in Dockerfile:**
+
+```bash
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How can I trigger a Kubernetes Scheduled Job manually?
 #### Q. What is required to deploy a simple application, like a web server in Kubernetes?
 #### Q. When would you use a Deployment versus a StatefulSet versus a DaemonSet?

@@ -1543,7 +1543,6 @@ CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How can I trigger a Kubernetes Scheduled Job manually?
 #### Q. What is required to deploy a simple application, like a web server in Kubernetes?
 #### Q. When would you use a Deployment versus a StatefulSet versus a DaemonSet?
 #### Q. What are container orchestrators and why are they required?

@@ -1543,7 +1543,92 @@ CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is required to deploy a simple application, like a web server in Kubernetes?
+## Q. What is required to deploy a simple application, like a web server in Kubernetes?
+
+You can run an application by creating a Kubernetes Deployment object, and you can describe a Deployment in a YAML file. For example, this YAML file **nginx-deployment.yaml** describes a Deployment that runs the nginx:31871:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+```
+
+Create the deployment with following command
+
+```bash
+kubectl create -f nginx-deployment.yaml
+```
+
+The above command will create one pod with single NGINX container. The NGINX web server will start listening on port 80. Since the replicas is specified as 1 it will create only single pod for service to expose.
+
+Check the deployment and pod is created successfully.
+
+```bash
+root@ubuntu-s-1vcpu-2gb-nyc3-01:~/single-node-kubernetes-cluster# kubectl get deployment
+NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+nginx     1         1         1            1           11m
+root@ubuntu-s-1vcpu-2gb-nyc3-01:~/single-node-kubernetes-cluster# kubectl get pods
+NAME                     READY     STATUS    RESTARTS   AGE
+nginx-666865b5dd-w8q9m   1/1       Running   0          11m
+```
+
+Here is service YAML `nginx-service.yaml` file.
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ngnix-service
+spec:
+  selector:
+    app: nginx
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+```
+
+Now, let\'s create the service.
+
+```bash
+kubectl create -f nginx-service.yaml
+```
+
+The service will be created as type NodePort. That means, it will expose the NGINX web server on each node with port 80. The appropriate pods are selected for this service depending on label selector “app: nginx”.
+
+Check the service is created successfully.
+
+```bash
+root@ubuntu-s-1vcpu-2gb-nyc3-01:~/single-node-kubernetes-cluster# kubectl get svc
+NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+ngnix-service   NodePort    10.96.163.55   <none>        80:31871/TCP   25m
+```
+
+Note, the port field, the NGINX service is available at node port 31871. Now you can access the web page at `http://<node IP address>:31871`
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. When would you use a Deployment versus a StatefulSet versus a DaemonSet?
 #### Q. What are container orchestrators and why are they required?
 #### Q. Tell me about a Kubernetes cluster you deployed. How did you test for load? 

@@ -1654,7 +1654,24 @@ Some typical use cases of a DaemonSet is to run cluster level applications like:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What are container orchestrators and why are they required?
+## Q. What are container orchestrators and why are they required?
+
+Container orchestration is all about managing the lifecycles of containers, especially in large, dynamic environments. Software teams use container orchestration to control and automate many tasks:
+
+* Provisioning and deployment of containers
+* Redundancy and availability of containers
+* Scaling up or removing containers to spread application load evenly across host infrastructure
+* Movement of containers from one host to another if there is a shortage of resources in a host, or if a host dies
+* Allocation of resources between containers
+* External exposure of services running in a container with the outside world
+* Load balancing of service discovery between containers
+* Health monitoring of containers and hosts
+* Configuration of an application in relation to the containers running it
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. Tell me about a Kubernetes cluster you deployed. How did you test for load? 
 #### Q. What monitoring did you implement? What metrics did you track?
 #### Q. What types of workloads run well on Kubernetes, and what types do not?

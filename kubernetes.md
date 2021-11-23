@@ -651,11 +651,11 @@ Configuring resource limits is very important when it comes to Ambassador contai
 
 Tools which are utilized for container monitoring are:
 
-* Grafana
-* cAdvisor
-* Heapster
-* InfluxDB
-* Prometheus
+* [Grafana](https://grafana.com/)
+* [cAdvisor](https://github.com/google/cadvisor)
+* [Heapster](https://github.com/kubernetes-retired/heapster)
+* [InfluxDB](https://www.influxdata.com/)
+* [Prometheus](https://prometheus.io/docs/guides/cadvisor/)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1672,8 +1672,6 @@ Container orchestration is all about managing the lifecycles of containers, espe
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Tell me about a Kubernetes cluster you deployed. How did you test for load? 
-#### Q. What monitoring did you implement? What metrics did you track?
 #### Q. What types of workloads run well on Kubernetes, and what types do not?
 #### Q. What is the Operator pattern and when should you use it?
 #### Q. How can RBAC be used to grant permission to Kubernetes resources? Are there any limitations?

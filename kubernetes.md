@@ -1629,7 +1629,31 @@ Note, the port field, the NGINX service is available at node port 31871. Now you
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. When would you use a Deployment versus a StatefulSet versus a DaemonSet?
+## Q. When would you use a Deployment versus a StatefulSet versus a DaemonSet?
+
+**Deployments:**
+
+Deployment is the easiest and most used resource for deploying your application. It is a Kubernetes controller that matches the current state of your cluster to the desired state mentioned in the Deployment manifest.
+
+**StatefulSets:**
+
+StatefulSet(stable-GA in k8s v1.9) is a Kubernetes resource used to manage stateful applications. It manages the deployment and scaling of a set of Pods, and provides guarantee about the ordering and uniqueness of these Pods.
+
+StatefulSet is also a Controller but unlike Deployments, it doesn\'t create ReplicaSet rather itself creates the Pod with a unique naming convention.
+
+**DaemonSet:**
+
+A DaemonSet is a controller that ensures that the pod runs on all the nodes of the cluster. If a node is added/removed from a cluster, DaemonSet automatically adds/deletes the pod.
+
+Some typical use cases of a DaemonSet is to run cluster level applications like:
+
+* Monitoring Exporters
+* Logs Collection Daemon
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. What are container orchestrators and why are they required?
 #### Q. Tell me about a Kubernetes cluster you deployed. How did you test for load? 
 #### Q. What monitoring did you implement? What metrics did you track?

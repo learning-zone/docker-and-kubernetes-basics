@@ -1703,7 +1703,28 @@ Some of the things that you can use an operator to automate include:
 * simulating failure in all or part of your cluster to test its resilience
 * choosing a leader for a distributed application without an internal member election process
 
-#### Q. How can RBAC be used to grant permission to Kubernetes resources? Are there any limitations?
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. How can RBAC be used to grant permission to Kubernetes resources?
+
+Role-based access control (RBAC) is a method of regulating access to computer or network resources based on the roles of individual users within your organization.
+
+RBAC authorization uses the `rbac.authorization.k8s.io` API group to drive authorization decisions, allowing you to dynamically configure policies through the Kubernetes API.
+
+To enable RBAC, start the API server with the `--authorization-mode` flag set to a comma-separated list that includes `RBAC`; for example:
+
+```bash
+kube-apiserver --authorization-mode=Example,RBAC --other-options --more-options
+```
+
+The RBAC API declares four kinds of Kubernetes object: Role, ClusterRole, RoleBinding and ClusterRoleBinding.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How would you expose an application running in a Kubernetes cluster to the outside world?
 #### Q. What tools can be used to monitor your cluster and your applications?
 #### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean?

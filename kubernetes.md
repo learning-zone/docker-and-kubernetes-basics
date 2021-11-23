@@ -1688,7 +1688,21 @@ Every time you add a node to your cluster that matches the specification in a Da
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is the Operator pattern and when should you use it?
+## Q. What is the Operator pattern and when should you use it?
+
+Operators are software extensions to Kubernetes that make use of custom resources to manage applications and their components. Operators follow Kubernetes principles, notably the control loop.
+
+Kubernetes operator pattern concept lets you extend the cluster\'s behaviour without modifying the code of Kubernetes itself by linking controllers to one or more custom resources. Operators are clients of the Kubernetes API that act as controllers for a Custom Resource.
+
+Some of the things that you can use an operator to automate include:
+
+* deploying an application on demand
+* taking and restoring backups of that application's state
+* handling upgrades of the application code alongside related changes such as database schemas or extra configuration settings
+* publishing a Service to applications that don't support Kubernetes APIs to discover them
+* simulating failure in all or part of your cluster to test its resilience
+* choosing a leader for a distributed application without an internal member election process
+
 #### Q. How can RBAC be used to grant permission to Kubernetes resources? Are there any limitations?
 #### Q. How would you expose an application running in a Kubernetes cluster to the outside world?
 #### Q. What tools can be used to monitor your cluster and your applications?

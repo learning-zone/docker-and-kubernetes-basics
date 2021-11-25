@@ -1835,7 +1835,6 @@ where `<external-ip>` is the external IP address (`LoadBalancer Ingress`) of you
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What tools can be used to monitor your cluster and your applications?
 #### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean?
 #### Q. What is Helm Charts?
 #### Q. How to persist data in kubernetes using volumes?

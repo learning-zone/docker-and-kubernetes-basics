@@ -1725,7 +1725,116 @@ The RBAC API declares four kinds of Kubernetes object: Role, ClusterRole, RoleBi
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How would you expose an application running in a Kubernetes cluster to the outside world?
+## Q. How would you expose an application running in a Kubernetes cluster to the outside world?
+
+A Kubernetes Service is a Kubernetes object which enables cross-communication between different components within and outside a Kubernetes cluster. It exposes Kubernetes applications to the outside world while simultaneously allowing network access to a set of Pods within and outside of a Kubernetes cluster.
+
+**Creating a Service:**
+
+service/load-balancer-example.yaml
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: load-balancer-example
+  name: hello-world
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: load-balancer-example
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: load-balancer-example
+    spec:
+      containers:
+      - image: gcr.io/google-samples/node-hello:1.0
+        name: hello-world
+        ports:
+        - containerPort: 8080
+```
+
+```bash
+kubectl apply -f https://k8s.io/examples/service/load-balancer-example.yaml
+```
+
+The preceding command creates a Deployment and an associated ReplicaSet. The ReplicaSet has five Pods each of which runs the Hello World application.
+
+```bash
+# Display information about the Deployment
+kubectl get deployments hello-world
+kubectl describe deployments hello-world
+
+# Display information about your ReplicaSet objects
+kubectl get replicasets
+kubectl describe replicasets
+
+# Create a Service object that exposes the deployment
+kubectl expose deployment hello-world --type=LoadBalancer --name=my-service
+
+# Display information about the Service
+kubectl get services my-service
+
+# ouput
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)    AGE
+my-service   LoadBalancer   10.3.245.137   104.198.205.71   8080/TCP   54s
+```
+
+**Display detailed information about the Service:**
+
+```bash
+kubectl describe services my-service
+```
+
+Output
+
+```bash
+Name:           my-service
+Namespace:      default
+Labels:         app.kubernetes.io/name=load-balancer-example
+Annotations:    <none>
+Selector:       app.kubernetes.io/name=load-balancer-example
+Type:           LoadBalancer
+IP:             10.3.245.137
+LoadBalancer Ingress:   104.198.205.71
+Port:           <unset> 8080/TCP
+NodePort:       <unset> 32377/TCP
+Endpoints:      10.0.0.6:8080,10.0.1.6:8080,10.0.1.7:8080 + 2 more...
+Session Affinity:   None
+Events:         <none>
+```
+
+Make a note of the external IP address (`LoadBalancer Ingress`) exposed by your service. In this example, the external IP address is 104.198.205.71. Also note the value of Port and NodePort. In this example, the Port is 8080 and the NodePort is 32377.
+
+In the preceding output, you can see that the service has several endpoints: 10.0.0.6:8080,10.0.1.6:8080,10.0.1.7:8080 + 2 more. These are internal addresses of the pods that are running the Hello World application. To verify these are pod addresses, enter this command:
+
+```bash
+kubectl get pods --output=wide
+
+# Output
+NAME                         ...  IP         NODE
+hello-world-2895499144-1jaz9 ...  10.0.1.6   gke-cluster-1-default-pool-e0b8d269-1afc
+hello-world-2895499144-2e5uh ...  10.0.1.8   gke-cluster-1-default-pool-e0b8d269-1afc
+hello-world-2895499144-9m4h1 ...  10.0.0.6   gke-cluster-1-default-pool-e0b8d269-5v7a
+hello-world-2895499144-o4z13 ...  10.0.1.7   gke-cluster-1-default-pool-e0b8d269-1afc
+hello-world-2895499144-segjf ...  10.0.2.5   gke-cluster-1-default-pool-e0b8d269-cpuc
+```
+
+Use the external IP address (LoadBalancer Ingress) to access the Hello World application:
+
+```bash
+curl http://<external-ip>:<port>
+```
+
+where `<external-ip>` is the external IP address (`LoadBalancer Ingress`) of your Service, and `<port>` is the value of Port in your Service description. If you are using minikube, typing minikube service my-service will automatically open the Hello World application in a browser.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. What tools can be used to monitor your cluster and your applications?
 #### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean?
 #### Q. What is Helm Charts?

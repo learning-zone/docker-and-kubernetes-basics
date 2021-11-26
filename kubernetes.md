@@ -1835,11 +1835,23 @@ where `<external-ip>` is the external IP address (`LoadBalancer Ingress`) of you
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean?
-#### Q. What is Helm Charts?
+## Q. What is Helm Charts?
+
+Helm Charts are simply Kubernetes YAML manifests combined into a single package that can be advertised to your Kubernetes clusters. Once packaged, installing a Helm Chart into your cluster is as easy as running a single helm install, which really simplifies the deployment of containerized applications.
+
+Helm has two parts to it:
+
+* The client (CLI), which lives on your local workstation.
+* The server (Tiller), which lives on the Kubernetes cluster to execute what\'s needed.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How to persist data in kubernetes using volumes?
 #### Q. How to create storage class in kubernetes?
 #### Q. How to deploy to kubernetes cluster on google cloud?
+#### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean?
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

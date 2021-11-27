@@ -1,6 +1,26 @@
 # Kubernetes Workshop
 
-## Kubernetes Dashboard Setup
+1. [Introduction](#1-introduction)
+1. [Kubernetes Dashboard Setup](#2-kubernetes-dashboard-setup)
+1. [Kubernetes Pod](#3-kubernetes-pod)
+1. [Kubernetes Node](#4-kubernetes-node)
+1. [Kubernetes Service](#5-kubernetes-service)
+1. [Kubernetes Deployment](#6-kubernetes-deployment)
+1. [Kubernetes ReplicaSet](#7-kubernetes-replicaset)
+1. [Kubernetes Namespace](#8-kubernetes-namespace)
+1. [Kubernetes Volume](#9-kubernetes-volume)
+1. [Kubernetes Secrets](#10-kubernetes-secrets)
+
+## 1. Introduction
+
+* Kubernetes Architecture
+* Kubernetes installation
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## 2. Kubernetes Dashboard Setup
 
 * [Kubernetes UI Dashboard Docker Image](https://hub.docker.com/r/kubernetesui/dashboard)
 * [Dashboard Settings](https://github.com/kubernetes/dashboard)
@@ -11,6 +31,19 @@ kubectl proxy                               // Launch Kubernetes Dashboard
 ```
 
 * [Kubernetes UI Dashboard Login](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login)
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## 3. Kubernetes Pod
+## 4. Kubernetes Node
+## 5. Kubernetes Service
+## 6. Kubernetes Deployment
+## 7. Kubernetes ReplicaSet
+## 8. Kubernetes Namespace
+## 9. Kubernetes Volume
+## 10. Kubernetes Secrets
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

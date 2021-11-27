@@ -1898,7 +1898,31 @@ spec:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How to create storage class in kubernetes?
+## Q. How to create storage class in kubernetes?
+
+A StorageClass provides a way for administrators to describe the "classes" of storage they offer. Each StorageClass contains the fields `provisioner`, `parameters`, and `reclaimPolicy`, which are used when a PersistentVolume belonging to the class needs to be dynamically provisioned.
+
+Administrators set the name and other parameters of a class when first creating StorageClass objects, and the objects cannot be updated once they are created. Administrators can specify a default StorageClass only for PVCs that don\'t request any particular class to bind to.
+
+```yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: standard
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp2
+reclaimPolicy: Retain
+allowVolumeExpansion: true
+mountOptions:
+  - debug
+volumeBindingMode: Immediate
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How to deploy to kubernetes cluster on google cloud?
 #### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean?
 

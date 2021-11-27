@@ -2043,6 +2043,8 @@ These are the steps to deploy a service to GKE:
 
 #### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean?
 
+*ToDo*
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

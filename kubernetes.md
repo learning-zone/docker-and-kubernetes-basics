@@ -1923,7 +1923,21 @@ volumeBindingMode: Immediate
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. How to deploy to kubernetes cluster on google cloud?
+## Q. How to deploy to kubernetes cluster on google cloud?
+
+These are the steps to deploy a service to GKE:
+
+* [Create a Google Cloud Account](https://console.cloud.google.com/)
+* Create a Project
+* Create a Kubernetes Cluster
+* Install Google Cloud SDK
+* Initialize Google Cloud SDK
+* Set kube config
+* Push Image to the Container Registry
+* Deploy Kubernetes Resources
+* Create an Ingress Load Balancer
+* Run Kubernetes Web UI Dashboard
+
 #### Q. Kubernetes APIs have been described as both imperative and declarative. What does this mean?
 
 <div align="right">

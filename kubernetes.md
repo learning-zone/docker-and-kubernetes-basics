@@ -1,5 +1,108 @@
 # Kubernetes Interview Questions
 
+## Table of Contents
+
+|Sl.No|  Questions                         |
+|-----|------------------------------------|
+| 01.|[What is Kubernetes?](#q-what-is-kubernetes)|
+| 02.|[How Container orchestration is beneficial?](#q-how-container-orchestration-is-beneficial)|
+| 03.|[How are Kubernetes and Docker related?](#q-how-are-kubernetes-and-docker-related)|
+| 04.|[What is a node in Kubernetes?](#q-what-is-a-node-in-kubernetes)|
+| 05.|[What are pods in Kubernetes?](#q-what-are-pods-in-kubernetes)|
+| 06.|[What is a Kubernetes deployment?](#q-what-is-a-kubernetes-deployment)|
+| 07.|[Explain the use case of Kubernetes deployment?](#q-explain-the-use-case-of-kubernetes-deployment)|
+| 08.|[What is the difference between a pod and a deployment?](#q-what-is-the-difference-between-a-pod-and-a-deployment)|
+| 09.|[What are Kubernetes Services?](#q-what-are-kubernetes-services)|
+| 10.|[What is replicaset in kubernetes?](#q-what-is-replicaset-in-kubernetes)|
+| 11.|[What are clusters in Kubernetes?](#q-what-are-clusters-in-kubernetes)|
+| 12.|[What are Daemon sets?](#q-what-are-daemon-sets)|
+| 13.|[What is Heapster in Kubernetes?](#q-what-is-heapster-in-kubernetes)|
+| 14.|[What is a Namespace in Kubernetes?](#q-what-is-a-namespace-in-kubernetes)|
+| 15.|[Why use namespaces?](#q-why-use-namespaces)|
+| 16.|[What is the Kubernetes controller manager?](#q-what-is-the-kubernetes-controller-manager)|
+| 17.|[What are the types of controller managers?](#q-what-are-the-types-of-controller-managers)|
+| 18.|[What is ETCD in Kubernetes?](#q-what-is-etcd-in-kubernetes)|
+| 19.|[What is ClusterIP?](#q-what-is-clusterip)|
+| 20.|[What is NodePort?](#q-what-is-nodeport)|
+| 21.|[What is a headless service?](#q-what-is-a-headless-service)|
+| 22.|[What is Kubelet?](#q-what-is-kubelet)|
+| 23.|[What is the Load Balancer in Kubernetes?](#q-what-is-the-load-balancer-in-kubernetes)|
+| 24.|[What is Kubectl?](#q-what-is-kubectl)|
+| 25.|[What is Kube-proxy?](#q-what-is-kube-proxy)|
+| 26.|[Can we put multiple containers inside a pod?](#q-can-we-put-multiple-containers-inside-a-pod)|
+| 27.|[Name some container patterns you come across or use?](#q-name-some-container-patterns-you-come-across-or-use)|
+| 28.|[What is Init Container Pattern?](#q-what-is-init-container-pattern)|
+| 29.|[When do you use Init Container Pattern?](#q-when-do-you-use-init-container-pattern)|
+| 30.|[How do you configure resource limits for the Init Container Pattern?](#q-how-do-you-configure-resource-limits-for-the-init-container-pattern)|
+| 31.|[What is Sidecar Container Design?](#q-what-is-sidecar-container-design)|
+| 32.|[When do you use Sidecar Container Pattern?](#q-when-do-you-use-sidecar-container-pattern)|
+| 33.|[How do you configure resource limits for the Sidecar Container Pattern?](#q-how-do-you-configure-resource-limits-for-the-sidecar-container-pattern)|
+| 34.|[What is Adapter Container Pattern?](#q-what-is-adapter-container-pattern)|
+| 35.|[When do you use Adapter Container Pattern?](#q-when-do-you-use-adapter-container-pattern)|
+| 36.|[How do you configure resource limits for the Adapter Container Pattern?](#q-how-do-you-configure-resource-limits-for-the-adapter-container-pattern)|
+| 37.|[What is Ambassador Container Pattern?](#q-what-is-ambassador-container-pattern)|
+| 38.|[When do you use Ambassador Container Pattern?](#q-when-do-you-use-ambassador-container-pattern)|
+| 39.|[How do you configure resource limits for the Ambassador Container Pattern?](#q-how-do-you-configure-resource-limits-for-the-ambassador-container-pattern)|
+| 40.|[Point out the tools which are utilized for container monitoring?](#q-point-out-the-tools-which-are-utilized-for-container-monitoring)|
+| 41.|[Disadvantages of Kubernetes](#q-disadvantages-of-kubernetes)|
+| 42.|[Why use Kubernetes?](#q-why-use-kubernetes)|
+| 43.|[What is the function of clusters in Kubernetes?](#q-what-is-the-function-of-clusters-in-kubernetes)|
+| 44.|[Characteristics of Kubernetes](#q-characteristics-of-kubernetes)|
+| 45.|[Define Ingress network](#q-define-ingress-network)|
+| 46.|[List the uses of GKE](#q-list-the-uses-of-gke)|
+| 47.|[Explain the main components of Kubernetes architecture?](#q-explain-the-main-components-of-kubernetes-architecture)|
+| 48.|[How do we control the resource usage of POD?](#q-how-do-we-control-the-resource-usage-of-pod)|
+| 49.|[What are the various K8\'s services running on nodes and describe the role of each service?](#q-what-are-the-various-k8-s-services-running-on-nodes-and-describe-the-role-of-each-service)|
+| 50.|[What is PDB (Pod Disruption Budget)?](#q-what-is-pdb-pod-disruption-budget)|
+| 51.|[What are the various things that can be done to increase Kubernetes security?](#q-what-are-the-various-things-that-can-be-done-to-increase-kubernetes-security)|
+| 52.|[How to monitor the Kubernetes cluster?](#q-how-to-monitor-the-kubernetes-cluster)|
+| 53.|[How to get the central logs from POD?](#q-how-to-get-the-central-logs-from-pod)|
+| 54.|[How to turn the service defined below in the spec into an external one?](#q-how-to-turn-the-service-defined-below-in-the-spec-into-an-external-one)|
+| 55.|[How to configure TLS with Ingress?](#q-how-to-configure-tls-with-ingress)|
+| 56.|[What is a Kubernetes Operator?](#q-what-is-a-kubernetes-operator)|
+| 57.|[Why do we need Operators?](#q-why-do-we-need-operators)|
+| 58.|[What difference do you find between Docker Swarm and Kubernetes?](#q-what-difference-do-you-find-between-docker-swarm-and-kubernetes)|
+| 59. |[What difference do you find between deploying applications on the host and containers?](#q-what-difference-do-you-find-between-deploying-applications-on-the-host-and-containers)|
+| 60.|[What is Minikube?](#q-what-is-minikube)|
+| 61.|[How Kubernetes simplifies the containerized Deployment](#q-how-kubernetes-simplifies-the-containerized-deployment)|
+| 62.|[What is the role of Kube-apiserver and Kube-scheduler?](#q-what-is-the-role-of-kube-apiserver-and-kube-scheduler)|
+| 63.|[How do master nodes in Kubernetes work?](#q-how-do-master-nodes-in-kubernetes-work)|
+| 64.|[What are the different types of services in Kubernetes?](#q-what-are-the-different-types-of-services-in-kubernetes)|
+| 65.|[What do you understand about Cloud controller managers?](#q-what-do-you-understand-about-cloud-controller-managers)|
+| 66.|[What is the difference between a replica set and a replication controller?](#q-what-is-the-difference-between-a-replica-set-and-a-replication-controller)|
+| 67.|[What are federated clusters?](#q-what-are-federated-clusters)|
+| 68.|[What are the best security measures that you can take while using Kubernetes?](#q-what-are-the-best-security-measures-that-you-can-take-while-using-kubernetes)|
+| 69.|[What are the main differences between the Docker Swarm and Kubernetes?](#q-what-are-the-main-differences-between-the-docker-swarm-and-kubernetes)|
+| 70.|[What are the types of secrets available in Kubernetes?](#q-what-are-the-types-of-secrets-available-in-kubernetes)|
+| 71.|[How to use secrets in Kubernetes?](#q-how-to-use-secrets-in-kubernetes)|
+| 72.|[How to Create and Use ConfigMap with Kubernetes?](#q-how-to-create-and-use-configmap-with-kubernetes)|
+| 73.|[What is a Kubernetes StatefulSet?](#q-what-is-a-kubernetes-statefulset)|
+| 74.|[What are levels of abstraction in Kubernetes?](#q-what-are-levels-of-abstraction-in-kubernetes)|
+| 75.|[How to Configure Kubernetes for Rolling Update?](#q-how-to-configure-kubernetes-for-rolling-update)|
+| 76.|[What is the difference between Docker Compose and Kubernetes?](#q-what-is-the-difference-between-docker-compose-and-kubernetes)|
+| 77.|[How to use local docker images with Minikube?](#q-how-to-use-local-docker-images-with-minikube)|
+| 78.|[What is the difference between ClusterIP, NodePort and LoadBalancer service types in Kubernetes?](#q-what-is-the-difference-between-clusterip-nodeport-and-loadbalancer-service-types-in-kubernetes)|
+| 79.|[What is the difference between kubernetes load balancer and ingress controller?](#q-what-is-the-difference-between-kubernetes-load-balancer-and-ingress-controller)|
+| 80.|[How to delete all pods in kubernetes namespaces?](#q-how-to-delete-all-pods-in-kubernetes-namespaces)|
+| 81.|[How do I force Kubernetes to re-pull an image?](#q-how-do-i-force-kubernetes-to-re-pull-an-image)|
+| 82.|[How can I keep a container running on Kubernetes?](#q-how-can-i-keep-a-container-running-on-kubernetes)|
+| 83.|[What is required to deploy a simple application, like a web server in Kubernetes?](#q-what-is-required-to-deploy-a-simple-application-like-a-web-server-in-kubernetes)|
+| 84.|[When would you use a Deployment versus a StatefulSet versus a DaemonSet?](#q-when-would-you-use-a-deployment-versus-a-statefulset-versus-a-daemonset)|
+| 85.|[What are container orchestrators and why are they required?](#q-what-are-container-orchestrators-and-why-are-they-required)|
+| 86.|[What type of workloads run well on Kubernetes, and what types do not?](#q-what-type-of-workloads-run-well-on-kubernetes-and-what-types-do-not)|
+| 87.|[What is the Operator pattern and when should you use it?](#q-what-is-the-operator-pattern-and-when-should-you-use-it)|
+| 88.|[How can RBAC be used to grant permission to Kubernetes resources?](#q-how-can-rbac-be-used-to-grant-permission-to-kubernetes-resources)|
+| 89.|[How would you expose an application running in a Kubernetes cluster to the outside world?](#q-how-would-you-expose-an-application-running-in-a-kubernetes-cluster-to-the-outside-world)|
+| 90.|[What is Helm Charts?](#q-what-is-helm-charts)|
+| 91.|[How to persist data in kubernetes using volumes?](#q-how-to-persist-data-in-kubernetes-using-volumes)|
+| 92.|[How to create storage class in kubernetes?](#q-how-to-create-storage-class-in-kubernetes)|
+| 93.|[How to deploy to kubernetes cluster on google cloud?](#q-how-to-deploy-to-kubernetes-cluster-on-google-cloud)|
+| 94.|[Kubernetes APIs have been described as both imperative and declarative. What does this mean?](#q-kubernetes-apis-have-been-described-as-both-imperative-and-declarative-what-does-this-mean)|
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 ## Q. ***What is Kubernetes?***
 
 Kubernetes is an open-source container orchestration tool or system that is used to automate tasks such as the management, monitoring, scaling, and deployment of containerized applications. It is used to easily manage several containers (since it can handle grouping of containers), which provides for logical units that can be discovered and managed.

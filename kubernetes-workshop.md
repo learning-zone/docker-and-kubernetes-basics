@@ -44,9 +44,7 @@ Click **Apply & Restart** to save the settings and then click **Install** to con
 
 * [Visual Studio Code Kubernetes plugin](https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools)
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+**Dashboard Setup:**
 
 * [Kubernetes UI Dashboard Docker Image](https://hub.docker.com/r/kubernetesui/dashboard)
 * [Dashboard Settings](https://github.com/kubernetes/dashboard)

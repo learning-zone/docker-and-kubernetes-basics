@@ -1,7 +1,7 @@
 # Kubernetes Workshop
 
-1. [Introduction](#1-introduction)
-1. [Kubernetes Dashboard Setup](#2-kubernetes-dashboard-setup)
+1. [Kubernetes Architecture](#1-Kubernetes-architecture)
+1. [Kubernetes Installation and Dashboard Setup](#2-kubernetes-installation-and-dashboard-setup)
 1. [Kubernetes Pod](#3-kubernetes-pod)
 1. [Kubernetes Node](#4-kubernetes-node)
 1. [Kubernetes Service](#5-kubernetes-service)
@@ -12,16 +12,41 @@
 1. [Kubernetes Secrets](#10-kubernetes-secrets)
 1. [Deploy a React application using Docker and Kubernetes](#11-deploy-a-react-application-using-docker-and-kubernetes)
 
-## 1. Introduction
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
-* Kubernetes Architecture
-* Kubernetes Installation
+## 1. Kubernetes Architecture
+
+<p align="center">
+  <img src="assets/kubernetes-architecture.png" alt="Kubernetes Architecture" width="800px" />
+</p>
+
+<p align="center">
+  <img src="assets/levels-of-abstraction.png" alt="Kubernetes levels of abstraction" width="300px" />
+</p>
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 2. Kubernetes Dashboard Setup
+## 2. Kubernetes Installation and Dashboard Setup
+
+**Kubernetes Installation:**
+
+To enable Kubernetes support and install a standalone instance of Kubernetes running as a Docker container, go to **Preferences > Kubernetes** and then click **Enable Kubernetes**.
+
+Click **Apply & Restart** to save the settings and then click **Install** to confirm. This instantiates images required to run the Kubernetes server as containers, and installs the `/usr/local/bin/kubectl` command on your machine.
+
+<p align="center">
+  <img src="assets/kubernetes-installation.png" alt="Kubernetes-Installation" width="500px" />
+</p>
+
+* [Visual Studio Code Kubernetes plugin](https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools)
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 * [Kubernetes UI Dashboard Docker Image](https://hub.docker.com/r/kubernetesui/dashboard)
 * [Dashboard Settings](https://github.com/kubernetes/dashboard)

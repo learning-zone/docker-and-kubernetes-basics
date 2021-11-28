@@ -26,6 +26,59 @@
   <img src="assets/levels-of-abstraction.png" alt="Kubernetes levels of abstraction" width="300px" />
 </p>
 
+**1. Node:**
+
+It represents a single machine in a cluster, which could be a physical machine in a data center or a virtual machine from a cloud provider. Each machine can substitute any other machine in a Kubernetes cluster.
+
+<p align="center">
+  <img src="assets/node-overview.png" alt="Node Overview" width="400px" />
+</p>
+
+**2. Pod:**
+
+A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers. Containers in the same pod share a local network and the same resources, allowing them to easily communicate with other containers in the same pod as if they were on the same machine while at the same time maintaining a degree of isolation.
+
+**3. Service:**
+
+A Kubernetes Service is an abstraction which defines a logical set of Pods running somewhere in your cluster, that all provide the same functionality. When created, each Service is assigned a unique IP address (also called clusterIP). This address is tied to the lifespan of the Service, and will not change while the Service is alive.
+
+**4. ReplicaSet:**
+
+A ReplicaSet\'s purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
+
+**5. Deployment:**
+
+A Kubernetes deployment is a resource object in Kubernetes that provides declarative updates to applications. A deployment allows you to describe an application\'s life cycle, such as which images to use for the app, the number of pods there should be, and the way in which they should be updated.
+
+**6. etcd:**
+
+Kubernetes uses etcd as a distributed key-value store for all of its data, including metadata and configuration data, and allows nodes in Kubernetes clusters to read and write data.
+
+**7. API Server:**
+
+API server implements an interface, which means different tools and libraries can readily communicate with it. **Kubeconfig** is a package along with the server side tools that can be used for communication. It exposes Kubernetes API
+
+**8. Kubelet:**
+
+The kubelet is a service agent that controls and maintains a set of pods by watching for pod specs through the Kubernetes API server. It preserves the pod lifecycle by ensuring that a given set of containers are all running as they should. The kubelet runs on each node and enables the communication between the master and slave nodes.
+
+**9. Controller Manager:**
+
+In Kubernetes, different methods are operating on the master node, and they are accumulated together as the Kubernetes Controller Manager. It is a daemon which installs regulators, including the given below:
+
+* Replication Controller
+* Node Controller
+* Endpoint controller
+* Administration record and token regulator
+
+**10. Scheduler:**
+
+The scheduler ( Kube-scheduler ) is responsible for workload utilization and allocating pod to new node. It makes sure that no workload is scheduled on already full nodes.
+
+**11. Kubernetes Proxy Service:**
+
+This is a proxy ( Kube-proxy ) service which runs on each node and helps in making services available to the external host. It helps in forwarding the request to correct containers and is capable of performing primitive load balancing.
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>

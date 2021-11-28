@@ -15,7 +15,7 @@
 ## 1. Introduction
 
 * Kubernetes Architecture
-* Kubernetes installation
+* Kubernetes Installation
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

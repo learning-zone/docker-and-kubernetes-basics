@@ -52,7 +52,7 @@
 | 46.|[List the uses of GKE](#q-list-the-uses-of-gke)|
 | 47.|[Explain the main components of Kubernetes architecture?](#q-explain-the-main-components-of-kubernetes-architecture)|
 | 48.|[How do we control the resource usage of POD?](#q-how-do-we-control-the-resource-usage-of-pod)|
-| 49.|[What are the various K8\'s services running on nodes and describe the role of each service?](#q-what-are-the-various-k8-s-services-running-on-nodes-and-describe-the-role-of-each-service)|
+| 49.|[What are the various K8s services running on nodes and describe the role of each service?](#q-what-are-the-various-k8s-services-running-on-nodes-and-describe-the-role-of-each-service)|
 | 50.|[What is PDB (Pod Disruption Budget)?](#q-what-is-pdb-pod-disruption-budget)|
 | 51.|[What are the various things that can be done to increase Kubernetes security?](#q-what-are-the-various-things-that-can-be-done-to-increase-kubernetes-security)|
 | 52.|[How to monitor the Kubernetes cluster?](#q-how-to-monitor-the-kubernetes-cluster)|
@@ -886,7 +886,7 @@ spec:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***What are the various K8\'s services running on nodes and describe the role of each service?***
+## Q. ***What are the various K8s services running on nodes and describe the role of each service?***
 
 Mainly K8 cluster consists of two types of nodes, executor and master.
 

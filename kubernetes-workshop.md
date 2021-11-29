@@ -113,7 +113,38 @@ kubectl proxy                               // Launch Kubernetes Dashboard
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### 3. Kubernetes Pod
+## 3. Kubernetes Pod
+
+The following is an example of a Pod which consists of a container running the image nginx:1.14.2.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
+```
+
+```bash
+kubectl apply -f nginx-pod.yaml
+kubectl get pod
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### 4. Kubernetes Node
 #### 5. Kubernetes Service
 #### 6. Kubernetes Deployment

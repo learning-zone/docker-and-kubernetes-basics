@@ -2041,6 +2041,14 @@ These are the steps to deploy a service to GKE:
 * Create an Ingress Load Balancer
 * Run Kubernetes Web UI Dashboard
 
+**Reference:**
+
+* *[https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app)*
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***Kubernetes APIs have been described as both imperative and declarative. What does this mean?***
 
 *ToDo*

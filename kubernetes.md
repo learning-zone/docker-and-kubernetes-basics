@@ -2026,7 +2026,7 @@ volumeBindingMode: Immediate
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***How to deploy to kubernetes cluster on google cloud?***
+## Q. ***How to deploy a kubernetes cluster on google cloud?***
 
 These are the steps to deploy a service to GKE:
 

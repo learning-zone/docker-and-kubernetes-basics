@@ -121,7 +121,7 @@ The following is an example of a Pod which consists of a container running the i
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: nginx-pod
   labels:
     name: nginx
 spec:
@@ -138,8 +138,8 @@ spec:
 
 ```bash
 kubectl apply -f nginx-pod.yaml
-kubectl get pod nginx
-kubectl describe pod nginx
+kubectl get pod nginx-pod
+kubectl describe pod nginx-pod
 ```
 
 <div align="right">
@@ -162,11 +162,71 @@ docker-desktop   Ready    control-plane,master   41d   v1.21.5
 
 ## 5. Kubernetes Service
 
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+  - port: 80
+    targetPort: 8080
+```
+
+```bash
+kubectl apply -f nginx-service.yaml     # Apply nginx service
+kubectl get pod
+kubectl get services
+kubectl describe service nginx-service  # Get service description
+kubectl get pod -o wide                 # Get detail information of POD
+kubectl get deployment nginx-deployment -o yaml > nginx-deployment-result.yaml  # Export deployment yaml result
+```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### 6. Kubernetes Deployment
+## 6. Kubernetes Deployment
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: 1.14.2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+```
+
+```bash
+kubectl apply -f nginx-deployment.yaml
+kubectl get pod                           # Get replicaSets running details
+kubectl get deployment
+kubectl describe deployment nginx-deployment
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### 7. Kubernetes ReplicaSet
 #### 8. Kubernetes Namespace
 #### 9. Kubernetes Volume

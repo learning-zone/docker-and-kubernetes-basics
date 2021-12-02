@@ -145,8 +145,26 @@ kubectl get pod
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### 4. Kubernetes Node
-#### 5. Kubernetes Service
+## 4. Kubernetes Node
+
+```bash
+kubectl get node
+
+# Output
+NAME             STATUS   ROLES                  AGE   VERSION
+docker-desktop   Ready    control-plane,master   41d   v1.21.5
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## 5. Kubernetes Service
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### 6. Kubernetes Deployment
 #### 7. Kubernetes ReplicaSet
 #### 8. Kubernetes Namespace

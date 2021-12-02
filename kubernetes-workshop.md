@@ -138,7 +138,8 @@ spec:
 
 ```bash
 kubectl apply -f nginx-pod.yaml
-kubectl get pod
+kubectl get pod nginx
+kubectl describe pod nginx
 ```
 
 <div align="right">

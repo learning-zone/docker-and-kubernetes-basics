@@ -301,7 +301,9 @@ kubectl describe namespace nginx-namespace
 
 ## 9. Kubernetes Volume
 
-In Kubernetes, a volume can be thought of as a directory which is accessible to the containers in a pod.
+A Kubernetes volume is a directory that contains data accessible to containers in a given Pod in the orchestration and scheduling platform. Volumes provide a plug-in mechanism to connect ephemeral containers with persistent data stores elsewhere.
+
+Kubernetes volumes persist until the Pod -- Kubernetes\'s atomic unit of container deployment -- is deleted. When a Pod with a unique identification is deleted, the volume associated with it gets destroyed. If a Pod is deleted but replaced with an identical Pod, a new and identical volume is also created. Kubernetes supports more than 20 types of volumes.
 
 **Persistent Volume (PV):** − It\'s a piece of network storage that has been provisioned by the administrator. It\'s a resource in the cluster which is independent of any individual pod that uses the PV.
 

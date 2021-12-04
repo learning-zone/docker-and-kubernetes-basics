@@ -299,7 +299,41 @@ kubectl describe namespace nginx-namespace
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### 9. Kubernetes Volume
+## 9. Kubernetes Volume
+
+In Kubernetes, a volume can be thought of as a directory which is accessible to the containers in a pod.
+
+**Persistent Volume (PV):** − It\'s a piece of network storage that has been provisioned by the administrator. It\'s a resource in the cluster which is independent of any individual pod that uses the PV.
+
+**Persistent Volume Claim (PVC):** − The storage requested by Kubernetes for its pods is known as PVC. The user does not need to know the underlying provisioning. The claims must be created in the same namespace where the pod is created.
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nginx-volume
+spec:
+  capacity:
+    storage: 40Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: slow
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  nfs:
+    path: /tmp
+    server: 172.17.0.2
+```
+
+```bash
+kubectl apply -f nginx-volume.yaml
+kubectl get pv
+kubectl describe pv nginx-volume
+```
+
 #### 10. Kubernetes Secrets
 #### 11. Deploy a React application using Docker and Kubernetes
 

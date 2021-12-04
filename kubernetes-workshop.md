@@ -316,7 +316,7 @@ metadata:
   name: nginx-volume
 spec:
   capacity:
-    storage: 40Gi
+    storage: 500Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce

@@ -227,7 +227,43 @@ kubectl describe deployment nginx-deployment
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### 7. Kubernetes ReplicaSet
+## 7. Kubernetes ReplicaSet
+
+A ReplicaSet\'s purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-replica
+  labels:
+    app: nginx
+    tier: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: backend
+  template:
+    metadata:
+      labels:
+        tier: backend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+```
+
+```bash
+kubectl apply -f nginx-replicaset.yaml
+kubectl get rs
+kubectl describe rs nginx-replica
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### 8. Kubernetes Namespace
 #### 9. Kubernetes Volume
 #### 10. Kubernetes Secrets

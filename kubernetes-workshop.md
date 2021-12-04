@@ -264,7 +264,41 @@ kubectl describe rs nginx-replica
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### 8. Kubernetes Namespace
+## 8. Kubernetes Namespace
+
+Namespaces are used for dividing cluster resources between multiple users. They are meant for environments where there are many users spread across projects or teams and provide a scope of resources.
+
+```bash
+kubectl get namespaces
+
+# Output
+NAME          STATUS    AGE
+default       Active    11d
+kube-system   Active    11d
+kube-public   Active    11d
+```
+
+* `default` The default namespace for objects with no other namespace
+* `kube-system` The namespace for objects created by the Kubernetes system
+* `kube-public` This namespace is created automatically and is readable by all users
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginx-namespace
+```
+
+```bash
+kubectl apply -f nginx-namespace.yaml
+kubectl get namespace
+kubectl describe namespace nginx-namespace
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### 9. Kubernetes Volume
 #### 10. Kubernetes Secrets
 #### 11. Deploy a React application using Docker and Kubernetes

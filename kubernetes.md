@@ -308,7 +308,7 @@ Saving this manifest into frontend.yaml and submitting it to a Kubernetes cluste
 ```bash
 kubectl apply -f https://kubernetes.io/examples/controllers/frontend.yaml
 
-# You can then get the current ReplicaSets deployed:
+# Get the current ReplicaSets deployed:
 kubectl get rs
 ```
 

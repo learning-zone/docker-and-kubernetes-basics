@@ -336,7 +336,65 @@ kubectl get pv
 kubectl describe pv nginx-volume
 ```
 
-#### 10. Kubernetes Secrets
+## 10. Kubernetes Secrets
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: nginx-secret
+type: Opaque
+data:
+  nginx-root-username: dXNlcm5hbWU=
+  nginx-root-password: cGFzc3dvcmQ=
+```
+
+```bash
+kubectl apply -f nginx-secret.yaml
+kubectl get secret nginx-secret
+kubectl describe secret nginx-secret
+```
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
+    env:
+      - name: NGINX_ROOT_USERNAME
+        valueFrom:
+          secretKeyRef:
+             name: nginx-secret
+             key: nginx-root-username
+      - name: NGINX_ROOT_PASSWORD
+        valueFrom:
+          secretKeyRef:
+             name: nginx-secret
+             key: nginx-root-password
+```
+
+```bash
+kubectl apply -f nginx-pod.yaml
+kubectl get secret nginx-pod
+kubectl describe secret nginx-pod
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### 11. Deploy a React application using Docker and Kubernetes
 
 <div align="right">

@@ -336,6 +336,10 @@ kubectl get pv
 kubectl describe pv nginx-volume
 ```
 
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 ## 10. Kubernetes Secrets
 
 ```yaml
@@ -490,6 +494,10 @@ kubectl get deployment nginx-deployment -o yaml > nginx-deployment-result.yaml  
 kubectl delete -f nginx-deployment.yaml
 kubectl delete - f nginx-service.yaml
 ```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 ## Application Deployment
 
@@ -782,6 +790,10 @@ minikube ssh                                      // SSH to minikibe
 kubectl get configmap                             // Display Config Map details
 ```
 
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 ## [Install Prometheus Operator](https://grafana.com/docs/grafana-cloud/quickstart/prometheus_operator/)
 
 ```js
@@ -793,6 +805,10 @@ cd operator_k8s
 kubectl get secret                                // Get Secrets
 kubectl get statefulset
 ```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 ## Install Promethus Operator using Helm
 

@@ -399,7 +399,9 @@ kubectl describe secret nginx-pod
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### 11. Deploy a React application using Docker and Kubernetes
+## 11. Deploy a React application using Docker and Kubernetes
+
+*ToDo*
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

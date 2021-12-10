@@ -435,6 +435,8 @@ kubectl get deployment
 kubectl get pod
 kubectl get replicaset
 kubectl apply -f <file_name>                // Deployment using .yaml config file
+kubectl cluster-info                        // Get Cluster Info
+kubectl cluster-info dump                   // Debug and diagnose cluster 
 ```
 
 **nginx-deployment.yaml:**

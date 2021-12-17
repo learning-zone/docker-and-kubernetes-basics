@@ -10,7 +10,7 @@
 1. [Kubernetes Namespace](#8-kubernetes-namespace)
 1. [Kubernetes Volume](#9-kubernetes-volume)
 1. [Kubernetes Secrets](#10-kubernetes-secrets)
-1. [Deploy a React application using Docker and Kubernetes](#11-deploy-a-react-application-using-docker-and-kubernetes)
+1. [Deploy a NodeJS application in Kubernetes Cluster](#11-deploy-a-nodejs-application-in-kubernetes-cluster)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -399,9 +399,58 @@ kubectl describe secret nginx-pod
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## 11. Deploy a React application using Docker and Kubernetes
+## 11. Deploy a NodeJS application in Kubernetes Cluster
 
-*ToDo*
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodejs
+  template:
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+      - name: nodejsapp
+        image: sofyspace/nodejs-starter:1.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-service
+spec:
+  selector:
+    app: nodejsapp
+  ports:
+  - port: 80
+    targetPort: 3000
+```
+
+```js
+kubectl apply -f nodejs-deployment.yaml
+kubectl get all
+kubectl expose deployment nodejs-deployment --type="LoadBalancer"
+kubectl get svc
+
+// Output
+cmd> kubectl get svc
+NAME                                      TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+kubernetes                                ClusterIP      10.96.0.1        <none>        443/TCP                      56d
+nodejs-deployment                         LoadBalancer   10.110.82.211    localhost     3000:32327/TCP               11s
+nodejs-service                            ClusterIP      10.110.60.110    <none>        80/TCP                       2m25s
+```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>

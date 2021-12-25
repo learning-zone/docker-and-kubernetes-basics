@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-starter",
+  "version": "1.0.0",
+  "description": "Basic NodeJS app deployed in Kubernetes Cluster",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pradeep Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

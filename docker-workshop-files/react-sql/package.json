@@ -1,0 +1,51 @@
+{
+  "name": "react-express-mssql-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/react": "^9.5.0",
+    "axios": "^0.19.2",
+    "npm-watch": "^0.6.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-scripts": "3.4.1"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src, static"
+      ],
+      "extensions": "js,jsx"
+    }
+  },
+  "scripts": {
+    "watch": "npm-watch",
+    "devStart": "react-scripts start",
+    "start": "npm run-script build && nodemon server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "author": "pradeep.vwa@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "mssql": "^6.3.2",
+    "nodemon": "^2.0.13"
+  }
+}

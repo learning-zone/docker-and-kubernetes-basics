@@ -103,9 +103,7 @@
 | 85. |[How to link containers?](#q-how-to-link-containers)|
 | 86. |[What is Paravirtualization?](#q-what-is-paravirtualization)|
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+<br/>
 
 ## Q. ***What is Docker?***
 
@@ -116,7 +114,7 @@ Docker is a containerization platform which packages your application and all it
 </p>
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is a Docker Container?***
@@ -124,7 +122,7 @@ Docker is a containerization platform which packages your application and all it
 Docker containers include the application and all of its dependencies. It shares the kernel with other containers, running as isolated processes in user space on the host operating system. Docker containers are not tied to any specific infrastructure: they run on any computer, on any infrastructure, and in any cloud. Docker containers are basically runtime instances of Docker images.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What are Docker Images?***
@@ -132,7 +130,7 @@ Docker containers include the application and all of its dependencies. It shares
 Docker image is the source of Docker container. In other words, Docker images are used to create containers. When a user runs a Docker image, an instance of a container is created. These docker images can be deployed to any Docker environment.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is Docker Hub?***
@@ -144,7 +142,7 @@ Docker images create docker containers. There has to be a registry where these d
 * **[https://docs.docker.com/get-started/](https://docs.docker.com/get-started/)**
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Explain Docker Architecture?***
@@ -156,7 +154,7 @@ The Docker works on client-server architecture. The Docker client establishes co
 * **Registry**: This component will be storing the Docker images. The public registries are Docker Hub and Docker Cloud which can be s used by anyone.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is a Dockerfile?***
@@ -190,7 +188,7 @@ docker run -p 3000:3000 sofyspace/scm-website         // Project will run on loc
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Tell us something about Docker Compose.***
@@ -236,7 +234,7 @@ docker-compose down   // Removing Volumes
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How is Dockerfile different from Docker Compose***
@@ -244,7 +242,7 @@ docker-compose down   // Removing Volumes
 A Dockerfile is a simple text file that contains the commands a user could call to assemble an image whereas Docker Compose is a tool for defining and running multi-container Docker applications. Docker Compose define the services that make up your app in docker-compose.yml so they can be run together in an isolated environment. It get an app running in one command by just running docker-compose up. Docker compose uses the Dockerfile if one add the build command to your project's docker-compose.yml. Your Docker workflow should be to build a suitable Dockerfile for each image you wish to create, then use compose to assemble the images using the build command.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is Docker Swarm?***
@@ -252,7 +250,7 @@ A Dockerfile is a simple text file that contains the commands a user could call 
 Docker Swarm is native clustering for Docker. It turns a pool of Docker hosts into a single, virtual Docker host. Docker Swarm serves the standard Docker API, any tool that already communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is a Docker Namespace?***
@@ -260,7 +258,7 @@ Docker Swarm is native clustering for Docker. It turns a pool of Docker hosts in
 A namespace is one of the Linux features and an important concept of containers. Namespace adds a layer of isolation in containers. Docker provides various namespaces in order to stay portable and not affect the underlying host system. Few namespace types supported by Docker – PID, Mount, IPC, User, Network
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the lifecycle of a Docker Container?***
@@ -278,7 +276,7 @@ Docker containers have the following lifecycle:
 1. Destroy the container
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is Docker Machine?***
@@ -286,7 +284,7 @@ Docker containers have the following lifecycle:
 Docker machine is a tool that lets you install Docker Engine on virtual hosts. These hosts can now be managed using the docker-machine commands. Docker machine also lets you provision Docker Swarm Clusters.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Suppose you have 3 containers running and out of these, you wish to access one of them. How do you access a running container?***
@@ -300,7 +298,7 @@ docker exec -it bash
 The exec command lets you get inside a container and work with it.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Will you lose your data, when a docker container exits?***
@@ -308,7 +306,7 @@ The exec command lets you get inside a container and work with it.
 No, you won\'t lose any data when Docker container exits. Any data that your application writes to the container gets preserved on the disk until you explicitly delete the container. The file system for the container persists even after the container halts.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Where all do you think Docker is being used?***
@@ -324,7 +322,7 @@ Docker is being used in the following areas:
 * **Rapid Deployment**: Docker eliminates the need to boost an entire OS from scratch, reducing the deployment time.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How is Docker different from other containerization methods?***
@@ -332,7 +330,7 @@ Docker is being used in the following areas:
 Docker containers are very easy to deploy in any cloud platform. It can get more applications running on the same hardware when compared to other technologies, it makes it easy for developers to quickly create, ready-to-run containerized applications and it makes managing and deploying applications much easier. You can even share containers with your applications.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Can I use JSON instead of YAML for my compose file in Docker?***
@@ -345,7 +343,7 @@ docker-compose -f docker-compose.json up
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the Difference Between Containers and Virtual Machines?***
@@ -381,7 +379,7 @@ A less technical definition of containers might be: a unit of software that is l
 Containers share all necessary capabilities with the VM to operate as an isolated OS environment for a modular app functionality with one key difference. Using a containerization engine, such as the Docker Engine, containers create several isolated OS environments within the same host system kernel, which can be shared with other containers dedicated to run different functions of the app. Only bins, libraries, and other runtime components are developed or executed separately for each container, which makes them more resource efficient as compared to VMs.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is Hypervisor?***
@@ -392,7 +390,7 @@ A hypervisor is a software that makes virtualization possible. It is also called
 * **Type 2:** This kind of hypervisor makes use of the underlying host operating system. It\'s also called Hosted Hypervisor.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is virtualization?***
@@ -400,7 +398,7 @@ A hypervisor is a software that makes virtualization possible. It is also called
 Virtualization is the process of creating a software-based, virtual version of something(compute storage, servers, application, etc.). These virtual versions or environments are created from a single physical hardware system. Virtualization lets you split one system into many different sections which act like separate, distinct individual systems. A software called Hypervisor makes this kind of splitting possible. The virtual environment created by the hypervisor is called Virtual Machine.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is containerization?***
@@ -408,7 +406,7 @@ Virtualization is the process of creating a software-based, virtual version of s
 Usually, in the software development process, code developed on one machine might not work perfectly fine on any other machine because of the dependencies. This problem was solved by the containerization concept. So basically, an application that is being developed and deployed is bundled and wrapped together with all its configuration files and dependencies. This bundle is called a container. Now when you wish to run the application on another system, the container is deployed which will give a bug-free environment as all the dependencies and libraries are wrapped together. Most famous containerization environments are Docker and Kubernetes.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Difference between virtualization and containerization***
@@ -418,7 +416,7 @@ Containers provide an isolated environment for running the application. The enti
 Whereas in Virtualization, hypervisors provide an entire virtual machine to the guest(including Kernal). Virtual machines are an abstraction of the hardware layer. Each VM is a physical machine. VM is more isolated and heavy and takes a lot time to start.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Is there a way to identify the status of a Docker container?***
@@ -435,7 +433,7 @@ There are six possible states a container can be at any given point –
 Use the following command to check for docker state at any given point: `$ docker ps` The above command lists down only running containers by default. To look for all containers, use the following command: `$ docker ps -a`
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Can you remove a paused container from Docker?***
@@ -443,7 +441,7 @@ Use the following command to check for docker state at any given point: `$ docke
 The answer is no. You cannot remove a paused container. The container has to be in the stopped state before it can be removed.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Can a container restart by itself?***
@@ -451,7 +449,7 @@ The answer is no. You cannot remove a paused container. The container has to be 
 No, it\'s not possible for a container to restart by itself. By default the flag -restart is set to false.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Is it better to directly remove the container using the rm command or stop the container followed by remove container?***
@@ -460,7 +458,7 @@ Its always better to stop the container and then remove it using the remove comm
 Stopping the container and then removing it will allow sending SIG_HUP signal to recipients. This will ensure that all the containers have enough time to clean up their tasks. This method is considered a good practice, avoiding unwanted errors.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Will cloud overtake the use of Containerization?***
@@ -468,7 +466,7 @@ Stopping the container and then removing it will allow sending SIG_HUP signal to
 Docker containers are gaining popularity but at the same time, Cloud services are giving a good fight. In my personal opinion, Docker will never be replaced by Cloud. Using cloud services with containerization will definitely hype the game. Organizations need to take their requirements and dependencies into consideration into the picture and decide what\'s best for them. Most of the companies have integrated Docker with the cloud. This way they can make the best out of both the technologies.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How many containers can run per host?***
@@ -476,7 +474,7 @@ Docker containers are gaining popularity but at the same time, Cloud services ar
 There can be as many containers as you wish per host. Docker does not put any restrictions on it. But you need to consider every container needs storage space, CPU and memory which the hardware needs to support. You also need to consider the application size. Containers are considered to be lightweight but very dependant on the host OS.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Is it a good practice to run stateful applications on Docker? or What type of applications - Stateless or Stateful are more suitable for Docker Container?***
@@ -487,7 +485,7 @@ Suppose you have an application that has many dependant services. Will docker co
 The answer is yes. Docker compose always runs in the dependency order. These dependencies are specifications like depends_on, links, volumes_from, etc.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How will you monitor Docker in production?***
@@ -510,7 +508,7 @@ Docker provides functionalities like docker stats and docker events to monitor d
 12.[Splunk](https://www.splunk.com/)
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Is it a good practice to run Docker compose in production?***
@@ -518,7 +516,7 @@ Docker provides functionalities like docker stats and docker events to monitor d
 Yes, using docker compose in production is the best practical application of docker compose. When you define applications with compose, you can use this compose definition in various production stages like CI, staging, testing, etc.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What changes are expected in your docker compose file while moving it to production?***
@@ -531,7 +529,7 @@ These are the following changes you need make to your compose file before migrat
 * Add extra services like log aggregator
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Are you aware of load balancing across containers and hosts? How does it work?***
@@ -539,7 +537,7 @@ These are the following changes you need make to your compose file before migrat
 While using docker service with multiple containers across different hosts, you come across the need to load balance the incoming traffic. Load balancing and HAProxy is basically used to balance the incoming traffic across different available(healthy) containers. If one container crashes, another container should automatically start running and the traffic should be re-routed to this new running container. Load balancing and HAProxy works around this concept.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is a Docker Registry?***
@@ -547,7 +545,7 @@ While using docker service with multiple containers across different hosts, you 
 A Docker Registry is a place where all the Docker Images will be stored and Docker Cloud and Docker Hub are the public registries where these images can be hosted upon. The Docker hub is the default storage for the Docker Images. An own registry can also be set up as per the requirement. Docker Data Center (DDC) can also be used which includes DTR (Docker Trusted Registry). Docker store will provide the feature of buying and selling the Docker images.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is DockerHub?***
@@ -555,7 +553,7 @@ A Docker Registry is a place where all the Docker Images will be stored and Dock
 DockerHub is a cloud-based registry service which allows you to link to code repositories, build your images and test them, stores manually pushed images, and links to Docker cloud so you can deploy images to your hosts. It provides a centralized resource for container image discovery, distribution and change management, user and team collaboration, and workflow automation throughout the development pipeline.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How to create Docker container***
@@ -573,7 +571,7 @@ docker ps -a
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Does Docker container package up the entire OS?***
@@ -581,7 +579,7 @@ docker ps -a
 Docker containers do not package up the OS. They package up the applications with everything that the application needs to run. The engine is installed on top of the OS running on a host. Containers share the OS kernel allowing a single host to run multiple containers.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Describe how many ways are available to configure Docker daemon?***
@@ -597,7 +595,7 @@ $ dockerd --debug --tls=true --tlscert=/var/docker/server.pem --tlskey=/var/dock
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Can you list reasons why Container Networking is so important?***
@@ -611,7 +609,7 @@ $ dockerd --debug --tls=true --tlscert=/var/docker/server.pem --tlskey=/var/dock
 * Provide secure multi-tenant services.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How to create a user-defined Bridge network ?***
@@ -623,7 +621,7 @@ To create a user-defined bridge network, one can use the docker network create c
 You can specify the subnet, the IP address range, the gateway, and other options. See the docker network create reference or the output of docker network create --help for details.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is memory-swap flag?***
@@ -631,7 +629,7 @@ You can specify the subnet, the IP address range, the gateway, and other options
 `--memory-swap` is a modifier flag that only has meaning if `--memory` is also set. Using swap allows the container to write excess memory requirements to disk when the container has exhausted all the RAM that is available to it. There is a performance penalty for applications that swap memory to disk often.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Can you explain different volume mount types available in Docker?***
@@ -639,7 +637,7 @@ You can specify the subnet, the IP address range, the gateway, and other options
 There are three mount types available in Docker · Volumes are stored in a part of the host filesystem which is managed by Docker (`/var/lib/docker/volumes/` on Linux). Non-Docker processes should not modify this part of the filesystem. Volumes are the best way to persist data in Docker. · Bind mounts may be stored anywhere on the host system. They may even be important system files or directories. Non-Docker processes on the Docker host or a Docker container can modify them at any time. · tmpfs mounts are stored in the host system’s memory only, and are never written to the host system’s filesystem.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How to share data among DockerHost?***
@@ -647,7 +645,7 @@ There are three mount types available in Docker · Volumes are stored in a part 
 Ways to achieve this when developing your applications. One is to add logic to your application to store files on a cloud object storage system like Amazon S3. Another is to create volumes with a driver that supports writing files to an external storage system like NFS or Amazon S3. Volume drivers allow you to abstract the underlying storage system from the application logic. For example, if your services use a volume with an NFS driver, you can update the services to use a different driver, as an example to store data in the cloud, without changing the application logic.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How to Backup, Restore, or Migrate data volumes under Docker container?***
@@ -667,7 +665,7 @@ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /db
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How to Configure Automated Builds on DockerHub***
@@ -675,7 +673,7 @@ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /db
 You can build your images automatically from a build context stored in a repository. A build context is a Dockerfile and any files at a specific location. For an automated build, the build context is a repository containing a Dockerfile.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How to configure the default logging driver under Docker?***
@@ -683,7 +681,7 @@ You can build your images automatically from a build context stored in a reposit
 To configure the Docker daemon to default to a specific logging driver, set the value of log-driver to the name of the logging driver in the daemon.json file, which is located in /etc/docker/ on Linux hosts or C:\ProgramData\docker\config\ on Windows server hosts. The default logging driver is json-file.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Why do my services take 10 seconds to recreate or stop?***
@@ -691,7 +689,7 @@ To configure the Docker daemon to default to a specific logging driver, set the 
 Compose stop attempts to stop a container by sending a SIGTERM. It then waits for a default timeout of 10 seconds. After the timeout, a SIGKILL is sent to the container to forcefully kill it. If you are waiting for this timeout, it means that your containers aren’t shutting down when they receive the SIGTERM signal.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How do I run multiple copies of a Compose file on the same host?***
@@ -699,7 +697,7 @@ Compose stop attempts to stop a container by sending a SIGTERM. It then waits fo
 Compose uses the project name to create unique identifiers for all of a project’s containers and other resources. To run multiple copies of a project, set a custom project name using the -command line option or the COMPOSE_PROJECT_NAME environment variable.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the difference between up, run, and start under Docker Compose?***
@@ -709,7 +707,7 @@ Typically, you want docker-compose up. Use up to start or restart all the servic
 The docker-compose run command is for running "one-off" or "adhoc" tasks. It requires the service name you want to run and only starts containers for services that the running service depends on. Use run to run tests or perform an administrative task such as removing or adding data to a data volume container. The run command acts like docker run -ti in that it opens an interactive terminal to the container and returns an exit status matching the exit status of the process in the container. The docker-compose start command is useful only to restart containers that were previously created, but were stopped. It never creates new containers.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is Docker Trusted Registry?***
@@ -717,7 +715,7 @@ The docker-compose run command is for running "one-off" or "adhoc" tasks. It req
 Docker Trusted Registry (DTR) is the enterprise-grade image storage solution from Docker. You install it behind your firewall so that you can securely store and manage the Docker images you use in your applications.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How to declare default environment variables under Docker Compose?***
@@ -727,7 +725,7 @@ Compose supports declaring default environment variables in an environment file 
 When you run docker-compose up, the web service defined above uses the image alpine:v3.4. You can verify this with the docker-compose config command which prints your resolved application config to the terminal: img
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Can you list out ways to share Compose configurations between files and projects under Docker Compose?***
@@ -738,7 +736,7 @@ Extending an entire Compose file by using multiple Compose files
 Extending individual services with the extends field
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the purpose of EXPOSE command in Dockerfile?***
@@ -754,7 +752,7 @@ You can also specify this within a docker run command, such as:
 Please note that EXPOSE will not allow communication via the defined ports to containers outside of the same network or to the host machine. To allow this to happen you need to publish the ports.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Why Docker Monitoring is necessary?***
@@ -765,7 +763,7 @@ Please note that EXPOSE will not allow communication via the defined ports to co
 * The changes are inherent in container based environments and impact of that too gets monitored indirectly.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Is it possible to run Kubernetes on Docker EE 2.0 Platform?***
@@ -773,7 +771,7 @@ Please note that EXPOSE will not allow communication via the defined ports to co
 Yes, it is possible to run Kubernetes under Docker EE 2.0 platform. Docker Enterprise Edition (EE) 2.0 is the only platform that manages and secures applications on Kubernetes in multi-Linux, multi-OS and multi-cloud customer environments. As a complete platform that integrates and scales with your organization, Docker EE 2.0 gives you the most flexibility and choice over the types of applications supported, orchestrators used, and where it’s deployed. It also enables organizations to operationalize Kubernetes more rapidly with streamlined workflows and helps you deliver safer applications through integrated security solutions.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Can you use Docker Compose to build up Swarm/Kubernetes Cluster?***
@@ -781,7 +779,7 @@ Yes, it is possible to run Kubernetes under Docker EE 2.0 platform. Docker Enter
 Yes, one can deploy a stack on Kubernetes with docker stack deploy command, the `docker-compose.yml` file, and the name of the stack. Example: `$docker stack deploy --compose-file /path/to/docker-compose.yml mystack $docker stack services mystack` You can see the service deployed with the kubectl get services command $kubectl get svc, po, deploy.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is 'docker stack deploy' command meant for?***
@@ -789,7 +787,7 @@ Yes, one can deploy a stack on Kubernetes with docker stack deploy command, the 
 The "docker stack deploy" is a command to deploy a new stack or update an existing stack. A stack is a collection of services that make up an application in a specific environment. A stack file is a file in YAML format that defines one or more services, similar to a docker-compose.yml file for Docker Compose but with a few extensions.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Explain the concept of HA under Swarm Mode?***
@@ -797,7 +795,7 @@ The "docker stack deploy" is a command to deploy a new stack or update an existi
 HA refers to High Availability. High Availability is a feature where you have multiple instances of your applications running in parallel to handle increased load or failures. These two paradigms fit perfectly into Docker Swarm, the built-in orchestrator that comes with Docker. Deploying your applications like this will improve your uptime which translates to happy users. For creating a high availability container in the Docker Swarm, we need to deploy a docker service to the swarm with nginx image. This can be done by using docker swarm create command as specified above.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What are Docker secrets and why is it necessary***
@@ -805,7 +803,7 @@ HA refers to High Availability. High Availability is a feature where you have mu
 In Docker there are three key components to container security and together they result in inherently safer apps. img Docker Secrets, a container native solution that strengthens the Trusted Delivery component of container security by integrating secret distribution directly into the container platform. By integrating secrets into Docker orchestration, we are able to deliver a solution for the secrets management problem that follows these exact principles. The following diagram provides a high-level view of how the Docker swarm mode architecture is applied to securely deliver a new type of object to our containers: a secret object.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What are docker networking***
@@ -818,7 +816,7 @@ Mainly we have four mode of networking for Docker
 * No networking
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Explain a use case for Docker***
@@ -827,7 +825,7 @@ Mainly we have four mode of networking for Docker
 * You can spin up clean test environments quickly (instead of bringing up full virtual machines)in order to test your software.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Basic Docker Commands***
@@ -858,7 +856,7 @@ Mainly we have four mode of networking for Docker
 |system prune | to remove all the stopped containers, all the networks that are not used, all dangling images and all build caches.| $ docker system prune --all |
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the difference between the COPY and ADD commands in a Dockerfile?***
@@ -894,7 +892,7 @@ ADD https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/svg/docker.svg /ap
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is Docker Volume?***
@@ -915,7 +913,7 @@ Docker has two options for containers to store files in the host machine so that
 </p>
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***When would you use "docker kill" or "docker rm -f"?***
@@ -933,7 +931,7 @@ docker kill ----signal=SIGINT foo
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the difference between CMD and ENTRYPOINT in a Dockerfile?***
@@ -973,7 +971,7 @@ Hello Docker hostname
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Do I lose my data when the Docker container exits?***
@@ -981,7 +979,7 @@ Hello Docker hostname
 No, you won\'t lose any data when Docker container exits. Any data that your application writes to the container gets preserved on the disk until you explicitly delete the container. The file system for the container persists even after the container halts.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is Build Cache in Docker?***
@@ -991,7 +989,7 @@ Docker creates container images using layers. Each command that is found in a Do
 Docker uses a layer cache to optimize the process of building Docker images and make it faster. Docker Layer Caching mainly works on **RUN**, **COPY** and **ADD** commands.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the difference between "docker run" and "docker create"?***
@@ -1010,7 +1008,7 @@ docker run myimage
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the difference between a docker registry and repository?***
@@ -1034,7 +1032,7 @@ docker pull myregistryhost:3000/namespace/repo-name:tag
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the default CPU limit set for a container?***
@@ -1056,7 +1054,7 @@ docker run -it --memory="1g" ubuntu
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Can you create containers without their own PID namespace***
@@ -1066,7 +1064,7 @@ Docker creates a new PID namespace for each container by default. A container\'s
 Without a PID namespace, the processes running inside a container would share the same ID space as those in other containers or on the host. A process in a container would be able to determine what other processes were running on the host machine.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the difference between Docker Image and Layer?***
@@ -1095,7 +1093,7 @@ bin   dev   etc   home  proc  root  sys   tmp   usr   var
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the difference between "expose" and "publish" in Docker?***
@@ -1121,7 +1119,7 @@ docker run -d -p 3000 <image_id>
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Docker Compose vs. Dockerfile - which is better?***
@@ -1163,7 +1161,7 @@ volumes:
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What exactly do you mean by "Dockerized node"? Can this node be on-premises or in the cloud?***
@@ -1171,7 +1169,7 @@ volumes:
 Docker can manage nodes that exist on-premises as well as in the cloud. Docker Datacenter is an on-premises solution that enterprises use to create, manage, deploy and scale their applications and comes with support from the Docker team. It can manage hosts that exist in your datacenter as well as in your virtual private cloud or public cloud provider (AWS, Azure, Digital Ocean, SoftLayer etc.).
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How can we control the startup order of services in Docker compose?***
@@ -1195,7 +1193,7 @@ services:
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is an orphan volume and how to remove it?***
@@ -1215,7 +1213,7 @@ docker volume rm $(docker volume ls -qf dangling=true)
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Can you explain dockerfile ONBUILD instruction?***
@@ -1237,7 +1235,7 @@ ONBUILD RUN /usr/local/bin/python-build --dir /app/src
 * The **ONBUILD** instruction may not trigger **FROM** or **MAINTAINER** instructions.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How does Docker run containers in non-Linux systems?***
@@ -1245,7 +1243,7 @@ ONBUILD RUN /usr/local/bin/python-build --dir /app/src
 Windows and Macintosh systems can\'t run Linux containers directly, since they\'re not Linux kernels with the appropriate facilities to run even Linux programs, much less supporting the same extra cgroup facilities. So when you install Docker on these, generally it installs a Linux VM on which to run the containers. Almost invariably it will install only a single VM and run all containers in that one VM.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How containers work at low level?***
@@ -1253,7 +1251,7 @@ Windows and Macintosh systems can\'t run Linux containers directly, since they\'
 Containers are implemented using **Linux namespaces** and **cgroups**. Namespaces let you virtualize system resources, like the file system or networking for each container. On the other hand, cgroups provide a way to limit the amount of resources, such as CPU and memory, that each container can use. At their core, low-level container runtimes are responsible for setting up these namespaces and cgroups for containers, and then running commands inside those namespaces and cgroups.
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***Name some limitations of containers vs VM***
@@ -1269,7 +1267,7 @@ Containers are implemented using **Linux namespaces** and **cgroups**. Namespace
 | Fully isolated and hence more secure|	Process-level isolation, possibly less secure|
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How to use Docker with multiple environments?***
@@ -1308,7 +1306,7 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is the difference between a Docker image and a container?***
@@ -1326,7 +1324,7 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
 |There is no such running state of Docker Image.|Containers uses RAM when created and in running state.|
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***How to link containers?***
@@ -1338,7 +1336,7 @@ docker run -d -p 3000:3000 sofyspace/react-app
 ```
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. ***What is Paravirtualization?***
@@ -1352,5 +1350,5 @@ With paravirtualization, the guest OS is modified, so it knows that it is runnin
 </p>
 
 <div align="right">
-    <b><a href="#">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>

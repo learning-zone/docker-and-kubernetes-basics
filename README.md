@@ -11,7 +11,7 @@
 * *[Kubernetes Basics](kubernetes.md)*
 * *[Kubernetes Workshop](kubernetes-workshop.md)*
 * *[Kubectl Command Cheatsheet](kubernetes-commands.md)*
-* *[Cloud Computing Interview Questions](cloud.md)*
+* *[Cloud Computing Basics](cloud.md)*
 * *[Jenkins Interview Questions](jenkins.md)*
 
 <br/>

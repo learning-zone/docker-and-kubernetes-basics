@@ -1,4 +1,4 @@
-# Cloud Computing Interview Questions
+# Cloud Computing Basics
 
 ## Q. ***What is a Cloud Technology?***
 

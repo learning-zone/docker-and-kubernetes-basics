@@ -1,4 +1,4 @@
-# Kubernetes Interview Questions
+# Kubernetes Basics
 
 <br/>
 
